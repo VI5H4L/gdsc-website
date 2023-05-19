@@ -1,0 +1,39 @@
+/* Hide the checkbox */
+.toggleSwitch input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Style the slider */
+  .toggleSwitch .slider {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Style the slider when it's in the "on" state */
+  .toggleSwitch input[type="checkbox"]:checked + .slider {
+    background-color: #00aaff;
+  }
+  
+  /* Style the switch thumb */
+  .toggleSwitch .slider:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    left: 1px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  /* Style the switch thumb when it's in the "on" state */
+  .toggleSwitch input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  

@@ -1,0 +1,98 @@
+.imageDiv 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin: 8px;
+    border: 2px solid #3CBA54;
+}
+
+.main 
+{
+    background-image: url('../images/Illustrations.png');
+     background-repeat: no-repeat;
+   background-size:contain; 
+   background-position: center;
+   width: 100vw;
+   height: 100vh;
+  
+   
+}
+
+.imageArea 
+{
+   margin: 10% 0% 0% 0% ;
+}
+
+.imageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #3CBA54;
+}
+
+.heading 
+{
+    text-align: center;
+    align-content: center;
+    font-size: 3rem;
+}
+
+.leadImageDiv 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.smallHeading 
+{
+    color: black;
+    margin: 30px 0px 0px 50px;
+}
+
+.leadsHeading 
+{
+    margin: 0px;
+}
+
+.leadsDetails 
+{
+    text-align: center;
+}
+
+.leadsDetails
+{
+    color: black;
+    text-align: center;
+}
+
+h3,h6{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .heading 
+    {
+        font-size: 2.5rem;
+    }
+    .leadImageDiv 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .smallHeading, .leadsHeading {
+        margin: 0px;
+        text-align: center;
+    }
+    .main 
+    {
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 50%;
+    }
+   }

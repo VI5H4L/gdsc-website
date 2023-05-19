@@ -1,0 +1,216 @@
+
+
+.aboutDiv 
+{
+    width: 1235px;
+    height: 392px;
+    background-color: #DB3236;
+    border-radius: 8px;
+    margin: 10% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.aboutDiv2
+{
+    height: 80vh;
+    width: 85vw;
+    align-items: center;
+    display: flex;
+    /* border: 4px solid red; */
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.aboutDiv3
+{
+    height: 90vh;
+    width: 85vw;
+    align-items: center;
+    display: flex;
+    /* border: 4px solid red; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutDiv4
+{
+    height: 60vh;
+    width: 85vw;
+    align-items: center;
+    display: flex;
+    /* border: 4px solid red; */
+    flex-direction: column;
+    align-items: center;
+}
+.aboutHeading 
+{
+    font-size: 4.5rem;
+    margin-left: 8%;
+    color: white;
+    font-weight: bold;
+}
+
+
+.aboutSubHeading2
+{
+    font-size: 1.75rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.aboutImage 
+{
+    margin-right: 8%;
+}
+
+
+.aboutSection
+{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutSection2
+{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutSection3
+{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutSection4
+{
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.domainImageDiv
+{
+    height: 74%;
+    width: 100%;
+}
+
+.domainImage
+{
+    width: 100%;
+    height: 100%
+}
+
+
+.smallSubHeading 
+{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: lighter;
+}
+
+
+.description 
+{
+    font-size: 1.35rem;
+}
+
+
+.frame1
+{
+    height: 300.48px;
+    width: 340.17px;
+    /* border: 4px solid black; */
+    background-image: url('../images/aboutFrame1.png');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    border-radius: 15.92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame2
+{
+    margin-top: 10%;
+    height: 318.48px;
+    width: 346.17px;
+    /* border: 4px solid black; */
+    background-image: url('../images/aboutFrame2.png');
+    background-repeat: no-repeat;
+    background-position: fixed;
+    border-radius: 15.92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.frameDiv
+{
+    margin: 6% 0%;
+    width: 100%;
+    /* border: 4px solid black; */
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.frame1Heading
+{ 
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+.frame2Heading
+{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.domainNameDiv
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button 
+{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid grey;
+    margin: 0px 20px;
+    opacity: 0.6;
+
+}
+
+.buttonName
+{
+    color: grey;
+    opacity: 0.7;
+}
