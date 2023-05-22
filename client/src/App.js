@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar1 from './components/Navbar1'
 import FacultyMentor from './pages/FacultyMentor';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -16,14 +16,11 @@ function App() {
   return (
     <>
 
-<Navbar />
+<Navbar1 />
     <Routes>
       
       <Route  path = "/" element={<div ><Home/></div>}/>
       <Route  path = "/about" element={<div ><AboutPage /></div>}/>
-      {/* <Route  path = "/contact" element={<div ><Newsletter /></div>}/>
-      <Route  path = "/events" element={<div ><Events /></div>}/> */}
-      {/* <Route  path = "/*" element={<div><Errorpage/></div>}/> */}
       </Routes>
        <Footer />   
        </>

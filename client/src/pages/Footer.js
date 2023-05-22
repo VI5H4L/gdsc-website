@@ -1,6 +1,5 @@
 import React from 'react'
 import FooterCss from './Footer.module.css';
-import NavCss from '../components/Navbar.module.css';
 import HomeCss from './Home.module.css';
 import gdsclogo from '../images/gdsclogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,9 +12,15 @@ function Footer() {
         <section id='Footer' className={FooterCss.main}>
           
      
-          <div className={FooterCss.footer}>
-            <div>
-            <div className={NavCss.logoimagediv}><img src={gdsclogo} alt='gdsclogo'/> </div>
+       
+            <div className={FooterCss.column1}>
+            <div className={FooterCss.logoimagediv}>
+           <img src={gdsclogo}  className={FooterCss.gdsclogo}alt='gdsclogo'/>
+           <div className={FooterCss.logoname}>
+            <p className={FooterCss.logonameheading}>Google Developer Student Clubs </p>
+            <p className={FooterCss.logonameheading2}>The LNM Institute of Information Technology</p>
+            </div>
+         </div>
             <div className={FooterCss.belowLogoFooterSection}>
             <span>dhsbubfai iacsuiucb</span>
           <span>dhsbubfai iacsuiucb</span>
@@ -29,9 +34,11 @@ function Footer() {
           </div>
             </div>
 
+<div className={FooterCss.footerDataDiv}>
             <div className={FooterCss.data}>
             <h2>XYZ</h2>
           <h4>Lorem ipsum</h4>
+         <h4>Lorem ipsum</h4>
          <h4>Lorem ipsum</h4>
           </div>
 
@@ -39,21 +46,31 @@ function Footer() {
             <h2>XYZ</h2>
           <h4>Lorem ipsum</h4>
          <h4>Lorem ipsum</h4>
+         <h4>Lorem ipsum</h4>
           </div>
 
               <div className={FooterCss.data}>
             <h2>XYZ</h2>
           <h4>Lorem ipsum</h4>
          <h4>Lorem ipsum</h4>
+         <h4>Lorem ipsum</h4>
           </div>
-          
-            </div>
+          </div>
             {/* <div className={FooterCss.copyright}>
           <p>© Copyright 2023, All Rights Reserved by GDSC</p>
         </div> */}
         
           {/* </div> */}
+        
         </section>
+
+        <section className={FooterCss.copyrightSection}>
+        <div className={FooterCss.copyright}>
+          <h5 className={FooterCss.cHeading}>© Copyright 2023, All Rights Reserved by GDSC</h5>
+        </div>
+        </section>
+
+    
         </>
      );
 }

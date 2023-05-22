@@ -73,9 +73,19 @@
     .headingDiv
     {
         margin-left:0px;
+        margin-top: 10%;
     }
     .imageDiv 
     {
         display: none;
     }
    }
+
+
+   @media (max-width: 500px)
+{
+    .headingDiv
+    {
+        margin-top: 20%;
+    }
+}
