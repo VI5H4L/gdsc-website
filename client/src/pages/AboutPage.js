@@ -1,6 +1,5 @@
 import React from 'react'
 import AboutCss from './AboutPage.module.css'
-import Navbar from '../components/Navbar';
 import AboutImage from '../images/aboutImage.png'
 import DomainImage from '../images/domainImage.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +9,6 @@ function AboutPage() {
     return ( 
 
         <>
-        {/* <Navbar /> */}
         <section className={AboutCss.aboutSection}>
           <div className={AboutCss.aboutDiv}>
             <h1 className={AboutCss.aboutHeading}> About Us</h1>
@@ -25,7 +23,7 @@ function AboutPage() {
             <div className={AboutCss.frameDiv}>
             <div className={AboutCss.frame2}><span className={AboutCss.frame2Heading}>13+</span><span className={AboutCss.frame2Heading}>Projects</span></div>
             <div className={AboutCss.frame1}><span className={AboutCss.frame1Heading}>50+</span><span className={AboutCss.frame1Heading}>Students</span></div>
-            <div className={AboutCss.frame2}><span className={AboutCss.frame2Heading}>15+</span><span className={AboutCss.frameHeading}>Events</span></div>
+            <div className={AboutCss.frame2}><span className={AboutCss.frame2Heading}>15+</span><span className={AboutCss.frame2Heading}>Events</span></div>
             </div>
            
           </div>
@@ -56,11 +54,7 @@ function AboutPage() {
            <p className={AboutCss.description}>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, su
 orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, su
-orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
+</p>
           </div>
         </section>
         </>

@@ -5,6 +5,7 @@
     width: 1235px;
     height: 392px;
     background-color: #DB3236;
+    background-image: url(../images/aboutBackground.png);
     border-radius: 8px;
     margin: 10% 0%;
     display: flex;
@@ -30,11 +31,13 @@
 {
     height: 90vh;
     width: 85vw;
-    align-items: center;
+    
     display: flex;
     /* border: 4px solid red; */
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    /* align-items: center; */
 }
 
 .aboutDiv4
@@ -64,6 +67,12 @@
     text-align: center;
 }
 
+.aboutSubHeading
+{
+    text-align: center;
+    font-weight: bold;
+}
+
 .aboutImage 
 {
     margin-right: 8%;
@@ -86,6 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5%;
 }
 
 .aboutSection3
@@ -109,8 +119,8 @@
 
 .domainImageDiv
 {
-    height: 74%;
-    width: 100%;
+    height: 532px;
+    width: 1235px;
 }
 
 .domainImage
@@ -140,13 +150,15 @@
     width: 340.17px;
     /* border: 4px solid black; */
     background-image: url('../images/aboutFrame1.png');
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: fixed;
+    background-size: cover;
     border-radius: 15.92px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .frame2
@@ -154,15 +166,17 @@
     margin-top: 10%;
     height: 318.48px;
     width: 346.17px;
-    /* border: 4px solid black; */
+    border: 3px solid  #F4C20D;
     background-image: url('../images/aboutFrame2.png');
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: fixed;
+    background-size: cover;
     border-radius: 15.92px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .frameDiv
@@ -213,4 +227,284 @@
 {
     color: grey;
     opacity: 0.7;
+}
+
+
+@media (max-width: 1270px)
+{
+
+    .aboutDiv
+    {
+        width: 80%;
+    }
+
+    .aboutImage{
+         width: 459px;
+         height: 344px;
+    }
+    .aboutHeading
+    {
+        font-size: 3.75rem;
+    }
+
+    .aboutSection2
+    {
+        height: 80vh;
+    }
+
+    .frame2
+    {
+width: 250px;
+height: 250px;
+    }
+    .frame1
+    {
+width: 250px;
+height: 250px;
+    }
+
+  .domainImageDiv
+{
+    height: 412px;
+    width: 1115px;
+}
+
+     
+}
+
+@media (max-width: 1150px)
+{
+    .domainImageDiv
+    {
+        height: 332px;
+        width: 935px;
+    }
+}
+
+@media (max-width:950px)
+{
+    .frame1
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+    .frame2
+    {
+        width: 200px;
+        height: 200px;
+    }
+
+    .domainImageDiv
+    {
+        height: 805px;
+        width: 805px;
+    }
+
+    .aboutSection4
+    {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 850px)
+{
+    .aboutImage
+    {
+       display: none;
+    }
+
+    .aboutHeading
+    {
+        font-size: 4rem;
+        margin: 0%;
+    }
+
+    .aboutDiv
+    {
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    margin-bottom: 0%;
+    }
+
+    .aboutSection
+    {
+        height: 80vh;
+        padding-top: 5%;
+    }
+
+    .aboutDiv2
+    {
+        width: 80%;
+    }
+
+    .aboutSubHeading
+    {
+        margin-top: 7%;
+        font-size: 1.25rem;
+    }
+
+    .aboutSection2
+    {
+        margin-top: 5%;
+    }
+    .frame1
+    {
+        width: 190px;
+        height: 190px;
+    }
+
+    .frame2
+    {
+        margin-top: 13%;
+        width: 190px;
+        height: 190px;
+    }
+
+    .domainImageDiv
+    {
+        height: 605px;
+        width: 605px;
+    }
+
+ 
+}
+
+@media (max-width: 760px)
+{
+    .frame1
+    {
+        width: 150px;
+        height: 150px;
+    }
+
+    .frame2
+    {
+        margin-top: 16%;
+        width: 150px;
+        height: 150px;
+    }
+
+    .frame1Heading
+    {
+        font-size: 1rem;
+    }
+
+    .frame2Heading
+    {
+        font-size: 1rem;
+    }
+
+    .aboutSection2
+    {
+        height: 60vh;
+        padding-bottom: 5%;
+    }
+
+    .domainImageDiv
+    {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 640px)
+{
+    .frameDiv
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aboutSection2
+    {
+        height: 90vh;
+        padding-bottom: 10%;
+    }
+
+    .frame2
+    {
+        margin-top: 0px;
+        margin-bottom: 5%;
+    }
+
+    .frame1
+    {
+        margin-bottom: 5%;
+    }
+
+    .aboutSubHeading2
+    {
+        font-size: 1.75rem;
+        margin-bottom: 11%;
+    }
+
+    .domainNameDiv
+    {
+        width: 100%;
+    }
+    
+
+    .buttonName
+    {
+        display: none;
+    }
+
+    .smallSubHeading
+    {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 500px)
+{
+
+    .aboutSection
+    {
+        padding-top: 7%;
+        height: 55vh;
+    }
+
+    .aboutDiv
+    {
+        width: 90%;
+        height: 50vh;
+    }
+
+    .aboutHeading
+    {
+        font-size: 2.5rem;
+    }
+
+    .aboutSubHeading
+    {
+        margin-top: 15%;
+        font-size: 1.25rem;
+    }
+
+    .aboutSection2
+    {
+        margin-top: 9%;
+    }
+}
+
+
+@media (max-width: 400px)
+{
+    .domainImageDiv
+    {
+        width: 100%;
+        height: 58vh;
+    }
+
+    .aboutSection4
+    {
+        height: 90vh;
+    }
 }
