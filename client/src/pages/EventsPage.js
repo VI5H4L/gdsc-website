@@ -12,17 +12,6 @@ function EventsPage() {
         const handleClick=()=>{
           setActive(!isActive);
         }
-
-        const handleMouseEnter = (event) => {
-          
-
-          event.target.classList.add(`${EventCss.btn}`);
-        };
-      
-        const handleMouseLeave = (event) => {
-         event.target.classList.remove(`${EventCss.btn}`);
-        };
-      
           
     return ( 
 
@@ -55,8 +44,8 @@ function EventsPage() {
            <section className={EventCss.section3}>
            {AllEventsData.map((item)=>(
                 <div key={item.id} className={EventCss.components}>
-                    <div className={EventCss.ImageDiv} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                        ...
+                    <div className={EventCss.ImageDiv}  >
+                        <img src={EventImage} className={EventCss.cardImage} alt='about' />
                     </div>
                     <div>
          

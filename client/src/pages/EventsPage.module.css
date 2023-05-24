@@ -83,8 +83,13 @@
     width: 351px;
     background-color: black;
     border-radius: 15px;
+    cursor: url(../images/click1.svg) 45 45 ,pointer;
 }
-
+.cardImage{
+    height: 100%;
+    width: 100%;
+    
+}
 .section3
 {
     height: auto;
@@ -100,13 +105,6 @@
 {
     padding: 2%;
 }
-
-.btn 
-{
-    cursor: url(../images/icon.png), pointer;
-    padding: 10px;
-}
-
 
 @media (max-width: 1270px)
 {
