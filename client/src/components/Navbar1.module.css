@@ -117,7 +117,7 @@ a
     display: none;
 }
 
-.rightnav{
+/* .rightnav{
     width: 45%;
     display: flex;
     float: left;
@@ -127,7 +127,7 @@ a
     flex-direction: row;
     justify-content: center;
     z-index: 900000;
-}
+} */
 
 
 @media (max-width:1000px)
@@ -145,7 +145,7 @@ a
         height: 70vh;
         width: 90%;
         top: 10px;
-        right: -800px;
+        right: -8000px;
         z-index: 9000;
         background-color: white;
         transition: 0.4s ease-in-out;
@@ -216,6 +216,8 @@ a
     {
         top: 20px;
     }
+
+  
 }
 
 @media (max-width: 500px)
@@ -232,7 +234,7 @@ a
 
     .listDiv{
         top: 40px;
-        right: 20px;
+        /* right: 10px; */
         padding: 2% 0%;
         height: 60vh;
     }
@@ -240,7 +242,7 @@ a
     .active
     {
         top: 40px;
-        right: 20px;
+        /* right: 10px; */
         padding: 2% 0%;
         height: 60vh;
     }

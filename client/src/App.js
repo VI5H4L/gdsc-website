@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Newsletter from './components/Newsletter';
 import AboutPage from './pages/AboutPage';
 import  './fonts/productSans.ttf'
+import EventsPage from './pages/EventsPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       
       <Route  path = "/" element={<div ><Home/></div>}/>
       <Route  path = "/about" element={<div ><AboutPage /></div>}/>
+      <Route  path = "/events" element={<div ><EventsPage /></div>}/>
       </Routes>
        <Footer />   
        </>
