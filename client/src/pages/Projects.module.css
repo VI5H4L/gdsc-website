@@ -13,7 +13,7 @@
     width: 1235px;
     height: 392px;
     background-color: #4885ED;
-    background-image: url(../images/eventsBackground.png);
+    background-image: url(../images/projectBackground.png);
     border-radius: 8px;
     margin: 10% 0%;
     display: flex;
@@ -105,9 +105,9 @@
     height: 315px;
     width: 351px;
     background-color: black;
-    border: 2px solid #4885ED;
+    border: 2px solid #4BC561;
     border-radius: 15px;
-    cursor: url(../images/click1.svg) 45 45 ,pointer;
+    cursor: url(../images/click2.svg) 45 45 ,pointer;
 }
 .cardImage{
     height: 100%;

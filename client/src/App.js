@@ -13,6 +13,7 @@ import Newsletter from './components/Newsletter';
 import AboutPage from './pages/AboutPage';
 import  './fonts/productSans.ttf'
 import EventsPage from './pages/EventsPage';
+import ProjectsPage from './pages/ProjectsPage'
 import { ThemeContext, ThemeProvider } from './ThemeContext';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Route  path = "/" element={<div ><Home /></div>}/>
       <Route  path = "/about" element={<div ><AboutPage /></div>}/>
       <Route  path = "/events" element={<div ><EventsPage /></div>}/>
+      <Route  path = "/projects" element={<div ><ProjectsPage /></div>}/>
       </Routes>
        <Footer />  
        

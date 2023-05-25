@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useContext} from 'react';
 import PopCss from './Popup.module.css'
 import PopupDiv from './PopupDiv';
 import {RxCross1} from 'react-icons/rx'
 import arrow from '../images/arrow.png'
-
+import { ThemeContext } from '../ThemeContext';
 function ExpandableData(props){
 
   const [isActive, setActive] = useState(false);
@@ -13,19 +13,20 @@ function ExpandableData(props){
     setActive(!isActive);
   }
 
-
+  const  {theme} = useContext(ThemeContext);
 
   return (
     <>
-    <div>
-      <h1 className={PopCss.mainHeading}>{props.heading}</h1>
+    <div className={`${theme === 'dark' ? PopCss.darkmainDiv : PopCss.mainDiv}`}>
+      <h1 className={`${theme === 'dark' ? PopCss.darkmainHeading : PopCss.mainHeading}`}>{props.heading}</h1>
           {`${props.data}`.slice(0, 150) } {/* Display the initial portion of data */}
           {/* <SeeMoreButton /> */}
           <button className={PopCss.mainButton} onClick={handleClick}>...See More</button>
         </div>
          <PopupDiv trigger={isActive}>
+          <div className={PopCss.contentDiv}>
             <h1 >{props.heading}</h1>
-            <button className={PopCss.button} onClick={handleClick}><RxCross1 className={PopCss.icon}/></button>
+            <button className={theme==='dark'?PopCss.darkbutton:PopCss.button} onClick={handleClick}><RxCross1  className={theme==='dark'?PopCss.darkicon:PopCss.icon}/></button>
             <p className={PopCss.para}>{props.data}</p> 
             <div className={PopCss.posterDiv}>
             <div className={PopCss.poster}> poster </div>
@@ -66,6 +67,7 @@ function ExpandableData(props){
                 </div>         
                <button className={PopCss.rsvpButton}>RSVP Here</button>
                </div>
+            </div>
             </div>
             </div>
         </PopupDiv>

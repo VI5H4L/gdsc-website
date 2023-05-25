@@ -1,15 +1,16 @@
 import React from 'react'
 import PopCss from './Popup.module.css'
-import {useState} from 'react';
+import {useState,useContext} from 'react';
+import { ThemeContext } from '../ThemeContext';
 
 function PopupDiv(props) {
-
+   const  {theme} = useContext(ThemeContext);
   
     return ( props.trigger)?(
         <>
  
-        <div className={PopCss.main}>
-           <div className={PopCss.inner}>
+        <div className={theme==='dark'?PopCss.darkmain:PopCss.main}>
+           <div className={theme==='dark'?PopCss.darkinner:PopCss.inner}>
             {props.children}
            </div>
         </div>

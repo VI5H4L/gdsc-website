@@ -1,10 +1,10 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import EventCss from './EventsPage.module.css'
 import EventImage from '../images/eventsImage.png'
+import darkEventImage from '../images/darkEventImage.png'
 import AllEventsData from '../Data/AllEvents'
-import PopupDiv from '../components/PopupDiv'
 import ExpandableData from '../components/ExpandableData'
-
+import { ThemeContext } from '../ThemeContext';
 function EventsPage() {
 
         const [isActive, setActive] = useState(false);
@@ -12,28 +12,30 @@ function EventsPage() {
         const handleClick=()=>{
           setActive(!isActive);
         }
+
+        const  {theme} = useContext(ThemeContext);
           
     return ( 
 
         <>
            <section className={EventCss.section1}>
             <div className={EventCss.eventsDiv}>
-            <h1 className={EventCss.eventHeading}>Events</h1>
-            <img src={EventImage} className={EventCss.eventImage} alt='about-image' />
+            <h1 className={`${theme === 'dark' ? EventCss.darkeventHeading : EventCss.eventHeading}`}>Events</h1>
+            <img src={`${theme === 'dark' ? darkEventImage : EventImage}`} className={EventCss.eventImage} alt='about-image' />
             </div>
            </section>
 
            <section className={EventCss.section2}>
               
-                <h1 className={EventCss.filterHeading}>We organize a wide range of events for all our domains!</h1>
+                <h1 className={`${theme==='dark'?EventCss.darkfilterHeading:EventCss.filterHeading}`}>We organize a wide range of events for all our domains!</h1>
                 <div className={EventCss.eventsFilterDiv}>
-              <select  className={EventCss.select} value="Select Tenure" >
+              <select  className={`${theme==='dark'?EventCss.darkselect:EventCss.select}`} value="Select Tenure" >
                 <option >Select Tenure</option>
                 <option>b</option>
                 <option>c</option>
               </select>
 
-              <select  className={EventCss.select} name="Select Domain">
+              <select className={`${theme==='dark'?EventCss.darkselect:EventCss.select}`} name="Select Domain">
                 <option >Select Domain</option>
                 <option>b</option>
                 <option>c</option>
