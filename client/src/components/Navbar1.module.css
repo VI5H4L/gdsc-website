@@ -15,6 +15,23 @@
  
 }
 
+.darkNavbar 
+{
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 1px 10px #999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: black;
+ 
+}
+
 
 .listDiv
 {
@@ -22,6 +39,12 @@
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+.darklist 
+{
+    background-color: black;
+    color: white;
 }
 
 
@@ -46,6 +69,7 @@
 {
     font-size: 1rem;
     margin-top: 1%;
+    margin-bottom: 0px;
     
 }
 
@@ -53,7 +77,7 @@
 .logonameheading2
 {
     font-size: 0.75rem;
-    
+    margin: 0px;
 }
 
 
@@ -100,6 +124,17 @@ a
     border: #DB3236;
 }
 
+
+.button 
+{
+    height: 31.61px;
+    width: 189px;
+    border-radius: 9.66px;
+    background-color: #DB3236;
+    color: white;
+    border: #DB3236;
+}
+
 .button1
 {
     display: none;
@@ -117,6 +152,11 @@ a
     display: none;
 }
 
+.darkhamburgerMenu
+{
+    display: none;
+}
+
 /* .rightnav{
     width: 45%;
     display: flex;
@@ -128,6 +168,8 @@ a
     justify-content: center;
     z-index: 900000;
 } */
+
+
 
 
 @media (max-width:1000px)
@@ -175,6 +217,11 @@ a
         padding: 2% 0%;
     }
 
+    a 
+    {
+        margin: 0px;
+    }
+
     .button1
     {
         display: block;
@@ -190,6 +237,13 @@ a
         margin-right: 5%;
     }
 
+    .darkhamburgerMenu
+    {
+        display: block;
+        margin-right: 5%;
+        background-color: black;
+    }
+
     .hamburger
 {
     display:block;
@@ -198,11 +252,28 @@ a
    
 }
 
+.darkhamburger
+{
+    display:block;
+    height: 35px;
+    width: 35px;
+   color: white;
+   background-color: black;
+}
+
 a 
 {
     background-color: white;
     font-size: 1.25rem;
     margin-bottom: 2%;
+}
+
+ul 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 5%;
 }
 }
 

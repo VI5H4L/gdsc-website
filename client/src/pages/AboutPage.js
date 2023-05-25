@@ -1,18 +1,21 @@
-import React from 'react'
+import React ,{useContext}from 'react'
 import AboutCss from './AboutPage.module.css'
 import AboutImage from '../images/aboutImage.png'
+import darkAboutImage from '../images/darkAboutImage.png'
 import DomainImage from '../images/domainImage.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft,faAngleRight,faTwitter,faInstagram } from '@fortawesome/free-solid-svg-icons';
-
+import { ThemeContext } from '../ThemeContext';
 function AboutPage() {
+
+  const  {theme} = useContext(ThemeContext);
     return ( 
 
         <>
         <section className={AboutCss.aboutSection}>
           <div className={AboutCss.aboutDiv}>
-            <h1 className={AboutCss.aboutHeading}> About Us</h1>
-            <img src={AboutImage} className={AboutCss.aboutImage} alt='about-image' />
+            <h1 className={`${theme==='dark'?AboutCss.darkaboutHeading:AboutCss.aboutHeading}`}> About Us</h1>
+            <img src={`${theme==='dark'? darkAboutImage:AboutImage}`} className={AboutCss.aboutImage} alt='about-image' />
           </div>
         </section>
 
@@ -22,7 +25,7 @@ function AboutPage() {
             <h1 className={AboutCss.aboutSubHeading}>We're A Vibrant Community Of Student Developers At The LNMIIT</h1>
             <div className={AboutCss.frameDiv}>
             <div className={AboutCss.frame2}><span className={AboutCss.frame2Heading}>13+</span><span className={AboutCss.frame2Heading}>Projects</span></div>
-            <div className={AboutCss.frame1}><span className={AboutCss.frame1Heading}>50+</span><span className={AboutCss.frame1Heading}>Students</span></div>
+            <div className={`${theme==='dark'?AboutCss.darkframe1:AboutCss.frame1}`}><span className={AboutCss.frame1Heading}>50+</span><span className={AboutCss.frame1Heading}>Students</span></div>
             <div className={AboutCss.frame2}><span className={AboutCss.frame2Heading}>15+</span><span className={AboutCss.frame2Heading}>Events</span></div>
             </div>
            

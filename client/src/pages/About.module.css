@@ -15,7 +15,8 @@
    background-size:contain; 
    background-position: center;
    width: 100vw;
-   height: 100vh;
+   min-height: 100vh;
+   height: auto;
   
    
 }
@@ -40,6 +41,14 @@
     font-size: 3rem;
 }
 
+.darkHeading 
+{
+    text-align: center;
+    align-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
 .leadImageDiv 
 {
     display: flex;
@@ -58,14 +67,16 @@
     margin: 0px;
 }
 
-.leadsDetails 
+
+.leadDetails
 {
+    color: black;
     text-align: center;
 }
 
-.leadsDetails
+.darkLeadDetails
 {
-    color: black;
+    color: white;
     text-align: center;
 }
 

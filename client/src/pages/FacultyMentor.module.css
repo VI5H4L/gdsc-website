@@ -12,6 +12,31 @@
     margin: 2% 0;
 }
 
+.darkmainDiv 
+{
+    background-image: url('../images/FacultyBackground1.png');
+     background-repeat: no-repeat;
+   background-size:cover; 
+   background-position: center;
+    /* width: 100vw; */
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 2% 0; */
+    background-color: black;
+}
+
+.darkHeading 
+{
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    font-size: 3rem;
+    color: black;
+    font-weight: bold;
+}
+
 /* .upperSection 
 {
     height: 16vh;
@@ -49,6 +74,16 @@
     height: 200px;
     border-radius: 50%;
     background-color: aliceblue;
+    border: 1px solid aliceblue;
+    margin: 10px;
+}
+.darkimageDiv 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: black;
+    border: 1px solid black;
     margin: 10px;
 }
 
@@ -58,6 +93,14 @@
     width: 220px;
     height: 220px;
     border: 2px dashed white;
+}
+
+.darkimageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed black;
 }
 
 .heading 
@@ -92,6 +135,13 @@
     color: white;
 }
 
+.darkParagraph 
+{
+    padding: 7% 0px;
+    width: 300px;
+    color: black;
+}
+
 .main 
 {
     display: flex;
@@ -115,6 +165,12 @@
         height: 169vh;
         width: 100vw;
      }
+
+     .darkmainDiv 
+     {
+        height: 169vh;
+        width: 100vw;
+     }
    
     .midSection
     {
@@ -132,7 +188,15 @@
     {
         font-size: 2.5rem;
     }
+    .darkHeading 
+    {
+        font-size: 2.5rem;
+    }
     .paragraph
+    {
+        text-align: center;
+    }
+    .darkParagraph
     {
         text-align: center;
     }
@@ -142,6 +206,11 @@
    {
 
     .mainDiv
+    {
+        margin-top: 50px;
+        width: 100%;
+    }
+    .darkmainDiv
     {
         margin-top: 50px;
         width: 100%;

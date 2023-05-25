@@ -1,4 +1,4 @@
-import React, {useState,useEffect}from 'react'
+import React, {useState,useEffect,useContext}from 'react'
 import PhotoCss from './PhotoGallery.module.css'
 import photo from '../images/photoGallery.png'
 import image1 from '../images/image1.jpg'
@@ -8,14 +8,14 @@ import image4 from '../images/image4.png'
 import image5 from '../images/image5.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft,faAngleRight,faTwitter,faInstagram } from '@fortawesome/free-solid-svg-icons';
-import Slider from 'react-slick';
+import { ThemeContext } from '../ThemeContext';
 
 
 
 
 function Photo() {
 
-
+   const {theme} =useContext(ThemeContext);
 
   const [selectedImage,setSelectedImage]=useState(image1);
   const [allImage,setAllImage]=useState([image1,image2,image3,image4,image5,image5,image5]);
@@ -57,7 +57,7 @@ function Photo() {
     return ( 
         <>
         <section id='photo' className={PhotoCss.main}>
-            <h1 className={PhotoCss.heading}>Photo Gallery</h1>
+            <h1 className={theme==='dark'? PhotoCss.darkheading: PhotoCss.heading}>Photo Gallery</h1>
             <div className={PhotoCss.mainDiv}>
             <div className={PhotoCss.photoDiv} >
               <img src={selectedImage} className={PhotoCss.photoDiv} />

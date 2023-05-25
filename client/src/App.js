@@ -1,4 +1,5 @@
 import './App.css';
+import React,{useContext}from 'react'
 import Navbar1 from './components/Navbar1'
 import FacultyMentor from './pages/FacultyMentor';
 import Home from './pages/Home';
@@ -12,19 +13,23 @@ import Newsletter from './components/Newsletter';
 import AboutPage from './pages/AboutPage';
 import  './fonts/productSans.ttf'
 import EventsPage from './pages/EventsPage';
+import { ThemeContext, ThemeProvider } from './ThemeContext';
 
 function App() {
+
   return (
     <>
-
+    <ThemeProvider>
 <Navbar1 />
     <Routes>
       
-      <Route  path = "/" element={<div ><Home/></div>}/>
+      <Route  path = "/" element={<div ><Home /></div>}/>
       <Route  path = "/about" element={<div ><AboutPage /></div>}/>
       <Route  path = "/events" element={<div ><EventsPage /></div>}/>
       </Routes>
-       <Footer />   
+       <Footer />  
+       
+       </ThemeProvider>
        </>
   );
 }
