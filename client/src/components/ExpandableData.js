@@ -21,7 +21,7 @@ function ExpandableData(props){
       <h1 className={`${theme === 'dark' ? PopCss.darkmainHeading : PopCss.mainHeading}`}>{props.heading}</h1>
           {`${props.data}`.slice(0, 150) } {/* Display the initial portion of data */}
           {/* <SeeMoreButton /> */}
-          <button className={PopCss.mainButton} onClick={handleClick}>...See More</button>
+          <button className={PopCss.mainButton}  onClick={handleClick}>...See More</button>
         </div>
          <PopupDiv trigger={isActive}>
           <div className={PopCss.contentDiv}>

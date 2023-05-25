@@ -44,7 +44,7 @@ function Navbar(){
             </div>
          </div>
          </Link >
-                <div className={isActive?`${NavCss.listDiv} ${NavCss.active}`:`${NavCss.listDiv}`}>
+                <div id={`${theme==='dark'?NavCss.darkdiv:""}`} className={isActive?`${NavCss.listDiv} ${NavCss.active}`:`${NavCss.listDiv}`}>
               <NavLink
                  className={`${theme === 'dark' ? NavCss.darklist : NavCss.list}`}
                 to="/"

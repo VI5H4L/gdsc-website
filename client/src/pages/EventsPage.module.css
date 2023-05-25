@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding-top: 5%;
 }
 
 .eventsDiv 
@@ -206,11 +208,6 @@
     margin-bottom: 0%;
     }
 
-    .Section1
-    {
-        height: 70vh;
-    }
-
     .eventsFilterDiv
     {
         flex-direction: column;
@@ -251,5 +248,24 @@
     .darkfilterHeading
     {
         font-size: 1.25rem;
+    }
+}
+
+@media (max-width:500px)
+{
+    .eventsDiv 
+    {
+        height: 300px;
+    }
+
+    .eventHeading
+    {
+        font-size: 3rem;
+        margin: 0%;
+    }
+    .darkeventHeading
+    {
+        font-size: 3rem;
+        margin: 0%;
     }
 }
