@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
 import ToggleCss from './ToggleSwitch.module.css'
 
-function ToggleSwitch() {
-    return ( 
+const ToggleSwitch = () => {
+  const [isChecked, setIsChecked] = useState(false);
 
-        <>
- <label class={ToggleCss.toggleSwitch}>
-  {/* <input type={ToggleCss.checkbox} /> */}
-  <span class={ToggleCss.slider}></span>
-</label>
+  const handleToggle = () => {
+    setIsChecked(!isChecked);
+  };
 
-        </>
-     );
-}
+  return (
+    <label className={ToggleCss.toggleSwitch} onClick={handleToggle}>
+      <input type={ToggleCss.checkbox} checked={isChecked} onClick={handleToggle} />
+      <span className={`${ToggleCss.slider} ${isChecked ? ToggleCss.sliderOff : ToggleCss.sliderOn}`} />
+    </label>
+  );
+};
 
 export default ToggleSwitch;

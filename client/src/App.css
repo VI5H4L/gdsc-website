@@ -1,10 +1,33 @@
 body 
 {
   overflow-x: hidden;
+  background-color: var(--bg-clr);
 }
 
 .App {
   text-align: center;
+}
+
+
+#dark 
+{
+  background-color: black;
+}
+
+#light
+{
+  background-color: white;
+}
+
+
+
+#dark h4 {
+  color: grey;
+}
+
+#dark a 
+{
+  background-color: black;
 }
 
 
