@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AboutCss from "./AboutPage.module.css";
 import AboutImage from "./images/aboutImage.png";
 import darkAboutImage from "./images/darkAboutImage.png";
 import DomainImage from "./images/domainImage.png";
 import DomainSection from "../../components/DomainSection/DomainSection";
-
+import DomainData from "../../Data/Domain";
 import { ThemeContext } from "../../ThemeContext";
 function AboutPage() {
   const { theme } = useContext(ThemeContext);
+
   return (
     <>
       <section className={AboutCss.aboutSection}>
@@ -101,55 +102,11 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* <section className={AboutCss.aboutSection3}>
-        <div className={AboutCss.aboutDiv3}>
-          <h1
-            className={`${
-              theme === "dark"
-                ? AboutCss.darkaboutSubHeading2
-                : AboutCss.aboutSubHeading2
-            }`}>
-            Introducing Our 6 Domains
-          </h1>
-          <div className={AboutCss.domainNameDiv}>
-            <div>
-              <button className={AboutCss.button}>
-                <FontAwesomeIcon
-                  icon={faAngleLeft}
-                  size="xl"
-                  style={{ color: "grey", width: "30px", height: "30px" }}
-                />
-              </button>
-              <span className={AboutCss.buttonName}>Creative</span>
-            </div>
-            <h2
-              className={`${
-                theme === "dark"
-                  ? AboutCss.darksmallSubHeading
-                  : AboutCss.smallSubHeading
-              }`}>
-              Development
-            </h2>
-            <div>
-              <span className={AboutCss.buttonName}>AI/ML</span>
-              <button className={AboutCss.button}>
-                <FontAwesomeIcon
-                  icon={faAngleRight}
-                  size="xl"
-                  style={{ color: "grey", width: "30px", height: "30px" }}
-                />
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </section> */}
-
-      <DomainSection heading="Introducing our 6 domains!">
-        <div className={AboutCss.domainImageDiv}>
-          <img src={DomainImage} className={AboutCss.domainImage} />
-        </div>
-      </DomainSection>
+      <DomainSection
+        heading="Introducing our 6 domains!"
+        current="Development"
+        data={DomainData}
+        variant="about"></DomainSection>
 
       <section className={AboutCss.aboutSection4}>
         <div className={AboutCss.aboutDiv4}>

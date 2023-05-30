@@ -95,15 +95,6 @@ function Navbar() {
               }}>
               Our Team
             </NavLink>
-            <NavLink
-              className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}
-              to="/credits"
-              onClick={() => {
-                handleToggle();
-                gotoTop();
-              }}>
-              Credits
-            </NavLink>
             <Link
               className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}
               onClick={() => {

@@ -45,3 +45,21 @@
 {
     padding: 2%;
 }
+
+
+@media (max-width:400px)
+{
+
+    .ImageDiv1 
+    {
+        height: 300px;
+    width: 300px;
+    }
+
+    .components 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
