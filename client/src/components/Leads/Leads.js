@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import AboutCss from "./Leads.module.css";
 import { ThemeContext } from "../../ThemeContext";
 import plane from "./images/planeIllustration.png";
