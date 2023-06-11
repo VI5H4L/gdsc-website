@@ -13,32 +13,7 @@ import cube from "./images/cubeIllustation.png";
 
 function Photo() {
   const { theme } = useContext(ThemeContext);
-  const [data1, setData1] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://gdsc-pk3d.onrender.com/gallery"
-        );
-        setData1(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const mappedData = data1.map((item) => ({
-    id: item._id,
-    src: item.photo,
-  }));
-
-  console.log(mappedData);
-
-  const [selectedImage, setSelectedImage] = useState(mappedData[0].id);
+  const [selectedImage, setSelectedImage] = useState(image1);
   const [allImage, setAllImage] = useState([
     image1,
     image2,
