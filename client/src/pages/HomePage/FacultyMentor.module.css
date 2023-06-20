@@ -1,0 +1,281 @@
+.mainDiv 
+{
+    background-image: url('./images/FacultyBackground1.png');
+     background-repeat: no-repeat;
+   background-size:cover; 
+   background-position: center;
+    /* width: 100vw; */
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+    position: relative;
+}
+
+.darkmainDiv 
+{
+    background-image: url('./images/FacultyBackground1.png');
+     background-repeat: no-repeat;
+   background-size:cover; 
+   background-position: center;
+    /* width: 100vw; */
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 2% 0; */
+    background-color: black;
+}
+
+.darkHeading 
+{
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    font-size: 3rem;
+    color: black;
+    font-weight: bold;
+}
+
+/* .upperSection 
+{
+    height: 16vh;
+    display: flex;
+    align-items: flex-end;
+   margin-top: 5%;
+    
+} */
+
+.midSection 
+{
+    height: 71vh;
+    width: 100%;
+    background-color: #4885ED;
+    opacity: 0.9;
+ 
+}
+
+
+/* 
+.upperImage 
+{
+    width: 100%;
+    padding: 0px;
+}
+
+.lowerImage 
+{
+    width: 100vw;
+} */
+
+.imageDiv 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    border: 1px solid aliceblue;
+    margin: 10px;
+}
+.darkimageDiv 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: black;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.imageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed white;
+}
+
+.darkimageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed black;
+}
+
+.heading 
+{
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+}
+
+.imageArea 
+{
+    padding: 3% 0px;
+    margin-left: 50px;
+    display: inline;
+}
+
+.mentorSection 
+{
+    display: flex;
+    flex-direction: row;
+    
+    /* justify-content: space-evenly; */
+}
+
+.paragraph 
+{
+    padding: 7% 0px;
+    width: 300px;
+    color: white;
+}
+
+.darkParagraph 
+{
+    padding: 7% 0px;
+    width: 300px;
+    color: black;
+}
+
+.main 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.plane 
+{
+    position: absolute;
+    bottom: -10%;
+    left: 30%;
+    z-index: 700;
+    width: 500px;
+    height: 500px;
+}
+
+.planeImage 
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (max-width:1270px)
+{
+    .plane
+    {
+        bottom: -15%;
+    }
+
+    .mainDiv
+    {
+        margin-top: 50px;
+        width: 100%;
+    }
+    .darkmainDiv
+    {
+        margin-top: 50px;
+        width: 100%;
+    }
+}
+
+@media (max-width:1000px)
+{
+    .plane
+    {
+        bottom: -13%;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .mentorSection
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+ @media only screen and (max-width: 800px) {
+   
+     .mainDiv 
+     {
+        height: 169vh;
+        width: 100vw;
+     }
+
+     .darkmainDiv 
+     {
+        height: 169vh;
+        width: 100vw;
+     }
+   
+    .midSection
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 99vh;
+    }
+    .main
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .heading 
+    {
+        font-size: 2.5rem;
+    }
+    .darkHeading 
+    {
+        font-size: 2.5rem;
+    }
+    .paragraph
+    {
+        text-align: center;
+    }
+    .darkParagraph
+    {
+        text-align: center;
+    }
+
+    .plane
+    {
+        bottom: -9%;
+        left: 24%;
+        width: 400px;
+        height: 400px;
+    }
+   } 
+
+
+   @media (max-width:700px)
+   {
+    .plane
+    {
+        bottom: -7%;
+        left: 18%;
+        width: 350px;
+        height: 350px;
+    }
+   }
+
+   @media (max-width:600px)
+   {
+    .plane
+    {
+        bottom: -7%;
+        left: 10%;
+        width: 300px;
+        height: 30px;
+    }
+   }

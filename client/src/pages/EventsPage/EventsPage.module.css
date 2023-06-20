@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+
+.components
+{
+    height: 485px;
+    width: 351px;
+    margin: 2% 4%;
+   
+}
+
+.ImageDiv
+{
+    height: 315px;
+    width: 351px;
+    background-color: black;
+    border: 2px solid #4885ED;
+    border-radius: 15px;
+    cursor: url(../EventsPage/images/click1.svg) 45 45 ,pointer;
+}
+.cardImage{
+    height: 100%;
+    width: 100%;
+    
+}
+.section3
+{
+    height: auto;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.data
+{
+    padding: 2%;
+}
+
+
+
+@media (max-width: 1270px)
+{
+    .eventsDiv
+    {
+        width: 80%;
+    }
+
+    .eventImage{
+         width: 459px;
+         height: 344px;
+    }
+    .eventHeading
+    {
+        font-size: 3.75rem;
+    }
+
+    .darkeventHeading
+    {
+        font-size: 3.75rem;
+    }
+
+    .eventsFilterDiv
+{
+    width: 80%;
+}
+
+
+ .filterHeading
+ {
+     font-size: 1.5rem;
+     text-align: center;
+ }
+
+ .darkfilterHeading
+ {
+     font-size: 1.5rem;
+     text-align: center;
+     color: white;
+ }
+}
+
+
+@media (max-width: 850px)
+{
+    .eventImage
+    {
+       display: none;
+    }
+
+    .eventHeading
+    {
+        font-size: 4rem;
+        margin: 0%;
+    }
+    .darkeventHeading
+    {
+        font-size: 4rem;
+        margin: 0%;
+    }
+
+    .eventsDiv
+    {
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    margin-bottom: 0%;
+    }
+
+    .eventsFilterDiv
+    {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10%;
+        height: 30vh;
+    }
+
+   
+
+    .section2
+    {
+        height: 50vh;
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    .select
+    {
+           width: 302px;
+           height: 40.23px;
+        text-align: center;
+    }
+
+    .darkselect
+    {
+           width: 302px;
+           height: 40.23px;
+        text-align: center;
+    }
+
+    .filterHeading
+    {
+        font-size: 1.25rem;
+    }
+
+    
+    .darkfilterHeading
+    {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width:500px)
+{
+    .eventsDiv 
+    {
+        height: 300px;
+    }
+
+    .eventHeading
+    {
+        font-size: 3rem;
+        margin: 0%;
+    }
+    .darkeventHeading
+    {
+        font-size: 3rem;
+        margin: 0%;
+    }
+}

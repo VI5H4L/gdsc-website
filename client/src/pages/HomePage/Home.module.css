@@ -1,0 +1,157 @@
+.headingDiv {
+  width: 45vw;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 20px; */
+}
+.darkHeadingDiv {
+  width: 45vw;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 20px; */
+  color: white;
+}
+
+.heading1 {
+  font-size: 4rem;
+  margin: 0px;
+  font-weight: bolder;
+}
+
+.heading2 {
+  font-size: 2.5rem;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.heading3 {
+  font-size: 1.5rem;
+  margin: 30px 0px 0px 0px;
+  font-weight: lighter;
+}
+
+.imageDiv {
+  height: 500px;
+  width: 500px;
+  /* margin: 30px 40px 0px 0px; */
+}
+
+.homeImage {
+  height: 100%;
+  width: 100%;
+  /* margin-left: 10%; */
+  /* margin: 30px 40px 0px 0px; */
+}
+
+.homeDiv {
+  margin-top: 5.5%;
+  display: flex;
+  flex-direction: row;
+  min-height: 70vh;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.darkHomeDiv {
+  /* margin-top: 5.5%; */
+  padding-top: 7%;
+  display: flex;
+  flex-direction: row;
+  min-height: 70vh;
+  height: auto;
+  width: 100%;
+  background-color: black;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.brandButtons {
+  height: 40px;
+  width: 40px;
+  margin: 40px 10px 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #dee5f3;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  /* color: white; */
+}
+
+.brandButtons:hover {
+  background-color: #5f94ef;
+}
+
+.darkBrandButtons:hover {
+  background-color: #5f94ef;
+}
+
+.darkBrandButtons {
+  height: 40px;
+  width: 40px;
+  margin: 40px 10px 0;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #dee5f3;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .homeDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .darkHomeDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .headingDiv {
+    margin-left: 0px;
+    margin-top: 10%;
+    width: 90%;
+  }
+
+  .darkHeadingDiv {
+    margin-left: 0px;
+    margin-top: 10%;
+    width: 90%;
+  }
+  .imageDiv {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .headingDiv {
+    margin-top: 20%;
+  }
+
+  .darkHeadingDiv {
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .headingDiv {
+    margin-top: 30%;
+  }
+
+  .darkHeadingDiv {
+    margin-top: 30%;
+  }
+}

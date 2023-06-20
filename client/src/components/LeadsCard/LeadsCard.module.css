@@ -1,0 +1,86 @@
+.leadImageDiv 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0% 10%;
+    min-height: 70vh;
+    width: 80%;
+    height: auto;
+}
+
+.imageArea 
+{
+   margin: 10% 5% ;
+}
+
+.imageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #3CBA54;
+}
+
+.imageDiv 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin: 8px;
+    border: 2px solid #3CBA54;
+}
+
+.leadDetails
+{
+    color: black;
+    text-align: center;
+}
+
+.darkLeadDetails
+{
+    color: white;
+    text-align: center;
+}
+
+.designation 
+{
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.leadName 
+{
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.teamImageDiv
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin: 8px;
+    border: 2px solid #F4C20D;
+}
+
+.teamimageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #F4C20D;
+}
+
+@media (max-width:900px)
+{
+    .leadImageDiv 
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

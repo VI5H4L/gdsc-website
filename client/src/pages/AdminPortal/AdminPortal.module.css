@@ -1,0 +1,344 @@
+#admin 
+{
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+    padding: 5% 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.headingDiv 
+{
+    min-height: 40vh;
+    height: auto;
+    font-size: 4rem;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+}
+
+.heading 
+{
+    font-size: 2.5rem;
+}
+
+
+.darkheading 
+{
+    font-size: 2.5rem;
+    color: white;
+}
+
+
+.select
+{
+    width: 352px;
+    height: 50.23px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    background-color: transparent;
+   margin: 5% 0%;
+}
+
+.darkselect
+{
+    width: 352px;
+    height: 50.23px;
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    background-color: transparent;
+    color: white;
+}
+
+.darkselect option 
+{
+   color: black;
+}
+
+.formGroup
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin: 3% 0%;
+}
+
+.formGroup1 
+{
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2%;
+}
+.timeline 
+{
+    margin: 3% 0%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width:100%
+}
+
+.form 
+{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.label 
+{
+    width: 100%;
+    font-size: 1.25rem;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+.darklabel 
+{
+    width: 100%;
+    font-size: 1.25rem;
+    margin-top: 2%;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+.input
+{
+    width: 100%;
+    padding-top: 3%;
+    border: 0px;
+    border-bottom: 2px solid black;
+    font-size: 1.15rem;
+    background-color: transparent;
+}
+
+.darkinput
+{
+    width: 100%;
+    padding-top: 3%;
+    border: 0px;
+    border-bottom: 2px solid white;
+    font-size: 1.15rem;
+    background-color: transparent;
+    color: white;
+}
+
+.darkinput1
+{
+    width: 160px;
+    padding-top: 3%;
+    border: 0px;
+    font-size: 1.15rem;
+    background-color: transparent;
+    color: white;
+    margin-left: 5%;
+    border: 2px solid white;
+}
+
+.input1
+{
+    width: 160px;
+    padding-top: 3%;
+    font-size: 1.15rem;
+    background-color: transparent;
+    margin-left: 5%;
+    border: 2px solid black;
+     
+}
+
+.darkvenue
+{
+    width: 160px;
+    padding-top: 3%;
+    border: 0px;
+    font-size: 1.15rem;
+    background-color: transparent;
+    color: white;
+    margin-left: 5%;
+    border-bottom: 2px solid white;
+}
+
+.venue:focus 
+{
+    outline: none;
+}
+
+.darkvenue:focus 
+{
+    outline: none;
+}
+
+.venue
+{
+    width: 160px;
+    padding-top: 3%;
+    border: 0px;
+    font-size: 1.15rem;
+    background-color: transparent;
+    color: black;
+    margin-left: 5%;
+    border-bottom: 2px solid black;
+     
+}
+
+.label1 
+{
+   max-width: fit-content;
+    height: auto;
+    font-size: 1.25rem;
+    margin-top: 2% 0%;
+    font-weight: bold;
+}
+
+.darklabel1
+{
+    max-width: fit-content;
+    font-size: 1.25rem;
+    margin-top: 2%;
+    font-weight: bold;
+    color: white;
+}
+
+.input:focus
+{
+    outline: none;
+    box-shadow: 0px 1px 0px #999;
+}
+
+.darkinput1::-webkit-calendar-picker-indicator
+{
+    background-color: white;
+}
+
+.darkinput:focus
+{
+    outline: none;
+    box-shadow: 0px 1px 0px #999;
+}
+
+.input2 
+{
+    width: 20px;
+    height: 20px;
+    margin: 5% 5%;
+
+}
+
+.darkinput2 
+{
+    width: 20px;
+    height: 20px;
+    margin-right: 5%;
+
+}
+
+.input1
+{
+    
+   
+}
+@media (max-width:900px)
+{
+    .input1 
+    {
+        margin: 5% 2%;
+    }
+    .darkinput1 
+    {
+        margin: 5% 2%;
+    }
+
+    .input2
+    {
+        margin: 5% 2%;
+    }
+    .darkinput2 
+    {
+        margin: 5% 2%;
+    }
+}
+
+
+@media (max-width:850px)
+{
+    .select
+    {
+           width: 302px;
+           height: 40.23px;
+        text-align: center;
+    }
+
+    .darkselect
+    {
+           width: 302px;
+           height: 40.23px;
+        text-align: center;
+    } 
+
+    .heading 
+    {
+        font-size: 2rem;
+        padding-top: 9%;
+    }
+
+    .formGroup 
+    {
+        margin: 6% 0%;
+    }
+ 
+}
+
+@media (max-width: 500px)
+{
+    .timeline 
+    {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .formGroup 
+    {
+        margin: 10% 0%;
+    }
+
+    .label
+    {
+      font-size: 1rem
+    }
+
+    .label1
+    {
+      font-size: 1rem
+    }
+
+    .darklabel
+    {
+      font-size: 1rem
+    }
+
+    .darklabel1
+    {
+      font-size: 1rem
+    }
+
+}

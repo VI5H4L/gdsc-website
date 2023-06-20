@@ -1,0 +1,65 @@
+.components
+{
+    height: 485px;
+    width: 351px;
+    margin: 2% 4%;
+   
+}
+
+.ImageDiv
+{
+    height: 315px;
+    width: 351px;
+    background-color: black;
+    border: 2px solid #4885ED;
+    border-radius: 15px;
+    cursor: url(../../pages/ProjectsPage/images/click2.svg) 45 45 ,pointer;
+}
+
+.ImageDiv1
+{
+    height: 315px;
+    width: 351px;
+    background-color: black;
+    border: 2px solid #4BC561;
+    border-radius: 15px;
+    cursor: url(../../pages/EventsPage/images/click1.svg) 45 45 ,pointer;
+}
+.cardImage{
+    height: 100%;
+    width: 100%;
+    
+}
+.section3
+{
+    height: auto;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.data
+{
+    padding: 2%;
+}
+
+
+@media (max-width:400px)
+{
+
+    .ImageDiv1 
+    {
+        height: 300px;
+    width: 300px;
+    }
+
+    .components 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

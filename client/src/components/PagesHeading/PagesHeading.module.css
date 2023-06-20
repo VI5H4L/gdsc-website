@@ -1,0 +1,350 @@
+.section1
+{
+    height: auto;
+    min-height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+
+.EventSection 
+{
+    width: 1235px;
+    height: 392px;
+    background-color: #4885ED;
+    background-image: url(../../pages/EventsPage/images/eventsBackground.png);
+    border-radius: 8px;
+    margin: 10% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ProjectSection 
+{
+    width: 1235px;
+    height: 392px;
+    background-color: #3CBA54;
+    background-image: url(../../pages/ProjectsPage/images/projectBackground.png);
+    border-radius: 8px;
+    margin: 10% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TeamSection 
+{
+    width: 1235px;
+    height: 392px;
+    background-color: #F4C20D;
+    background-image: url(../../pages/ProjectsPage/images/teamBackground.png);
+    border-radius: 8px;
+    margin: 10% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.eventHeading 
+{
+    font-size: 4.5rem;
+    margin-left: 8%;
+    color: white;
+    font-weight: bold;
+}
+
+.darkeventHeading 
+{
+    font-size: 4.5rem;
+    margin-left: 8%;
+    color: black;
+    font-weight: bold;
+}
+
+.eventImage 
+{
+    margin-right: 8%;
+}
+
+.section2 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40vh;
+    padding-top: 2%;
+}
+
+
+.select
+{
+    width: 352px;
+    height: 50.23px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    background-color: transparent;
+}
+
+.darkselect
+{
+    width: 352px;
+    height: 50.23px;
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    background-color: transparent;
+    color: white;
+}
+
+.select1 
+{
+    display: none;
+}
+
+.select2
+{
+    width: 352px;
+    height: 50.23px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    background-color: transparent;
+}
+
+.darkselect
+{
+    width: 352px;
+    height: 50.23px;
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    background-color: transparent;
+    color: white;
+}
+.eventsFilterDiv
+{
+    margin-top: 4%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.select option
+{
+    font-size: 1rem;
+}
+
+.darkfilterHeading
+{
+    color: white;
+}
+
+@media (max-width: 1270px)
+{
+    .EventSection
+    {
+        width: 80%;
+    }
+
+    .ProjectSection
+    {
+        width: 80%;
+    }
+
+    .TeamSection
+    {
+        width: 80%;
+    }
+    .eventsDiv
+    {
+        width: 80%;
+    }
+
+    .eventImage{
+         width: 459px;
+         height: 344px;
+    }
+    .eventHeading
+    {
+        font-size: 3.75rem;
+    }
+
+    .darkeventHeading
+    {
+        font-size: 3.75rem;
+    }
+
+    .eventsFilterDiv
+{
+    width: 80%;
+}
+
+
+ .filterHeading
+ {
+     font-size: 1.5rem;
+     text-align: center;
+ }
+
+ .darkfilterHeading
+ {
+     font-size: 1.5rem;
+     text-align: center;
+     color: white;
+ }
+}
+
+@media (max-width: 1000px)
+{
+    .eventImage
+    {
+        width: 409px;
+         height: 294px;
+    }
+}
+
+
+@media (max-width: 850px)
+{
+    .eventImage
+    {
+       display: none;
+    }
+
+    .EventSection 
+    {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ProjectSection
+    {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .TeamSection
+    {
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .eventHeading
+    {
+        font-size: 4rem;
+        margin: 0%;
+    }
+    .darkeventHeading
+    {
+        font-size: 4rem;
+        margin: 0%;
+    }
+
+    .eventsDiv
+    {
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    margin-bottom: 0%;
+    }
+
+    .eventsFilterDiv
+    {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10%;
+        height: 30vh;
+    }
+
+   
+
+    .section2
+    {
+        height: 50vh;
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    .select
+    {
+           width: 302px;
+           height: 40.23px;
+        text-align: center;
+    }
+
+    .darkselect
+    {
+           width: 302px;
+           height: 40.23px;
+        text-align: center;
+    }
+
+    .filterHeading
+    {
+        font-size: 1.25rem;
+    }
+
+    
+    .darkfilterHeading
+    {
+        font-size: 1.25rem;
+    }
+}
+
+
+@media (max-width:500px)
+{
+    .EventSection 
+    {
+        width: 90%;
+        height: 50vh
+    }
+
+    .ProjectSection 
+    {
+        width: 90%;
+        height: 50vh
+    }
+
+    .TeamSection
+    {
+        width: 90%;
+        height: 50vh
+    }
+
+    .eventHeading
+    {
+        font-size: 3rem;
+        margin: 0%;
+    }
+    .darkeventHeading
+    {
+        font-size: 3rem;
+        margin: 0%;
+    }
+}
+
+
+
+

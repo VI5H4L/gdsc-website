@@ -1,0 +1,163 @@
+.imageDiv 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin: 8px;
+    border: 2px solid #3CBA54;
+}
+
+
+
+.main 
+{
+    background-image: url('./images/Illustrations.png');
+     background-repeat: no-repeat;
+   background-size:contain; 
+   background-position: center;
+   width: 100vw;
+   min-height: 100vh;
+   height: auto;
+  position: relative;
+   
+}
+
+.mainYellow
+{
+    background-image: url('./images/yellowI.png');
+     background-repeat: no-repeat;
+   background-size:contain; 
+   background-position: center;
+   width: 100vw;
+   min-height: 100vh;
+   height: auto;
+  position: relative;
+  background-color: transparent;
+   
+}
+
+.imageArea 
+{
+   margin: 10% 0% 0% 0% ;
+}
+
+.imageBigDiv 
+{
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    border: 2px dashed #3CBA54;
+}
+
+
+
+.heading 
+{
+    text-align: center;
+    align-content: center;
+    font-size: 3rem;
+}
+
+.darkHeading 
+{
+    text-align: center;
+    align-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.smallHeading 
+{
+    color: black;
+    margin: 30px 0px 0px 50px;
+}
+
+.leadsHeading 
+{
+    margin: 0px;
+}
+
+
+.leadDetails
+{
+    color: black;
+    text-align: center;
+}
+
+.darkLeadDetails
+{
+    color: white;
+    text-align: center;
+}
+
+h3,h6{
+    text-align: center;
+}
+
+
+.plane 
+{
+    max-width: fit-content;
+    position: absolute;
+    top:-65%;
+    left:30%;
+    z-index: 700;
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+}
+
+.planeImage 
+{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:1000px)
+{
+    .plane 
+    {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .heading 
+    {
+        font-size: 2.5rem;
+    }
+    .leadImageDiv 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .smallHeading, .leadsHeading {
+        margin: 0px;
+        text-align: center;
+    }
+    .main 
+    {
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 50%;
+    }
+
+    .plane 
+    {
+        width: 300px;
+        height: 300px;
+        top: -30%;
+    }
+   }
+
+   @media (max-width:600px)
+   {
+    .plane 
+    {
+        display: none;
+    }
+   }
