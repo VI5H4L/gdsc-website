@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AboutCss from "./AboutPage.module.css";
 import AboutImage from "./images/aboutImage.png";
 import darkAboutImage from "./images/darkAboutImage.png";
@@ -8,6 +8,26 @@ import DomainData from "../../Data/Domain";
 import { ThemeContext } from "../../ThemeContext";
 function AboutPage() {
   const { theme } = useContext(ThemeContext);
+  const [image, setImage] = useState();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async (Domain) => {
+    try {
+      const response = await fetch(`http://localhost:8000/ourteam/batchpic?domain=${Domain}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const responseData = await response.json();
+      console.log(responseData);
+      console.log(responseData[0].batchPhoto);
+      setImage(responseData[0].batchPhoto);
+    } catch (error) {
+      console.error("Error fetching domain data:", error);
+    }
+  };
 
   return (
     <>
@@ -104,8 +124,10 @@ function AboutPage() {
 
       <DomainSection
         heading="Introducing our 6 domains!"
-        current="Development"
+        current="development"
         data={DomainData}
+        onDomainChange = {fetchData}
+        image = {image}
         variant="about"></DomainSection>
 
       <section className={AboutCss.aboutSection4}>

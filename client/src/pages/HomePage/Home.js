@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HomeCss from "./Home.module.css";
 import FacultyCss from "./FacultyMentor.module.css";
 import homeImage from "./images/homeImage.png";
@@ -15,9 +15,29 @@ import Photo from "../../components/PhotoGallery/PhotoGallery";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import LeadsData from "../../Data/Leads";
 import { ThemeContext } from "../../ThemeContext";
+import facultyImage from "../HomePage/images/faculty_mentor.png";
 
 function Home() {
   const { theme } = useContext(ThemeContext);
+
+  const  [leads, setLeads] = useState([]);
+
+  useEffect(() => {
+    fetchAboutData();
+}, []);
+
+const fetchAboutData = async () => {
+    try {
+        // console.log("aaa");
+        const response = await fetch('http://localhost:8000/ourteam/gdsclead');
+        
+        const data = await response.json();
+        setLeads(data);
+      } catch (error) {
+        console.error('Error fetching gdsclead:', error);
+      }
+}
+
   return (
     <>
       <section
@@ -104,7 +124,26 @@ function Home() {
                     theme === "dark"
                       ? FacultyCss.darkimageDiv
                       : FacultyCss.imageDiv
-                  }`}></div>
+                  }`} 
+                  style={{
+                    display: "inline-block",
+                    position: "relative",
+                    width: "200px",
+                    height: "200px",
+                    overflow: "hidden",
+                    borderRadius: "50%",
+                  }}>
+                    <img
+                    className="mentorfaculty"
+                    src={facultyImage}
+                    alt="facultymentor.png"
+                    style={{
+                      width: "auto",
+                      height: "100%",
+                      marginleft: "-50px",
+                    }}
+                  />
+                  </div>
               </div>
             </div>
             <div className={FacultyCss.mentorSection}>
@@ -114,7 +153,7 @@ function Home() {
                     ? FacultyCss.darkParagraph
                     : FacultyCss.paragraph
                 }`}>
-                <div>Mentor name</div>
+                <div>Sourabh Kumar</div>
                 <div>Mentor designation</div>
               </div>
               <div
@@ -132,7 +171,7 @@ function Home() {
         </div>
       </section>
 
-      <About data={LeadsData} variant="green" />
+      <About data={leads} variant="green" />
       <Events />
       <Photo />
       <Newsletter />

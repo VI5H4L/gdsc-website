@@ -1,14 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LeadCardCss from "./LeadsCard.module.css";
 import { ThemeContext } from "../../ThemeContext";
 function LeadsCard(props) {
   const { theme } = useContext(ThemeContext);
-  const { data, variant } = props;
+  const { variant } = props;
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    console.log("Props data:", props.data);
+    if (Array.isArray(props.data)) {
+      setData(props.data);
+    } else {
+      setData([]);
+    }
+  }, [props.data]);
+
   return (
     <>
       <div className={LeadCardCss.leadImageDiv}>
-        {data.map((item) => (
-          <div key={item.id} className={LeadCardCss.imageArea}>
+        {data.map((lead) => (
+          <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
               className={
                 variant === "green"
@@ -20,7 +32,7 @@ function LeadsCard(props) {
                   variant === "green"
                     ? LeadCardCss.imageDiv
                     : LeadCardCss.teamImageDiv
-                }></div>
+                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img src={lead.photo} alt={lead.name} className={LeadCardCss.photo} style={{width: "auto", height: "100%", marginleft: "-50px"}}/></div>
             </div>
             <div
               className={`${
@@ -28,8 +40,8 @@ function LeadsCard(props) {
                   ? LeadCardCss.darkLeadDetails
                   : LeadCardCss.leadDetails
               }`}>
-              <h3 className={LeadCardCss.leadName}>{item.name}</h3>
-              <h6 className={LeadCardCss.designation}>{item.desgnation}</h6>
+              <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
+              <h6 className={LeadCardCss.designation}>{lead.position}</h6>
             </div>
           </div>
         ))}

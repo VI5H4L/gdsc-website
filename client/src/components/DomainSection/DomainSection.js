@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import DomainCss from "./DomainSection.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
@@ -12,15 +12,22 @@ import {
   GameDevMembers,
   managementMembers,
 } from "../../Data/Teams";
+
+
+
+
 function DomainSection(props) {
   const { theme } = useContext(ThemeContext);
-  const { data } = props;
+  const { data, image, leadData} = props;
   var { variant } = props;
   const [current, setCurrent] = useState(0);
   const [heading, setHeading] = useState(data[current].heading);
   const [previous, setPrevious] = useState(data.length - 1);
   const [next, setNext] = useState(1);
-  const [image, setImage] = useState(data[current].src);
+
+
+  
+  
   var showTag = true;
   var showTag2 = false;
   var data1 = DevelopmentMembers;
@@ -28,6 +35,7 @@ function DomainSection(props) {
     showTag = false;
     showTag2 = true;
   }
+  
 
   const previousButton = () => {
     if (current === 0) {
@@ -36,7 +44,7 @@ function DomainSection(props) {
       setCurrent(current - 1);
     }
     setHeading(data[current].heading);
-    setImage(data[current].src);
+    // setImage(data[current].src);
     if (current === 0) {
       setPrevious(data.length - 1);
       setNext(current + 1);
@@ -56,7 +64,7 @@ function DomainSection(props) {
       setCurrent(current + 1);
     }
     setHeading(data[current].heading);
-    setImage(data[current].src);
+    // setImage(data[current].src);
     if (current === 0) {
       setPrevious(data.length - 1);
       setNext(current + 1);
@@ -71,17 +79,38 @@ function DomainSection(props) {
 
   if (heading === "development") {
     data1 = DevelopmentMembers;
-  } else if (heading === "CP") {
+    if (props.onDomainChange) {
+      props.onDomainChange(heading);
+      // console.log(leadData);
+    }
+  } else if (heading === "cp") {
     data1 = CpMembers;
-  } else if (heading === "Creative") {
+    if (props.onDomainChange) {
+      props.onDomainChange(heading);
+    }
+  } else if (heading === "creative") {
     data1 = CreativeMembers;
-  } else if (heading === "AI/ML") {
+    if (props.onDomainChange) {
+      props.onDomainChange(heading);
+    }
+  } else if (heading === "aiml") {
     data1 = AiMembers;
-  } else if (heading === "GameDev") {
+    if (props.onDomainChange) {
+      props.onDomainChange(heading);
+    }
+  } else if (heading === "gamedev") {
     data1 = GameDevMembers;
-  } else if (heading === "Management") {
+    if (props.onDomainChange) {
+      props.onDomainChange(heading);
+    }
+  } else if (heading === "management") {
     data1 = managementMembers;
+    if (props.onDomainChange) {
+      props.onDomainChange(heading);
+    }
   }
+
+  
 
   return (
     <>
@@ -105,7 +134,7 @@ function DomainSection(props) {
                 />
               </button>
               <span className={DomainCss.buttonName}>
-                {data[previous].heading}
+                {data[previous].heading.charAt(0).toUpperCase() + data[previous].heading.slice(1)}
               </span>
             </div>
             <h2
@@ -114,10 +143,11 @@ function DomainSection(props) {
                   ? DomainCss.darksmallSubHeading
                   : DomainCss.smallSubHeading
               }`}>
-              {heading}
+              {heading.charAt(0).toUpperCase() + heading.slice(1)}
             </h2>
+            
             <div>
-              <span className={DomainCss.buttonName}>{data[next].heading}</span>
+            <span className={DomainCss.buttonName}>{data[next].heading.charAt(0).toUpperCase() + data[next].heading.slice(1)}</span>
               <button className={DomainCss.button} onClick={nextButton}>
                 <FontAwesomeIcon
                   icon={faAngleRight}
@@ -129,10 +159,10 @@ function DomainSection(props) {
           </div>
           {showTag && (
             <div className={DomainCss.domainImageDiv}>
-              <img src={image} className={DomainCss.domainImage} />
+                <img src={props.image} className={DomainCss.domainImage} />
             </div>
           )}
-          {showTag2 && <LeadsCard data={data1} variant="yellow" />}
+          {showTag2 && <LeadsCard data={leadData} variant="yellow" />}
           {props.children}
         </div>
       </section>
