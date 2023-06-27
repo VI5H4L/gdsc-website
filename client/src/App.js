@@ -21,6 +21,7 @@ import EventsPage from "./pages/EventsPage/EventsPage";
 import ProjectImage from "./pages/ProjectsPage/images/projectImage.png";
 import darkProjectImage from "./pages/ProjectsPage/images/darkprojectImage.png";
 import ProjectBackground from "./pages/ProjectsPage/images/projectBackground.png";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 
 /********************************Our Team components*************************************/
 import OurTeamImage from "./pages/ProjectsPage/images/teamImage.png";
@@ -72,7 +73,7 @@ function App() {
             path="/projects"
             element={
               <div>
-                <EventsPage
+                <ProjectsPage
                   heading="Projects"
                   image1={darkProjectImage}
                   image2={ProjectImage}

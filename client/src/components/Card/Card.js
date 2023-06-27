@@ -4,6 +4,7 @@ import ExpandableData from "../ExpandedDiv/ExpandableData";
 function EventCard(props) {
   const { data } = props;
   const { variant } = props;
+  // console.log(props.data);
   return (
     <>
       <section className={CardCss.section3}>
@@ -22,8 +23,12 @@ function EventCard(props) {
             <div>
               <ExpandableData
                 heading={item.heading}
-                data={item.description}
+                data={item}
                 variant={props.variant}
+                event={item.facilitators} 
+                whichMember={"Facilitator(s)"}  
+                project={item.speakers} 
+                whichMentor={"Speakers(s)"}
               />
             </div>
           </div>

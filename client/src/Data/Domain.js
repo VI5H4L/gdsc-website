@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import image1 from "../components/PhotoGallery/images/image1.jpg";
 import image2 from "../components/PhotoGallery/images/image2.png";
 import image3 from "../components/PhotoGallery/images/image3.jpg";
@@ -8,34 +8,34 @@ import { DevelopmentMembers, CpMembers } from "./Teams";
 const DomainData = [
   {
     id: 1,
-    heading: "Development",
-    src: image1,
+    heading: "development",
   },
   {
     id: 2,
-    heading: "Creative",
-    src: image2,
+    heading: "creative",
   },
   {
     id: 3,
-    heading: "AI/ML",
-    src: image3,
+    heading: "aiml",
   },
   {
     id: 4,
-    heading: "GameDev",
-    src: image4,
+    heading: "gamedev",
   },
   {
     id: 5,
-    heading: "CP",
-    src: image5,
+    heading: "cp",
   },
   {
     id: 6,
-    heading: "Management",
-    src: image5,
+    heading: "management",
   },
 ];
 
+
+
+
 export default DomainData;
+
+
+

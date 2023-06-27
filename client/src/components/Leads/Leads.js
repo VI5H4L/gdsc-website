@@ -4,9 +4,12 @@ import AboutCss from "./Leads.module.css";
 import { ThemeContext } from "../../ThemeContext";
 import plane from "./images/planeIllustration.png";
 import LeadsCard from "../LeadsCard/LeadsCard";
+
+
 function About(props) {
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
+
   var mainClass = "";
   var showTag = true;
   if (variant === "yellow") {

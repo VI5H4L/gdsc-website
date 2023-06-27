@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoCss from "./PhotoGallery.module.css";
-import image1 from "./images/image1.jpg";
-import image2 from "./images/image2.png";
-import image3 from "./images/image3.jpg";
-import image4 from "./images/image4.png";
-import image5 from "./images/image5.png";
+// import image1 from "./images/image1.jpg";
+// import image2 from "./images/image2.png";
+// import image3 from "./images/image3.jpg";
+// import image4 from "./images/image4.png";
+// import image5 from "./images/image5.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "../../ThemeContext";
@@ -13,18 +13,28 @@ import cube from "./images/cubeIllustation.png";
 
 function Photo() {
   const { theme } = useContext(ThemeContext);
-  const [selectedImage, setSelectedImage] = useState(image1);
-  const [allImage, setAllImage] = useState([
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image5,
-    image5,
-  ]);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [allImage,setAllImage]=useState([]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const fetchImages = () => {
+    // Your backend API endpoint for fetching the images
+    const apiEndpoint = 'http://localhost:8000/gallery/';
+    // Your API key for authentication
+    // const apiKey = process.env.EVENT_URI;
+
+    fetch(apiEndpoint)
+      .then(response => response.json())
+      .then(data => {
+        // Set the fetched images to the state
+        setAllImage(data.map(item => item.photo));
+        setSelectedImage(data[0].photo);
+      })
+      .catch(error => {
+        console.error('Error fetching images:', error);
+      });
+    };
 
   const previousImage = () => {
     if (currentIndex === 0) {
@@ -43,6 +53,10 @@ function Photo() {
     }
     setSelectedImage(allImage[currentIndex]);
   };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
 
   useEffect(() => {
     const container = document.getElementById("image-gallery-container");
@@ -71,7 +85,9 @@ function Photo() {
         </h1>
         <div className={PhotoCss.mainDiv}>
           <div className={PhotoCss.photoDiv}>
-            <img src={selectedImage} className={PhotoCss.photoDiv} />
+          {selectedImage && (
+            <img src={selectedImage}  className={PhotoCss.photoDiv} />
+          )}
           </div>
           <div className={PhotoCss.mainCarousal}>
             <button
