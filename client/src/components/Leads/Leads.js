@@ -4,9 +4,20 @@ import AboutCss from "./Leads.module.css";
 import { ThemeContext } from "../../ThemeContext";
 import plane from "./images/planeIllustration.png";
 import LeadsCard from "../LeadsCard/LeadsCard";
-
+import {motion} from 'framer-motion'
+import { useInView } from "react-intersection-observer";
 
 function About(props) {
+
+  const [ref,inView]=useInView({
+    triggerOnce: false
+  })
+
+  const airplaneVariants = {
+    initial: { x: "-100%", y: "-100%" }, 
+    animate: { x: "200%", y: "200%", transition: { duration: 3, ease: "easeInOut",repeat: Infinity } },
+    exit: { x: "100%", y: "100%", transition: { duration: 3, ease: "easeInOut" } }, 
+  };
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
 
@@ -23,7 +34,11 @@ function About(props) {
       <section id="our-team" className={mainClass}>
         {showTag && (
           <div className={AboutCss.plane}>
-            <img className={AboutCss.planeImage} src={plane} />
+            <motion.img   ref={ref}
+      initial={inView ? "animate" : "initial"}
+      animate="animate" // Apply enter animation
+      exit="exit" // Apply exit animation
+      variants={airplaneVariants} className={AboutCss.planeImage} src={plane} />
           </div>
         )}
         {showTag && (
