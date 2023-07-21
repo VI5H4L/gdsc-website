@@ -1,7 +1,49 @@
 import React, { useContext, useEffect, useState } from "react";
 import LeadCardCss from "./LeadsCard.module.css";
 import { ThemeContext } from "../../ThemeContext";
+import { useInView } from "react-intersection-observer";
+import { motion} from 'framer-motion';
 function LeadsCard(props) {
+
+  const [ref,inView]=useInView({
+    triggerOnce: false,
+    delay: 500
+  })
+
+  const slideInVariantsDesktop = {
+    initial: { translateX: 100, opacity: 0 },
+    animate: { translateX: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+  
+  
+  const slideInVariantsMobile = {
+    initial: { translateY: 100, opacity: 0 },
+    animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+  
+  
+  const [animationVariants, setAnimationVariants] = useState(slideInVariantsDesktop);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1000) {
+        setAnimationVariants(slideInVariantsMobile);
+      } else {
+        setAnimationVariants(slideInVariantsDesktop);
+      }
+    };
+  
+  
+    window.addEventListener("resize", handleResize);
+  
+   
+    handleResize();
+  
+   
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
 
@@ -18,7 +60,10 @@ function LeadsCard(props) {
 
   return (
     <>
-      <div className={LeadCardCss.leadImageDiv}>
+      <motion.div  ref={ref}
+              initial={inView? "animate" : "initial"}
+              animate={inView? "animate" : "initial"}
+              variants={animationVariants} className={LeadCardCss.leadImageDiv}>
         {data.map((lead) => (
           <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
@@ -45,7 +90,7 @@ function LeadsCard(props) {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </>
   );
 }

@@ -2,10 +2,21 @@ import React, { useContext, useEffect, useState } from "react";
 import EventCss from "./Events.module.css";
 import EventsData from "../../Data/Events";
 import { ThemeContext } from "../../ThemeContext";
+import {motion} from 'framer-motion'
+import { useInView } from "react-intersection-observer";
 
 function Events() {
   const { theme } = useContext(ThemeContext);
   const [events, setEvents] = useState([]);
+
+    const [ref,inView]=useInView({
+    triggerOnce: false
+  })
+
+  const slideInVariants = {
+    initial: { translateY: 100, opacity: 0 }, 
+    animate: { translateY: 0, opacity:1, transition: { duration: 0.7, ease: "easeOut" } }, 
+  };
 
   useEffect(() => {
     fetchEvents();
@@ -25,12 +36,16 @@ function Events() {
       <section
         id="Events"
         className={`${theme === "dark" ? EventCss.darkmain : EventCss.main}`}>
-        <h1
+        <motion.h1
+         ref={ref} 
+         initial={inView ? "animate" : "initial"}
+  animate={inView ? "animate" : "initial"}
+  variants={slideInVariants}
           className={`${
             theme === "dark" ? EventCss.darkHeading : EventCss.heading
           }`}>
           Latest Events
-        </h1>
+        </motion.h1>
         <div className={EventCss.mainImageDiv}>
           {events.map((event) => (
             <div key={event.id} className={EventCss.eventsDiv}>

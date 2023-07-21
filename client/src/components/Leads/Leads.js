@@ -1,23 +1,33 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import axios from "axios";
 import AboutCss from "./Leads.module.css";
 import { ThemeContext } from "../../ThemeContext";
 import plane from "./images/planeIllustration.png";
 import LeadsCard from "../LeadsCard/LeadsCard";
-import {motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
 
-function About(props) {
 
+function About(props) {
   const [ref,inView]=useInView({
-    triggerOnce: false
+    triggerOnce: false,
+    delay: 500
   })
 
-  const airplaneVariants = {
-    initial: { x: "-100%", y: "-100%" }, 
-    animate: { x: "200%", y: "200%", transition: { duration: 3, ease: "easeInOut",repeat: Infinity } },
-    exit: { x: "100%", y: "100%", transition: { duration: 3, ease: "easeInOut" } }, 
+  const [ref1,inView1]=useInView({
+    triggerOnce: false,
+    delay: 500
+  })
+
+
+
+  const slideInVariants = {
+    initial: { translateY: 100, opacity: 0 },
+    animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
   };
+
+
+
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
 
@@ -29,25 +39,48 @@ function About(props) {
   } else {
     mainClass = AboutCss.main;
   }
+
+
+  const { scrollYProgress } = useViewportScroll();
+
+ 
+  const airplaneX = useTransform(scrollYProgress, [0, 1], ["-150%", "100%"]);
+  const airplaneY = useTransform(scrollYProgress, [0, 1], ["-150%", "100%"]);
+
   return (
     <>
       <section id="our-team" className={mainClass}>
         {showTag && (
           <div className={AboutCss.plane}>
-            <motion.img   ref={ref}
-      initial={inView ? "animate" : "initial"}
-      animate="animate" // Apply enter animation
-      exit="exit" // Apply exit animation
-      variants={airplaneVariants} className={AboutCss.planeImage} src={plane} />
+            <motion.img
+              className={AboutCss.planeImage}
+              src={plane}
+              style={{
+                position: "fixed",
+                width:'500px',
+                height: '500px',
+                top: "50%",
+                left: "50%",
+                x: airplaneX, // Use the calculated airplaneX value
+                y: airplaneY, // Use the calculated airplaneY value
+          
+                zIndex: 9999,
+              }}
+            />
           </div>
         )}
         {showTag && (
-          <h1
+          <motion.h1
+          ref={ref1}
+          initial={inView1 ? "animate" : "initial"}
+          animate={inView1? "animate" : "initial"}
+          variants={slideInVariants}
             className={`${
               theme === "dark" ? AboutCss.darkHeading : AboutCss.heading
-            }`}>
+            }`}
+          >
             Meet our Leads !!
-          </h1>
+          </motion.h1>
         )}
         <LeadsCard data={props.data} variant={variant} />
       </section>

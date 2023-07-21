@@ -12,11 +12,33 @@ import {
   GameDevMembers,
   managementMembers,
 } from "../../Data/Teams";
+import {motion} from 'framer-motion'
+import { useInView } from "react-intersection-observer";
+
 
 
 
 
 function DomainSection(props) {
+
+  const [ref,inView]=useInView({
+    triggerOnce: false
+  })
+
+  
+  const [ref1,inView1]=useInView({
+    triggerOnce: false,
+    delay: 500
+  })
+
+  
+  const slideInVariantsMobile = {
+    initial: { translateY: 100, opacity: 0 },
+    animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+  
+
+
   const { theme } = useContext(ThemeContext);
   const { data, image, leadData} = props;
   var { variant } = props;
@@ -116,23 +138,27 @@ function DomainSection(props) {
     <>
       <section className={DomainCss.aboutSection3}>
         <div className={DomainCss.aboutDiv3}>
-          <h1
+          <motion.h1
+           ref={ref}
+           initial={inView ? "animate" : "initial"}
+           animate={inView? "animate" : "initial"}
+           variants={slideInVariantsMobile}
             className={`${
               theme === "dark"
                 ? DomainCss.darkaboutSubHeading2
                 : DomainCss.aboutSubHeading2
             }`}>
             {props.heading}
-          </h1>
+          </motion.h1>
           <div className={DomainCss.domainNameDiv}>
             <div>
-              <button className={DomainCss.button} onClick={previousButton}>
+              <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}} className={DomainCss.button} onClick={previousButton}>
                 <FontAwesomeIcon
                   icon={faAngleLeft}
                   size="xl"
                   style={{ color: "grey", width: "30px", height: "30px" }}
                 />
-              </button>
+              </motion.button>
               <span className={DomainCss.buttonName}>
                 {data[previous].heading.charAt(0).toUpperCase() + data[previous].heading.slice(1)}
               </span>
@@ -148,13 +174,13 @@ function DomainSection(props) {
             
             <div>
             <span className={DomainCss.buttonName}>{data[next].heading.charAt(0).toUpperCase() + data[next].heading.slice(1)}</span>
-              <button className={DomainCss.button} onClick={nextButton}>
+              <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}} className={DomainCss.button} onClick={nextButton}>
                 <FontAwesomeIcon
                   icon={faAngleRight}
                   size="xl"
                   style={{ color: "grey", width: "30px", height: "30px" }}
                 />
-              </button>
+              </motion.button>
             </div>
           </div>
           {showTag && (

@@ -16,7 +16,7 @@ import Newsletter from "../../components/Newsletter/Newsletter";
 import LeadsData from "../../Data/Leads";
 import { ThemeContext } from "../../ThemeContext";
 import facultyImage from "../HomePage/images/faculty_mentor.png";
-import {motion} from 'framer-motion'
+import {delay, motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
 
 
@@ -28,7 +28,8 @@ function Home() {
 
   
   const [ref1,inView1]=useInView({
-    triggerOnce: false
+    triggerOnce: false,
+    delay: 500
   })
   const { theme } = useContext(ThemeContext);
 
@@ -38,10 +39,7 @@ function Home() {
     fetchAboutData();
 }, []);
 
-const slideInVariants = {
-  initial: { translateX: 100, opacity: 0 }, 
-  animate: { translateX: 0, opacity:1, transition: { duration: 0.7, ease: "easeOut" } }, 
-};
+
 const fetchAboutData = async () => {
     try {
         const response = await fetch('http://localhost:8000/ourteam/gdsclead');
@@ -52,6 +50,41 @@ const fetchAboutData = async () => {
         console.error('Error fetching gdsclead:', error);
       }
 }
+
+const slideInVariantsDesktop = {
+  initial: { translateX: 100, opacity: 0 },
+  animate: { translateX: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+const slideInVariantsMobile = {
+  initial: { translateY: 100, opacity: 0 },
+  animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+
+const [animationVariants, setAnimationVariants] = useState(slideInVariantsDesktop);
+
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth <= 1000) {
+      setAnimationVariants(slideInVariantsMobile);
+    } else {
+      setAnimationVariants(slideInVariantsDesktop);
+    }
+  };
+
+  
+  window.addEventListener("resize", handleResize);
+
+  
+  handleResize();
+
+  
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+
 
 const heading='Google'
 const heading1='Developer Student Clubs'
@@ -177,10 +210,10 @@ const heading2='The LNM Institute Of Information Technology'
         }`}>
         <div className={FacultyCss.midSection}>
           <div>
-            <motion.div ref={ref1} 
-             initial={inView1 ? "animate" : "initial"}
-      animate={inView1 ? "animate" : "initial"}
-      variants={slideInVariants}>
+            <motion.div  ref={ref1}
+              initial={inView1 ? "animate" : "initial"}
+              animate={inView1 ? "animate" : "initial"}
+              variants={animationVariants}>
             <h1
               className={`${
                 theme === "dark" ? FacultyCss.darkHeading : FacultyCss.heading
@@ -193,7 +226,7 @@ const heading2='The LNM Institute Of Information Technology'
             <motion.div ref={ref1} 
              initial={inView1 ? "animate" : "initial"}
       animate={inView1 ? "animate" : "initial"}
-      variants={slideInVariants} className={FacultyCss.imageArea}>
+      variants={animationVariants} className={FacultyCss.imageArea}>
               <div
                 className={`${
                   theme === "dark"
@@ -230,7 +263,7 @@ const heading2='The LNM Institute Of Information Technology'
             <motion.div ref={ref1} 
              initial={inView1 ? "animate" : "initial"}
       animate={inView1 ? "animate" : "initial"}
-      variants={slideInVariants} className={FacultyCss.mentorSection}>
+      variants={animationVariants} className={FacultyCss.mentorSection}>
               <div
                 className={`${
                   theme === "dark"
@@ -255,10 +288,10 @@ const heading2='The LNM Institute Of Information Technology'
         </div>
       </section>
 
-      <About data={leads} variant="green" />
-      <Events />
-      <Photo />
-      <Newsletter />
+     <About data={leads} variant="green" />
+       <Events />
+       <Photo />
+      <Newsletter /> 
     </>
   );
 }

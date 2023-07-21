@@ -1,8 +1,9 @@
-//////////////////////////////////////////////////////////////////////////
+
 import React, { useState, useEffect } from "react";
 import PagesHeading from "../../components/PagesHeading/PagesHeadingDiv";
 import EventImage from "./images/eventsImage.png";
 import EventCard from "../../components/Card/Card";
+
 
 function EventsPage(props) {
   const [filteredData, setFilteredData] = useState([]);
