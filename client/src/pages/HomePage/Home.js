@@ -56,12 +56,13 @@ const slideInVariantsDesktop = {
   animate: { translateX: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
+// Animation variants for mobile screen size
 const slideInVariantsMobile = {
   initial: { translateY: 100, opacity: 0 },
   animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
 };
 
-
+// Determine the screen size and set the appropriate animation variants
 const [animationVariants, setAnimationVariants] = useState(slideInVariantsDesktop);
 
 useEffect(() => {
@@ -73,22 +74,17 @@ useEffect(() => {
     }
   };
 
-  
+  // Add event listener to update animation variants on resize
   window.addEventListener("resize", handleResize);
 
-  
+  // Call the handleResize function initially
   handleResize();
 
-  
+  // Clean up the event listener on component unmount
   return () => {
     window.removeEventListener("resize", handleResize);
   };
 }, []);
-
-
-const heading='Google'
-const heading1='Developer Student Clubs'
-const heading2='The LNM Institute Of Information Technology'
 
   return (
     <>
@@ -101,58 +97,19 @@ const heading2='The LNM Institute Of Information Technology'
           className={`${
             theme === "dark" ? HomeCss.darkHeadingDiv : HomeCss.headingDiv
           }`}>
-          <motion.h1  className={HomeCss.heading1}>   {heading.split("").map((character, index) =>
-        character === " " ? (
-          <motion.span key={index} style={{ display: "inline-block", width: "0.6em" }}>
-            {" "}
-          </motion.span>
-        ) : (
-          <motion.span
-            key={index}
-            style={{ display: "inline-block" }}
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
-            {character}
-          </motion.span>
-        )
-      )}</motion.h1>
-          <motion.h1 className={HomeCss.heading2}> {heading1.split("").map((character, index) =>
-        character === " " ? (
-          <motion.span key={index} style={{ display: "inline-block", width: "0.6em" }}>
-            {" "}
-          </motion.span>
-        ) : (
-          <motion.span
-            key={index}
-            style={{ display: "inline-block" }}
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.2, delay: index * 0.05 }}
-          >
-            {character}
-          </motion.span>
-        )
-      )}</motion.h1>
-          <motion.h1 className={HomeCss.heading3}>
-             {heading2.split("").map((character, index) =>
-        character === " " ? (
-          <motion.span key={index} style={{ display: "inline-block", width: "0.6em" }}>
-            {" "}
-          </motion.span>
-        ) : (
-          <motion.span
-            key={index}
-            style={{ display: "inline-block" }}
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
-          >
-            {character}
-          </motion.span>
-        )
-      )}
+          <motion.h1  ref={ref}
+              initial={inView ? "animate" : "initial"}
+              animate={inView ? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={HomeCss.heading1}>Google</motion.h1>
+          <motion.h1  ref={ref}
+              initial={inView ? "animate" : "initial"}
+              animate={inView ? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={HomeCss.heading2}> Developer Student Clubs</motion.h1>
+          <motion.h1  ref={ref}
+              initial={inView ? "animate" : "initial"}
+              animate={inView ? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={HomeCss.heading3}>
+             The LNM Institute Of Information Technology
           </motion.h1>
           <div>
             <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
@@ -213,7 +170,7 @@ const heading2='The LNM Institute Of Information Technology'
             <motion.div  ref={ref1}
               initial={inView1 ? "animate" : "initial"}
               animate={inView1 ? "animate" : "initial"}
-              variants={animationVariants}>
+              variants={slideInVariantsMobile}>
             <h1
               className={`${
                 theme === "dark" ? FacultyCss.darkHeading : FacultyCss.heading
@@ -226,7 +183,7 @@ const heading2='The LNM Institute Of Information Technology'
             <motion.div ref={ref1} 
              initial={inView1 ? "animate" : "initial"}
       animate={inView1 ? "animate" : "initial"}
-      variants={animationVariants} className={FacultyCss.imageArea}>
+      variants={slideInVariantsMobile} className={FacultyCss.imageArea}>
               <div
                 className={`${
                   theme === "dark"
@@ -263,7 +220,7 @@ const heading2='The LNM Institute Of Information Technology'
             <motion.div ref={ref1} 
              initial={inView1 ? "animate" : "initial"}
       animate={inView1 ? "animate" : "initial"}
-      variants={animationVariants} className={FacultyCss.mentorSection}>
+      variants={slideInVariantsMobile} className={FacultyCss.mentorSection}>
               <div
                 className={`${
                   theme === "dark"
@@ -288,8 +245,8 @@ const heading2='The LNM Institute Of Information Technology'
         </div>
       </section>
 
-     <About data={leads} variant="green" />
-       <Events />
+    <About data={leads} variant="green" />
+        <Events />
        <Photo />
       <Newsletter /> 
     </>

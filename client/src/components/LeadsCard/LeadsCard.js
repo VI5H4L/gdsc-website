@@ -9,12 +9,6 @@ function LeadsCard(props) {
     triggerOnce: false,
     delay: 500
   })
-
-  const slideInVariantsDesktop = {
-    initial: { translateX: 100, opacity: 0 },
-    animate: { translateX: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
-  };
-  
   
   const slideInVariantsMobile = {
     initial: { translateY: 100, opacity: 0 },
@@ -22,28 +16,6 @@ function LeadsCard(props) {
   };
   
   
-  const [animationVariants, setAnimationVariants] = useState(slideInVariantsDesktop);
-  
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 1000) {
-        setAnimationVariants(slideInVariantsMobile);
-      } else {
-        setAnimationVariants(slideInVariantsDesktop);
-      }
-    };
-  
-  
-    window.addEventListener("resize", handleResize);
-  
-   
-    handleResize();
-  
-   
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
 
@@ -63,7 +35,7 @@ function LeadsCard(props) {
       <motion.div  ref={ref}
               initial={inView? "animate" : "initial"}
               animate={inView? "animate" : "initial"}
-              variants={animationVariants} className={LeadCardCss.leadImageDiv}>
+              variants={slideInVariantsMobile} className={LeadCardCss.leadImageDiv}>
         {data.map((lead) => (
           <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
