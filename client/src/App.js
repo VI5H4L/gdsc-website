@@ -35,6 +35,7 @@ import AdminPortal from "./pages/AdminPortal/AdminPortal";
 
 /****************************************Loader*****************************************/
 import Loader from "./components/Loader/Loader";
+import Login from './pages/LoginPage/Login'
 
 function App() {
 
@@ -122,10 +123,23 @@ function App() {
               </div>
             }
           />
+
+<Route
+            path="/login"
+            element={
+              <div>
+                <Login />
+              </div>
+            }
+          />
         </Routes>
         <Footer />
       </ThemeProvider>
 }
+
+{/* <Login /> */}
+
+
     </>
   );
 }
