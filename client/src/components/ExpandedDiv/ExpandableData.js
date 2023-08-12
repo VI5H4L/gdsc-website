@@ -64,7 +64,7 @@ function ExpandableData(props) {
       </div>
       <PopupDiv trigger={isActive}>
         <div className={PopCss.contentDiv}>
-          <h1>{props.heading}</h1>
+          <h1>{props.data.name}</h1>
           <button
             className={theme === "dark" ? PopCss.darkbutton : PopCss.button}
             onClick={handleClick}>
