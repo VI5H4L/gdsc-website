@@ -43,7 +43,7 @@ function Home() {
 const fetchAboutData = async () => {
     try {
         // console.log("aaa");
-        const response = await fetch('https://gdsc-website.onrender.com/ourteam/gdsclead');
+        const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
 
         
         const data = await response.json();
