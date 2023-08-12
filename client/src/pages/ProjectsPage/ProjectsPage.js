@@ -222,7 +222,7 @@ function ProjectsPage() {
 
   const handleFilterChange = async (selectedDomain, selectedTenure) => {
     try {
-      let url = "https://gdsc-website.onrender.com/filter";
+      let url = "https://gdsc-website.onrender.com/projects/filter";
 
       if (selectedDomain && selectedTenure) {
         console.log('working');
