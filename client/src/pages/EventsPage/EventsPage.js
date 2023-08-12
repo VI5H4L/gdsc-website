@@ -14,7 +14,7 @@ function EventsPage(props) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/events/all");
+      const response = await fetch("https://gdsc-website.onrender.com/events/all");
       const data = await response.json();
       setAllData(data);
     } catch (error) {
@@ -24,7 +24,7 @@ function EventsPage(props) {
 
   const handleFilterChange = async (selectedDomain, selectedTenure) => {
     try {
-    let url = "http://localhost:8000/events/filter";
+    let url = "https://gdsc-website.onrender.com/events/filter";
 
       if (selectedDomain && selectedTenure) {
         // console.log('working');
