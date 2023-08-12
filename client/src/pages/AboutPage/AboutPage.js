@@ -16,7 +16,7 @@ function AboutPage() {
 
   const fetchData = async (Domain) => {
     try {
-      const response = await fetch(`http://localhost:8000/ourteam/batchpic?domain=${Domain}`);
+      const response = await fetch(`https://gdsc-website.onrender.com/ourteam/batchpic?domain=${Domain}`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
