@@ -8,7 +8,7 @@ const ourTeamSchema = new Schema({
   },
   position: {
     type: String,
-    enum: ["core", "domainlead", "gdsclead", "2022-2023", "2023-2024","2024-2025","2025-2026"],
+    enum: ["core", "domainlead", "gdsclead"],
     required: true,
   },
   photo: {

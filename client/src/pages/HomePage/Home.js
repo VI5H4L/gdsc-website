@@ -42,7 +42,9 @@ function Home() {
 
 const fetchAboutData = async () => {
     try {
-        const response = await fetch('http://localhost:8000/ourteam/gdsclead');
+        // console.log("aaa");
+        const response = await fetch('https://gdsc-website.onrender.com/ourteam/gdsclead');
+
         
         const data = await response.json();
         setLeads(data);

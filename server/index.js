@@ -32,5 +32,5 @@ app.use('/ourteam', ourTeamRouter);
 app.use('/gallery', galleryRouter);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log("Example app listening at https://gdsc-website.onrender.com")
 })
