@@ -209,7 +209,7 @@ function ProjectsPage() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/projects/all");
+      const response = await fetch("https://gdsc-website.onrender.com/projects/all");
       const data = await response.json();
       setAllData(data);
       console.log(data);
@@ -220,7 +220,7 @@ function ProjectsPage() {
 
   const handleFilterChange = async (selectedDomain, selectedTenure) => {
     try {
-      let url = "http://localhost:8000/projects/filter";
+      let url = "https://gdsc-website.onrender.com/filter";
 
       if (selectedDomain && selectedTenure) {
         console.log('working');
