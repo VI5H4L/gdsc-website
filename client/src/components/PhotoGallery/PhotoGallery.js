@@ -10,11 +10,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "../../ThemeContext";
 import cube from "./images/cubeIllustation.png";
+import {motion} from 'framer-motion'
+import { useInView } from "react-intersection-observer";
 
 function Photo() {
   const { theme } = useContext(ThemeContext);
   const [selectedImage, setSelectedImage] = useState(null);
   const [allImage,setAllImage]=useState([]);
+
+  const [ref,inView]=useInView({
+    triggerOnce: false
+  })
+
+  const slideInVariants = {
+    initial: { translateY: 100, opacity: 0 }, 
+    animate: { translateY: 0, opacity:1, transition: { duration: 0.7, ease: "easeOut" } }, 
+  };
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -77,12 +88,16 @@ function Photo() {
         <div className={PhotoCss.cube}>
           <img className={PhotoCss.cubeImage} src={cube} />
         </div>
-        <h1
+        <motion.h1
+          ref={ref} 
+          initial={inView ? "animate" : "initial"}
+   animate={inView ? "animate" : "initial"}
+   variants={slideInVariants}
           className={
             theme === "dark" ? PhotoCss.darkheading : PhotoCss.heading
           }>
           Photo Gallery
-        </h1>
+        </motion.h1>
         <div className={PhotoCss.mainDiv}>
           <div className={PhotoCss.photoDiv}>
           {selectedImage && (
@@ -90,7 +105,8 @@ function Photo() {
           )}
           </div>
           <div className={PhotoCss.mainCarousal}>
-            <button
+            <motion.button
+            whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={PhotoCss.carousalButton1}
               onClick={previousImage}>
               <FontAwesomeIcon
@@ -98,7 +114,7 @@ function Photo() {
                 size="2xl"
                 style={{ color: "#fff", width: "50px", height: "50px" }}
               />
-            </button>
+            </motion.button>
             <div className={PhotoCss.scrollingDiv} id="image-gallery-container">
               <div className={PhotoCss.carousalDiv}>
                 {allImage.map((img, index) => {
@@ -119,13 +135,13 @@ function Photo() {
                 })}
               </div>
             </div>
-            <button className={PhotoCss.carousalButton2} onClick={nextImage}>
+            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}} className={PhotoCss.carousalButton2} onClick={nextImage}>
               <FontAwesomeIcon
                 icon={faAngleRight}
                 size="2xl"
                 style={{ color: "#fff", width: "50px", height: "50px" }}
               />
-            </button>
+            </motion.button>
           </div>
         </div>
       </section>

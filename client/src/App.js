@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar1 from "./components/Navbar/Navbar1";
 import HomePage from "./pages/HomePage/Home";
@@ -32,9 +32,25 @@ import TeamsPage from "./pages/TeamsPage/Teams";
 
 /********************************Our Team components*************************************/
 import AdminPortal from "./pages/AdminPortal/AdminPortal";
+
+/****************************************Loader*****************************************/
+import Loader from "./components/Loader/Loader";
+import Login from './pages/LoginPage/Login'
+
 function App() {
+
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Disable the loader after 5.5 seconds
+    setTimeout(() => {
+      setLoading(false);
+    }, 5500);
+  }, []);
+
   return (
     <>
+    {isLoading? <Loader />:
       <ThemeProvider>
         <Navbar1 />
         <Routes>
@@ -107,9 +123,23 @@ function App() {
               </div>
             }
           />
+
+<Route
+            path="/login"
+            element={
+              <div>
+                <Login />
+              </div>
+            }
+          />
         </Routes>
         <Footer />
       </ThemeProvider>
+}
+
+{/* <Login /> */}
+
+
     </>
   );
 }

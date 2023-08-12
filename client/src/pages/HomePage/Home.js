@@ -16,8 +16,21 @@ import Newsletter from "../../components/Newsletter/Newsletter";
 import LeadsData from "../../Data/Leads";
 import { ThemeContext } from "../../ThemeContext";
 import facultyImage from "../HomePage/images/faculty_mentor.png";
+import {delay, motion} from 'framer-motion'
+import { useInView } from "react-intersection-observer";
+
 
 function Home() {
+
+  const [ref,inView]=useInView({
+    triggerOnce: false
+  })
+
+  
+  const [ref1,inView1]=useInView({
+    triggerOnce: false,
+    delay: 500
+  })
   const { theme } = useContext(ThemeContext);
 
   const  [leads, setLeads] = useState([]);
@@ -26,10 +39,12 @@ function Home() {
     fetchAboutData();
 }, []);
 
+
 const fetchAboutData = async () => {
     try {
         // console.log("aaa");
         const response = await fetch('https://gdsc-website.onrender.com/ourteam/gdsclead');
+
         
         const data = await response.json();
         setLeads(data);
@@ -37,6 +52,41 @@ const fetchAboutData = async () => {
         console.error('Error fetching gdsclead:', error);
       }
 }
+
+const slideInVariantsDesktop = {
+  initial: { translateX: 100, opacity: 0 },
+  animate: { translateX: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+// Animation variants for mobile screen size
+const slideInVariantsMobile = {
+  initial: { translateY: 100, opacity: 0 },
+  animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+// Determine the screen size and set the appropriate animation variants
+const [animationVariants, setAnimationVariants] = useState(slideInVariantsDesktop);
+
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth <= 1000) {
+      setAnimationVariants(slideInVariantsMobile);
+    } else {
+      setAnimationVariants(slideInVariantsDesktop);
+    }
+  };
+
+  // Add event listener to update animation variants on resize
+  window.addEventListener("resize", handleResize);
+
+  // Call the handleResize function initially
+  handleResize();
+
+  // Clean up the event listener on component unmount
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
 
   return (
     <>
@@ -49,46 +99,60 @@ const fetchAboutData = async () => {
           className={`${
             theme === "dark" ? HomeCss.darkHeadingDiv : HomeCss.headingDiv
           }`}>
-          <h1 className={HomeCss.heading1}>Google</h1>
-          <h1 className={HomeCss.heading2}>Developer Student Clubs</h1>
-          <h1 className={HomeCss.heading3}>
-            The LNM Institute Of Information Technology
-          </h1>
+          <motion.h1  ref={ref}
+              initial={inView ? "animate" : "initial"}
+              animate={inView ? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={HomeCss.heading1}>Google</motion.h1>
+          <motion.h1  ref={ref}
+              initial={inView ? "animate" : "initial"}
+              animate={inView ? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={HomeCss.heading2}> Developer Student Clubs</motion.h1>
+          <motion.h1  ref={ref}
+              initial={inView ? "animate" : "initial"}
+              animate={inView ? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={HomeCss.heading3}>
+             The LNM Institute Of Information Technology
+          </motion.h1>
           <div>
-            <button
+            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
+                
               <FontAwesomeIcon size="1x" icon={faTwitter} />
-            </button>
-            <button
+            </motion.button>
+            < motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faFacebookF} />
-            </button>
-            <button
+            </motion.button>
+            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faInstagram} />
-            </button>
-            <button
+            </motion.button>
+            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faLinkedinIn} />
-            </button>
+            </motion.button>
           </div>
         </div>
+        <motion.div  ref={ref}
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: inView ? 1 : 0 }}
+      transition={{ duration: 0.5 }}>
         <div className={HomeCss.imageDiv}>
           <img
             className={HomeCss.homeImage}
@@ -96,6 +160,7 @@ const fetchAboutData = async () => {
             alt="homeImage.png"
           />
         </div>
+        </motion.div>
       </section>
       <section
         id="faculty"
@@ -104,15 +169,23 @@ const fetchAboutData = async () => {
         }`}>
         <div className={FacultyCss.midSection}>
           <div>
+            <motion.div  ref={ref1}
+              initial={inView1 ? "animate" : "initial"}
+              animate={inView1 ? "animate" : "initial"}
+              variants={slideInVariantsMobile}>
             <h1
               className={`${
                 theme === "dark" ? FacultyCss.darkHeading : FacultyCss.heading
               }`}>
               Faculty Mentor
             </h1>
+            </motion.div>
           </div>
           <div className={FacultyCss.main}>
-            <div className={FacultyCss.imageArea}>
+            <motion.div ref={ref1} 
+             initial={inView1 ? "animate" : "initial"}
+      animate={inView1 ? "animate" : "initial"}
+      variants={slideInVariantsMobile} className={FacultyCss.imageArea}>
               <div
                 className={`${
                   theme === "dark"
@@ -145,8 +218,11 @@ const fetchAboutData = async () => {
                   />
                   </div>
               </div>
-            </div>
-            <div className={FacultyCss.mentorSection}>
+            </motion.div>
+            <motion.div ref={ref1} 
+             initial={inView1 ? "animate" : "initial"}
+      animate={inView1 ? "animate" : "initial"}
+      variants={slideInVariantsMobile} className={FacultyCss.mentorSection}>
               <div
                 className={`${
                   theme === "dark"
@@ -166,15 +242,15 @@ const fetchAboutData = async () => {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim venia
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <About data={leads} variant="green" />
-      <Events />
-      <Photo />
-      <Newsletter />
+    <About data={leads} variant="green" />
+        <Events />
+       <Photo />
+      <Newsletter /> 
     </>
   );
 }

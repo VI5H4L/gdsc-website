@@ -11,8 +11,13 @@
     align-items: center;
     margin: 2% 0;
     position: relative;
+    
 }
 
+#faculty 
+{
+    
+}
 .darkmainDiv 
 {
     background-image: url('./images/FacultyBackground1.png');
@@ -53,6 +58,7 @@
     width: 100%;
     background-color: #4885ED;
     opacity: 0.9;
+    overflow-x: hidden;
  
 }
 
