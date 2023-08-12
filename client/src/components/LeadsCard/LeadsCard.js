@@ -1,7 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import LeadCardCss from "./LeadsCard.module.css";
 import { ThemeContext } from "../../ThemeContext";
+import { useInView } from "react-intersection-observer";
+import { motion} from 'framer-motion';
 function LeadsCard(props) {
+
+  const [ref,inView]=useInView({
+    triggerOnce: false,
+    delay: 500
+  })
+  
+  const slideInVariantsMobile = {
+    initial: { translateY: 100, opacity: 0 },
+    animate: { translateY: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+  
+  
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
 
@@ -18,7 +32,10 @@ function LeadsCard(props) {
 
   return (
     <>
-      <div className={LeadCardCss.leadImageDiv}>
+      <motion.div  ref={ref}
+              initial={inView? "animate" : "initial"}
+              animate={inView? "animate" : "initial"}
+              variants={slideInVariantsMobile} className={LeadCardCss.leadImageDiv}>
         {data.map((lead) => (
           <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
@@ -45,7 +62,7 @@ function LeadsCard(props) {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </>
   );
 }

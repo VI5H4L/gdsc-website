@@ -112,6 +112,15 @@ function Navbar() {
               }}>
               Admin
             </NavLink>
+            <NavLink
+              to="/login"
+              className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}
+              onClick={() => {
+                gotoTop();
+                handleToggle();
+              }}>
+             Login
+            </NavLink>
             <Link to="/button">
               <button className={NavCss.button1}>Join the community</button>
             </Link>

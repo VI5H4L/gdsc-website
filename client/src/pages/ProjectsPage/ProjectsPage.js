@@ -171,6 +171,8 @@ import projectImage from "./images/projectImage.png";
 import darkprojectImage from "./images/darkprojectImage.png";
 import ExpandableData from "../../components/ExpandedDiv/ExpandableData";
 import { ThemeContext } from "../../ThemeContext";
+import {motion} from 'framer-motion'
+import { useInView } from "react-intersection-observer";
 
 function ProjectsPage() {
   const [isActive, setActive] = useState(false);
@@ -209,7 +211,7 @@ function ProjectsPage() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/projects/all");
+      const response = await fetch("https://gdsc-website.onrender.com/projects/all");
       const data = await response.json();
       setAllData(data);
       console.log(data);
@@ -220,7 +222,7 @@ function ProjectsPage() {
 
   const handleFilterChange = async (selectedDomain, selectedTenure) => {
     try {
-      let url = "http://localhost:8000/projects/filter";
+      let url = "https://gdsc-website.onrender.com/projects/filter";
 
       if (selectedDomain && selectedTenure) {
         console.log('working');
@@ -240,6 +242,25 @@ function ProjectsPage() {
     }
   };
 
+    
+  const variants = {
+    initial: { opacity: 0 ,y:100}, 
+    animate: { opacity:1,y:0, transition: { duration: 0.9, ease: "easeOut" } }, 
+  };
+
+  
+  const [ref,inView]=useInView({
+    triggerOnce: false,
+    delay: 600
+  })
+
+  const [ref1,inView1]=useInView({
+    triggerOnce: false,
+    delay: 600
+  })
+
+  const heading=`Projects`;
+
   return (
     <>
       <section className={ProjectCss.section1}>
@@ -251,9 +272,29 @@ function ProjectsPage() {
                 : ProjectCss.eventHeading
             }`}
           >
-            Projects
+                {" "}
+            {heading.split("").map((character, index) =>
+        character === " " ? (
+          <motion.span key={index} style={{ display: "inline-block", width: "0.6em" }}>
+            {" "}
+          </motion.span>
+        ) : (
+          <motion.span
+            key={index}
+            style={{ display: "inline-block" }}
+            animate={{ opacity: 1 ,x:0}}
+            initial={{ opacity: 0 ,x:-20}}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            {character}
+          </motion.span>
+        )
+      )}
           </h1>
-          <img
+          <motion.img  ref={ref} 
+           initial={inView ? "animate" : "initial"}
+    animate={inView ? "animate" : "initial"}
+    variants={variants} 
             src={`${theme === "dark" ? darkprojectImage : projectImage}`}
             className={ProjectCss.eventImage}
             alt="about-image"
@@ -262,7 +303,11 @@ function ProjectsPage() {
       </section>
 
       <section className={ProjectCss.section2}>
-        <h1
+        <motion.h1
+           ref={ref1} 
+           initial={inView1 ? "animate" : "initial"}
+    animate={inView1 ? "animate" : "initial"}
+    variants={variants} 
           className={`${
             theme === "dark"
               ? ProjectCss.darkfilterHeading
@@ -270,9 +315,9 @@ function ProjectsPage() {
           }`}
         >
           We offer diverse projects that span across all domains!
-        </h1>
+        </motion.h1>
         <div className={ProjectCss.eventsFilterDiv}>
-          <select
+          <motion.select whileHover={{scale:1.2}}
             className={`${
               theme === "dark" ? ProjectCss.darkselect : ProjectCss.select
             }`}
@@ -287,9 +332,9 @@ function ProjectsPage() {
             <option value="2023-2024">2023-2024</option>
             <option value="2024-2025">2024-2025</option>
             <option value="2025-2026">2025-2026</option>
-          </select>
+          </motion.select>
 
-          {showTag && (<select
+          {showTag && (<motion.select  whileHover={{scale:1.2}}
             className={`${
               theme === "dark" ? ProjectCss.darkselect : ProjectCss.select
             }`}
@@ -303,7 +348,7 @@ function ProjectsPage() {
             <option value="gamedev">Game Dev</option>
             <option value="cp">Competitive Programming</option>
             <option value="aiml">AI/ML</option>
-          </select>
+          </motion.select>
           )}
         </div>
       </section>
