@@ -17,7 +17,7 @@ function TeamsPage(props) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8000/ourteam/gdsclead");
+      const response = await fetch("https://gdsc-website.onrender.com/ourteam/gdsclead");
       const data = await response.json();
       setAllData(data);
     } catch (error) {
@@ -27,7 +27,7 @@ function TeamsPage(props) {
 
   const handleTenureChange = async (selectedDomain, selectedTenure) => {
     try {
-      let url = `http://localhost:8000/ourteam/filter?tenure=${selectedTenure}`;
+      let url = `https://gdsc-website.onrender.com/ourteam/filter?tenure=${selectedTenure}`;
       const response = await fetch(url);
       const data = await response.json();
       const gdscLeadData = data.filter(member => member.position === "gdsclead");
@@ -53,7 +53,7 @@ function TeamsPage(props) {
 
   const handleFilterChange = async (selectedDomain) => {
     try {
-      let url = `http://localhost:8000/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
+      let url = `https://gdsc-website.onrender.com/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
       console.log(selectedDomain);
       console.log(selectTenure);
       const response = await fetch(url);
