@@ -9,6 +9,7 @@ function ExpandableData(props) {
 
   const handleClick = () => {
     setActive(!isActive);
+    console.log(props.data.name);
   };
 
   var { variant } = props;
