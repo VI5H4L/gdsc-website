@@ -17,7 +17,7 @@ const LoginForm = () => {
         // Authentication successful, redirect to admin page
         console.log('Login successful:', response.data.authtoken);
         localStorage.setItem('authtoken', response.data.authtoken);
-        window.location.href = 'http://localhost:3000/admin'; 
+        window.location.href = 'https://gdsc-lnmiit.vercel.app/admin'; 
       } else {
         setError('Invalid email or password');
       }
