@@ -41,7 +41,7 @@ router.route("/login").post(async (req, res) => {
 
     const { email, password } = req.body;
     try {
-      if (email !== dummyUserData.email) {
+      if ((email !== dummyUserData.email) && (password !== dummyUserData.password)) {
         return res.status(400).json({
           error: "Invalid email or password",
         });
