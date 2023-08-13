@@ -25,11 +25,13 @@ const eventsRouter = require('./routes/events');
 const projectsRouter = require('./routes/projects');
 const ourTeamRouter = require('./routes/ourteam');
 const galleryRouter = require('./routes/gallery');
+const authenticationRouter = require("./routes/authentication");
 
 app.use('/events', eventsRouter);
 app.use('/projects', projectsRouter);
 app.use('/ourteam', ourTeamRouter);
 app.use('/gallery', galleryRouter);
+app.use("/authentication", authenticationRouter);
 
 app.listen(port, () => {
   console.log("Example app listening at https://gdsc-website.onrender.com")
