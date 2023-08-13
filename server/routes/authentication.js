@@ -10,10 +10,10 @@ const secretKey = "your_secret_key";
 
 // Dummy user data
 const dummyUserData = {
-  "email": process.env.EMAIL,
-  "password": process.env.PASSWORD
-  // "email": "johndoe@example.com",
-  // "password": "password"
+  // "email": process.env.EMAIL,
+  // "password": process.env.PASSWORD
+  "email": "johndoe@example.com",
+  "password": "password"
 };
 
 // Middleware to verify JWT token
