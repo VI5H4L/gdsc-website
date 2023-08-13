@@ -12,7 +12,7 @@ function AddGallery() {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8000/gallery/", { photo: photoUrl });
+      const response = await axios.post("https://gdscbackend.vercel.app/gallery/", { photo: photoUrl });
 
       console.log("Photo added to gallery:", response.data);
 

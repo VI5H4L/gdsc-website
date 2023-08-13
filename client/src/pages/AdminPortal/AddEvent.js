@@ -29,7 +29,7 @@ function AddEvent() {
         event.preventDefault();
     
         try {
-          const response = await axios.post("http://localhost:8000/events/", formData);
+          const response = await axios.post("https://gdscbackend.vercel.app/events/", formData);
     
           console.log("Event data posted successfully:", response.data);
     

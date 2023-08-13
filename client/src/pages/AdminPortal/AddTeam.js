@@ -21,7 +21,7 @@ function AddTeam() {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8000/ourteam/", formData);
+      const response = await axios.post("https://gdscbackend.vercel.app/ourteam/", formData);
 
       console.log("Team member data posted successfully:", response.data);
 

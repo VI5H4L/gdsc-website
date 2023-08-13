@@ -30,7 +30,7 @@ function AddProject() {
         event.preventDefault();
     
         try {
-          const response = await axios.post("http://localhost:8000/projects/", formData);
+          const response = await axios.post("https://gdscbackend.vercel.app/projects/", formData);
     
           console.log("Event data posted successfully:", response.data);
     
