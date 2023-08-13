@@ -45,8 +45,7 @@ router.route("/login").post(async (req, res) => {
         if(email === dummyUserData.email )
         {
             success = true;
-          console.log("login successfull");
-            return success;
+            return console.log("login successfull");;
         }els
         {
             return res.status(400).json({
