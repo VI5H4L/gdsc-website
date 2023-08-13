@@ -34,5 +34,5 @@ app.use('/gallery', galleryRouter);
 app.use("/authentication", authenticationRouter);
 
 app.listen(port, () => {
-  console.log("Example app listening at https://gdsc-website.onrender.com")
+  console.log("Example app listening at https://gdscbackend.vercel.app/")
 })
