@@ -13,6 +13,7 @@ import AddGallery from "./AddGallery";
 function AdminPortal() {
   const { theme } = useContext(ThemeContext);
   const [value, onChange] = useState(new Date());
+  const [selectedFilter, setSelectedFilter] = useState("Events"); // Default filter
 
   const variants = {
     initial: { opacity: 0 ,y:100}, 
