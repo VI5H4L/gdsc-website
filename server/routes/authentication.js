@@ -41,13 +41,21 @@ router.route("/login").post(async (req, res) => {
 
     const { email, password } = req.body;
     try {
-      if (email !== dummyUserData.email) {
-        if(password !== dummyUserData.password)
+      if (password === dummyUserData.password) {
+        if(email === dummyUserData.email )
+        {
+            return console.log("login successfull");
+        }els
         {
             return res.status(400).json({
             error: "Invalid email or password",
             });
         }
+      }else
+      {
+        return res.status(400).json({
+            error: "Invalid email or password",
+            });
       }
 
       const data = {
