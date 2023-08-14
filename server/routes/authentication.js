@@ -41,8 +41,8 @@ router.route("/login").post(async (req, res) => {
 
     const { email, password } = req.body;
     try {
-      if (password === dummyUserData.password) {
-        if(email === dummyUserData.email )
+      if (email === dummyUserData.email) {
+        if(password === dummyUserData.password )
         {
             success = true;
             return console.log("login successfull");;
@@ -67,7 +67,7 @@ router.route("/login").post(async (req, res) => {
 
       const authtoken = jwt.sign(data, secretKey);
 
-      success = true;
+      // success = true;
       res.json({ success, authtoken });
     } catch (error) {
       res.json({ email, password });
