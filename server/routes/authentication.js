@@ -41,34 +41,24 @@ router.route("/login").post(async (req, res) => {
 
     const { email, password } = req.body;
     try {
-      if (email === dummyUserData.email) {
-        if(password === dummyUserData.password )
-        {
-            success = true;
-            return console.log("login successfull");;
-        }els
-        {
-            return res.status(400).json({
-            error: "Invalid email or password",
-            });
-        }
+      if (email === dummyUserData.email && password === dummyUserData.password) {
+        
+        const data = {
+          user: {
+            id: 1, 
+          },
+        };
+
+      const authtoken = jwt.sign(data, secretKey);
+
+      success = true;
+      res.json({ success, authtoken });
       }else
       {
         return res.status(400).json({
             error: "Invalid email or password",
             });
       }
-
-      const data = {
-        user: {
-          id: 1, 
-        },
-      };
-
-      const authtoken = jwt.sign(data, secretKey);
-
-      // success = true;
-      res.json({ success, authtoken });
     } catch (error) {
       res.json({ email, password });
     }
