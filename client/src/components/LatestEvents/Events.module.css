@@ -80,6 +80,11 @@
     margin: 0px;
 }
 
+.paraDiv 
+{
+    width: 300px;
+}
+
 @media (max-width: 1270px)
 {
     .cube 
