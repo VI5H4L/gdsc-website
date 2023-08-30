@@ -68,14 +68,15 @@ const LoginForm = ({adminhandler}) => {
         console.log('Login successful:', response.data.authtoken);
         localStorage.setItem('authtoken', response.data.authtoken);
         window.location.href = 'https://gdsc-lnmiit.vercel.app/admin'; 
-        
+          if(email==="johndoe@example.com")
+              adminhandler();
       } else {
         setError('Invalid email or password');
       }
     } catch (error) {
       setError('An error occurred during login');
     }
-    adminhandler();
+    
   };
 
   
@@ -98,4 +99,6 @@ const LoginForm = ({adminhandler}) => {
 };
 
 export default LoginForm;
+
+
 
