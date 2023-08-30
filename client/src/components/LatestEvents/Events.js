@@ -64,6 +64,7 @@ function Events() {
                   }}
                 />
               </div>
+              <div className={EventCss.paraDiv}>
               <p
                 className={`${theme === "dark" ? EventCss.darkp : EventCss.p}`}>
                 {event.name}
@@ -72,6 +73,7 @@ function Events() {
                 className={`${theme === "dark" ? EventCss.darkp : EventCss.p}`}>
                 {event.description}
               </p>
+              </div>
             </div>
           ))}
         </div>
