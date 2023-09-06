@@ -27,6 +27,7 @@ function AddEvent() {
 
       const handleSubmit = async (event) => {
         event.preventDefault();
+          console.log("handleSubmit called");
     
         try {
           const response = await axios.post("https://gdscbackend.vercel.app/events/", formData);
