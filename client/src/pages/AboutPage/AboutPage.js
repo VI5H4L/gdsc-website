@@ -41,6 +41,11 @@ function AboutPage() {
     animate: { opacity: 1, rotateY: 0, transition: { duration: 1, ease: "easeOut" } },
   };
 
+  const convertDriveURL = (url) => {
+    const parts = url.split('/');
+    const fileId = parts[parts.length - 2];
+    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  };
 
   const fetchData = async (Domain) => {
     try {
@@ -51,7 +56,9 @@ function AboutPage() {
       const responseData = await response.json();
       console.log(responseData);
       console.log(responseData[0].batchPhoto);
-      setImage(responseData[0].batchPhoto);
+      const convertedURL = convertDriveURL(responseData[0].batchPhoto);
+      setImage(convertedURL);
+      // setImage();
     } catch (error) {
       console.error("Error fetching domain data:", error);
     }
