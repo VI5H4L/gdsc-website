@@ -53,7 +53,18 @@ function TeamsPage(props) {
 
   const handleFilterChange = async (selectedDomain) => {
     try {
-      let url = `https://gdscbackend.vercel.app/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
+      // let url = `https://gdscbackend.vercel.app/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
+      let url = "https://gdscbackend.vercel.app/ourteam/filter";
+
+      if (selectedDomain && selectTenure) {
+        // console.log('working');
+        url += `?domains=${selectedDomain}&&tenure=${selectTenure}`;
+      } else if (selectedDomain) {
+        url += `?domains=${selectedDomain}`;
+      } else if (selectedTenure) {
+        url += `?tenure=${selectTenure}`;
+      }
+      
       console.log(selectedDomain);
       console.log(selectTenure);
       const response = await fetch(url);
