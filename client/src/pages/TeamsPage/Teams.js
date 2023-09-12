@@ -95,7 +95,7 @@ function TeamsPage(props) {
         heading="Domain members"
         current="development"
         data={DomainData}
-        onDomainChange={selectDomain}
+        onDomainChange={setSelectDomain}
         leadData={selectData}
         variant="team"
       ></DomainSection>
