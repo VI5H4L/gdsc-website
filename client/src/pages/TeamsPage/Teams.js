@@ -6,7 +6,7 @@ import DomainData from "../../Data/Domain";
 
 function TeamsPage(props) {
   const [gdscLeadData, setGdscLeadData] = useState([]);
-  const [domainLeadData, setDomainLeadData] = useState([]);
+  // const [domainLeadData, setDomainLeadData] = useState([]);
   const [selectTenure, setSelectTenure] = useState("");
   const [selectDomain, setSelectDomain] = useState("");
   const [selectData, setSelectData] = useState([]);
@@ -32,9 +32,9 @@ function TeamsPage(props) {
       const response = await fetch(url);
       const data = await response.json();
       const gdscLeadData = data.filter(member => member.position === "gdsclead");
-      const domainLeadData = data.filter(member=> (member.position === "domainlead")&&(mamber.domain === selectedDomain));
+      // const domainLeadData = data.filter(member=> (member.position === "domainlead")&&(mamber.domain === selectedDomain));
       setGdscLeadData(gdscLeadData);
-      setDomainLeadData(domainLeadData);
+      // setDomainLeadData(domainLeadData);
       console.log(gdscLeadData);
       setSelectTenure(selectedTenure);
       setSelectData([]);
@@ -43,16 +43,16 @@ function TeamsPage(props) {
     }
   };
 
-  useEffect(() => {
-    handleFilterChange(selectDomain);
-    console.log('aaaaaa');
-  }, [selectDomain]);
+  // useEffect(() => {
+  //   handleFilterChange(selectDomain);
+  //   console.log('aaaaaa');
+  // }, [selectDomain]);
 
   useEffect(() => {
-    if (selectTenure && selectDomain) {
+    if (!selectTenure) {
       handleFilterChange(selectDomain);
     }
-  }, [selectTenure]);
+  }, [selectDomain, selectTenure]);
 
   const handleFilterChange = async (selectedDomain) => {
     try {
@@ -96,7 +96,7 @@ function TeamsPage(props) {
         current="development"
         data={DomainData}
         onDomainChange={setSelectDomain}
-        leadData={selectTenure?selectData:domainLeadData}
+        leadData={selectData}
         variant="team"
       ></DomainSection>
     </>
