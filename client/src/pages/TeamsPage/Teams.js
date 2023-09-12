@@ -43,16 +43,16 @@ function TeamsPage(props) {
     }
   };
 
-  // useEffect(() => {
-  //   handleFilterChange(selectDomain);
-  //   console.log('aaaaaa');
-  // }, [selectDomain]);
+  useEffect(() => {
+    handleFilterChange(selectDomain);
+    console.log('aaaaaa');
+  }, [selectDomain]);
 
-  // useEffect(() => {
-  //   if (!selectTenure) {
-  //     handleFilterChange(selectDomain);
-  //   }
-  // }, [selectDomain, selectTenure]);
+  useEffect(() => {
+    if (!selectTenure) {
+      handleFilterChange(selectDomain);
+    }
+  }, [selectDomain, selectTenure]);
 
   const handleFilterChange = async (selectedDomain) => {
     try {
@@ -95,7 +95,7 @@ function TeamsPage(props) {
         heading="Domain members"
         current="development"
         data={DomainData}
-        onDomainChange={handleFilterChange}
+        onDomainChange={setSelectDomain}
         leadData={selectData}
         variant="team"
       ></DomainSection>
