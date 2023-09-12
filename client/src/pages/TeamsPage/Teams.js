@@ -6,6 +6,7 @@ import DomainData from "../../Data/Domain";
 
 function TeamsPage(props) {
   const [gdscLeadData, setGdscLeadData] = useState([]);
+  const [domainLeadData, setDomainLeadData] = useState([]);
   const [selectTenure, setSelectTenure] = useState("");
   const [selectDomain, setSelectDomain] = useState("");
   const [selectData, setSelectData] = useState([]);
@@ -31,7 +32,9 @@ function TeamsPage(props) {
       const response = await fetch(url);
       const data = await response.json();
       const gdscLeadData = data.filter(member => member.position === "gdsclead");
+      const domainLeadData = data.filter(member=> (member.position === "domainlead")&&(mamber.domain === selectedDomain));
       setGdscLeadData(gdscLeadData);
+      setDomainLeadData(domainLeadData);
       console.log(gdscLeadData);
       setSelectTenure(selectedTenure);
       setSelectData([]);
@@ -53,17 +56,17 @@ function TeamsPage(props) {
 
   const handleFilterChange = async (selectedDomain) => {
     try {
-      // let url = `https://gdscbackend.vercel.app/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
-      let url = "https://gdscbackend.vercel.app/ourteam/filter?";
+      let url = `https://gdscbackend.vercel.app/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
+      // let url = "https://gdscbackend.vercel.app/ourteam/filter?";
 
-      if (selectedDomain && selectTenure) {
-        // console.log('working');
-        url += `domain=${selectedDomain}&tenure=${selectTenure}`;
-      } else if (selectedDomain) {
-        url += `domain=${selectedDomain}`;
-      } else if (selectedTenure) {
-        url += `tenure=${selectTenure}`;
-      }
+      // if (selectedDomain && selectTenure) {
+      //   // console.log('working');
+      //   url += `domain=${selectedDomain}&tenure=${selectTenure}`;
+      // } else if (selectedDomain) {
+      //   url += `domain=${selectedDomain}`;
+      // } else if (selectedTenure) {
+      //   url += `tenure=${selectTenure}`;
+      // }
       
       console.log(selectedDomain);
       console.log(selectTenure);
@@ -93,7 +96,7 @@ function TeamsPage(props) {
         current="development"
         data={DomainData}
         onDomainChange={setSelectDomain}
-        leadData={selectData}
+        leadData={selectTenure?selectData:domainLeadData}
         variant="team"
       ></DomainSection>
     </>
