@@ -99,38 +99,72 @@ function DomainSection(props) {
     }
   };
 
-  if (heading === "development") {
-    data1 = DevelopmentMembers;
+  // if (heading === "development") {
+  //   data1 = DevelopmentMembers;
+  //   if (props.onDomainChange) {
+  //     props.onDomainChange(heading);
+  //     // console.log(leadData);
+  //   }
+  // } else if (heading === "cp") {
+  //   data1 = CpMembers;
+  //   if (props.onDomainChange) {
+  //     props.onDomainChange(heading);
+  //   }
+  // } else if (heading === "creative") {
+  //   data1 = CreativeMembers;
+  //   if (props.onDomainChange) {
+  //     props.onDomainChange(heading);
+  //   }
+  // } else if (heading === "aiml") {
+  //   data1 = AiMembers;
+  //   if (props.onDomainChange) {
+  //     props.onDomainChange(heading);
+  //   }
+  // } else if (heading === "gamedev") {
+  //   data1 = GameDevMembers;
+  //   if (props.onDomainChange) {
+  //     props.onDomainChange(heading);
+  //   }
+  // } else if (heading === "management") {
+  //   data1 = managementMembers;
+  //   if (props.onDomainChange) {
+  //     props.onDomainChange(heading);
+  //   }
+  // }
+
+  const handleDomainChange = (heading) => {
+    let newData1;
+
+    switch (heading) {
+      case "development":
+        newData1 = DevelopmentMembers;
+        break;
+      case "cp":
+        newData1 = CpMembers;
+        break;
+      case "creative":
+        newData1 = CreativeMembers;
+        break;
+      case "aiml":
+        newData1 = AiMembers;
+        break;
+      case "gamedev":
+        newData1 = GameDevMembers;
+        break;
+      case "management":
+        newData1 = managementMembers;
+        break;
+      default:
+        newData1 = DevelopmentMembers; // Default to DevelopmentMembers if heading doesn't match any case
+        break;
+    }
+
     if (props.onDomainChange) {
       props.onDomainChange(heading);
-      // console.log(leadData);
     }
-  } else if (heading === "cp") {
-    data1 = CpMembers;
-    if (props.onDomainChange) {
-      props.onDomainChange(heading);
-    }
-  } else if (heading === "creative") {
-    data1 = CreativeMembers;
-    if (props.onDomainChange) {
-      props.onDomainChange(heading);
-    }
-  } else if (heading === "aiml") {
-    data1 = AiMembers;
-    if (props.onDomainChange) {
-      props.onDomainChange(heading);
-    }
-  } else if (heading === "gamedev") {
-    data1 = GameDevMembers;
-    if (props.onDomainChange) {
-      props.onDomainChange(heading);
-    }
-  } else if (heading === "management") {
-    data1 = managementMembers;
-    if (props.onDomainChange) {
-      props.onDomainChange(heading);
-    }
-  }
+
+    data1 = newdata1; // Update data1 state based on the new heading
+  };
 
   
 
