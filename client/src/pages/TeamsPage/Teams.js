@@ -58,7 +58,7 @@ function TeamsPage(props) {
 
       if (selectedDomain && selectTenure) {
         // console.log('working');
-        url += `?domain=${selectedDomain}&&tenure=${selectTenure}`;
+        url += `?domain=${selectedDomain}&tenure=${selectTenure}`;
       } else if (selectedDomain) {
         url += `?domain=${selectedDomain}`;
       } else if (selectedTenure) {
