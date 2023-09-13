@@ -46,17 +46,16 @@ function TeamsPage(props) {
   useEffect(() => {
     handleFilterChange(selectDomain);
     console.log('aaaaaa');
-    // eslint-disable-next-line no-use-before-define
+    
   }, [selectDomain]);
 
   useEffect(() => {
     if (selectTenure && selectDomain) {
       handleFilterChange(selectDomain);
     }
-    // eslint-disable-next-line no-use-before-define
+    
   }, [selectDomain, selectTenure]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps, no-undef
   const handleDomainChange = async (selectedDomain) => {
     try {
       let url = `https://gdscbackend.vercel.app/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
