@@ -47,17 +47,17 @@ function TeamsPage(props) {
     handleFilterChange(selectDomain);
     console.log('aaaaaa');
     // eslint-disable-next-line no-use-before-define
-  }, [handleFilterChange, selectDomain]);
+  }, [selectDomain]);
 
   useEffect(() => {
     if (selectTenure && selectDomain) {
       handleFilterChange(selectDomain);
     }
     // eslint-disable-next-line no-use-before-define
-  }, [handleFilterChange, selectDomain, selectTenure]);
+  }, [selectDomain, selectTenure]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps, no-undef
-  const handleDomainChange = useCallback(async (selectedDomain) => {
+  const handleDomainChange = async (selectedDomain) => {
     try {
       let url = `https://gdscbackend.vercel.app/ourteam/filter?domain=${selectedDomain}&tenure=${selectTenure}`;
       // let url = "https://gdscbackend.vercel.app/ourteam/filter?";
@@ -81,7 +81,7 @@ function TeamsPage(props) {
     } catch (error) {
       console.error('Error filtering events:', error);
     }
-  });
+  };
 
   return (
     <>
