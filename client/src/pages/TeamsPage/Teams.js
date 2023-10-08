@@ -151,7 +151,7 @@ function TeamsPage(props) {
       console.error("Error filtering events:", error);
     }
   };
-
+  
   const handleDomainChange = async (selectedDomain) => {
 
       console.log("entered");
@@ -177,7 +177,6 @@ function TeamsPage(props) {
         setSelectDomain(selectedDomain);
         console.log(filteredData);
           console.log(selectedDomain);
-
       console.log(selectTenure);
       } catch (error) {
         console.error('Error filtering events:', error);
