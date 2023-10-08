@@ -51,6 +51,18 @@
   /* margin: 30px 40px 0px 0px; */
 }
 
+.buttonDiv 
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.aTag 
+{
+  height: 60px;
+  width: 60px;
+}
+
 .homeDiv {
   margin-top: 5.5%;
   display: flex;

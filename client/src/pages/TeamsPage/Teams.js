@@ -41,13 +41,13 @@ function TeamsPage(props) {
   };
 
   useEffect(() => {
-    handleFilterChange(selectDomain);
+    handleDomainChange(selectDomain);
     console.log('aaaaaa');
   }, [selectDomain]);
 
   useEffect(() => {
     if (selectTenure && selectDomain) {
-      handleFilterChange(selectDomain);
+      handleDomainChange(selectDomain);
     }
   }, [selectTenure]);
 

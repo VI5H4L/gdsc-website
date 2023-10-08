@@ -99,7 +99,6 @@ h3,h6{
 
 .plane 
 {
-    max-width: fit-content;
     position: absolute;
     top:-65%;
     left:30%;
@@ -123,7 +122,6 @@ h3,h6{
         height: 400px;
     }
 }
-
 
 @media only screen and (max-width: 800px) {
     .heading 

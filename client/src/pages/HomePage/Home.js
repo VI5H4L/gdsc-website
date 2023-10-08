@@ -18,6 +18,7 @@ import { ThemeContext } from "../../ThemeContext";
 import facultyImage from "../HomePage/images/faculty_mentor.png";
 import {delay, motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
+import plane from "./images/planeIllustration.png";
 
 
 function Home() {
@@ -113,8 +114,8 @@ useEffect(() => {
               variants={slideInVariantsMobile} className={HomeCss.heading3}>
              The LNM Institute Of Information Technology
           </motion.h1>
-          <div>
-            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
+          <div className={HomeCss.buttonDiv}>
+          {/* <a className={HomeCss.aTag}> <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
@@ -122,31 +123,31 @@ useEffect(() => {
               }`}>
                 
               <FontAwesomeIcon size="1x" icon={faTwitter} />
-            </motion.button>
-            < motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
+            </motion.button></a> 
+            <a className={HomeCss.aTag}>  < motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faFacebookF} />
-            </motion.button>
-            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
+            </motion.button></a> */}
+            <a className={HomeCss.aTag} href="https://www.instagram.com/gdsc.lnmiit/">  <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faInstagram} />
-            </motion.button>
-            <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
+            </motion.button></a>
+            <a className={HomeCss.aTag} href="https://www.linkedin.com/company/gdsc-lnmiit-jaipur/">  <motion.button whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? HomeCss.darkBrandButtons
                   : HomeCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faLinkedinIn} />
-            </motion.button>
+            </motion.button></a>
           </div>
         </div>
         <motion.div  ref={ref}
@@ -211,9 +212,10 @@ useEffect(() => {
                     src={facultyImage}
                     alt="facultymentor.png"
                     style={{
-                      width: "auto",
-                      height: "100%",
+                      width: "200px",
+                      height: "200px",
                       marginleft: "-50px",
+                     
                     }}
                   />
                   </div>
@@ -230,7 +232,7 @@ useEffect(() => {
                     : FacultyCss.paragraph
                 }`}>
                 <div>Sourabh Kumar</div>
-                <div>Mentor designation</div>
+                <div>Our Faculty Mentor</div>
               </div>
               <div
                 className={`${
@@ -238,14 +240,22 @@ useEffect(() => {
                     ? FacultyCss.darkParagraph
                     : FacultyCss.paragraph
                 }`}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim venia
+"The Google Developer Student Club (GDSC) is a non-profit, student-led community,
+officially recognized and powered by Google Developers, operating within The LNM
+Institute of Information Technology, Jaipur. Students from 2nd and 3rd year of the
+undergraduate programs, with an interest in growing as a tech enthusiast, are welcome."	
               </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+  
+          <div className={FacultyCss.plane}>
+            <img
+              src={plane}
+            />
+          </div>
 
     <About data={leads} variant="green" />
         <Events />
