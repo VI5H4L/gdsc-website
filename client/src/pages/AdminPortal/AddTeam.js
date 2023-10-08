@@ -19,11 +19,12 @@ function AddTeam() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    console.log("Submitting form...");
+    console.log("Form Data:", formData);
     try {
       const response = await axios.post("https://gdscbackend.vercel.app/ourteam/", formData);
 
-      console.log("Team member data posted successfully:", response.data);
+      console.log("Team member data posted successfully:", response);
 
       setFormData({
         name: "",

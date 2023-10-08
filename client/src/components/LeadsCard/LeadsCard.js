@@ -30,6 +30,13 @@ function LeadsCard(props) {
     }
   }, [props.data]);
 
+  const convertDriveURL = (url) => {
+    const parts = url.split('/');
+    const fileId = parts[parts.length - 2];
+    // console.log(fileId);
+    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  };
+
   return (
     <>
       <motion.div  ref={ref}
@@ -49,7 +56,7 @@ function LeadsCard(props) {
                   variant === "green"
                     ? LeadCardCss.imageDiv
                     : LeadCardCss.teamImageDiv
-                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img src={lead.photo} alt={lead.name} className={LeadCardCss.photo} style={{width: "auto", height: "100%", marginleft: "-50px"}}/></div>
+                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img src={convertDriveURL(lead.photo)} alt={lead.name} className={LeadCardCss.photo} style={{width: "auto", height: "100%", marginleft: "-50px"}}/></div>
             </div>
             <div
               className={`${
