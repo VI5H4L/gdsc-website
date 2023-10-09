@@ -37,29 +37,36 @@ function Photo() {
 
     fetch(apiEndpoint)
       .then(response => response.json())
-      // .then(data => {
-      //   // Set the fetched images to the state
-      //   setAllImage(data.map(item => item.photo));
-      //   setSelectedImage(data[0].photo);
-      // })
-        .then((response) => {
-      const transformedImageUrls = response.data.map((item) => {
-        // Convert Google Drive URL to direct image URL
-        const parts = url.split('/');
-    const fileId = parts[parts.length - 2];
-    // console.log(fileId);
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
-      });
+      .then(data => {
+        // Set the fetched images to the state
+        setAllImage(data.map(item => item.photo));
+        setSelectedImage(data[0].photo);
+      })
+    //     .then((response) => {
+    //   const transformedImageUrls = response.data.map((item) => {
+    //     // Convert Google Drive URL to direct image URL
+    //     const parts = url.split('/');
+    // const fileId = parts[parts.length - 2];
+    // // console.log(fileId);
+    // return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    //   });
 
-      setAllImage(transformedImageUrls);
-      setSelectedImage(transformedImageUrls[0]);
-    })
+    //   setAllImage(transformedImageUrls);
+    //   setSelectedImage(transformedImageUrls[0]);
+    // })
       
       .catch(error => {
         console.error('Error fetching images:', error);
       });
     };
 
+  const convertDriveURL = (url) => {
+    const parts = url.split('/');
+    const fileId = parts[parts.length - 2];
+    // console.log(fileId);
+    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  };
+  
   const previousImage = () => {
     if (currentIndex === 0) {
       setCurrentIndex(allImage.length - 1);
@@ -114,7 +121,7 @@ function Photo() {
         <div className={PhotoCss.mainDiv}>
           <div className={PhotoCss.photoDiv}>
           {selectedImage && (
-            <img src={selectedImage}  className={PhotoCss.photoDiv} />
+            <img src={convertDriveURL(selectedImage)}  className={PhotoCss.photoDiv} />
           )}
           </div>
           <div className={PhotoCss.mainCarousal}>
@@ -139,7 +146,7 @@ function Photo() {
                           : PhotoCss["notClicked"]
                       }
                       key={index}
-                      src={img}
+                      src={convertDriveURL(img)}
                       width={200}
                       height={100}
                       onClick={() => handleClick(index)}
