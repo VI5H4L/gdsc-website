@@ -37,6 +37,7 @@ function Photo() {
 
     fetch(apiEndpoint)
       .then(response => response.json())
+      console.log(response);
       .then(data => {
         // Set the fetched images to the state
         setAllImage(data.map(item => item.photo));
@@ -63,7 +64,7 @@ function Photo() {
   const convertDriveURL = (url) => {
     const parts = url.split('/');
     const fileId = parts[parts.length - 2];
-    // console.log(fileId);
+    console.log(fileId);
     return `https://drive.google.com/uc?export=view&id=${fileId}`;
   };
   
