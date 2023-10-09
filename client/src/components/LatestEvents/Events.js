@@ -24,7 +24,7 @@ function Events() {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch("https://gdsc-website.onrender.com/events/all");
+      const response = await fetch("https://gdscbackend.vercel.app/events/all");
       const data = await response.json();
       setEvents(data.slice(0,3));
     } catch (error) {
