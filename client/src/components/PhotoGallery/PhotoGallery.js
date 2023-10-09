@@ -31,7 +31,7 @@ function Photo() {
 
   const fetchImages = () => {
     // Your backend API endpoint for fetching the images
-    const apiEndpoint = 'https://gdsc-website.onrender.com/gallery/';
+    const apiEndpoint = 'https://gdscbackend.vercel.app/gallery/';
     // Your API key for authentication
     // const apiKey = process.env.EVENT_URI;
 
