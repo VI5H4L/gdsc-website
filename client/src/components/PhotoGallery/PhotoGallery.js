@@ -37,7 +37,6 @@ function Photo() {
 
     fetch(apiEndpoint)
       .then(response => response.json())
-      console.log(response);
       .then(data => {
         // Set the fetched images to the state
         setAllImage(data.map(item => item.photo));
