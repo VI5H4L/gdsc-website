@@ -68,7 +68,7 @@ const LoginForm = ({adminhandler}) => {
         console.log('Login successful:', response.data.authtoken);
         localStorage.setItem('authtoken', response.data.authtoken);
         window.location.href = '/admin';
-          if(email==="johndoe@example.com")
+          if(email===process.env.REACT_APP_EMAIL)
               adminhandler();
       } else {
         setError('Invalid email or password');
