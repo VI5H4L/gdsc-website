@@ -67,7 +67,7 @@ const LoginForm = ({adminhandler}) => {
         // Authentication successful, redirect to admin page
         console.log('Login successful:', response.data.authtoken);
         localStorage.setItem('authtoken', response.data.authtoken);
-        window.location.href = 'https://gdsc-lnmiit.vercel.app/admin'; 
+        window.location.href = '/admin';
           if(email==="johndoe@example.com")
               adminhandler();
       } else {
