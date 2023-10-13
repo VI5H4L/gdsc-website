@@ -183,22 +183,22 @@ function AddTeam() {
                   Domains
                 </label>
                 <div className={AdminCss.timeline}>
-          {["development", "creative", "management", "gamedev", "cp", "aiml"].map((domains) => (
-            <div className={AdminCss.formGroup1} key={domains}>
+          {["development", "creative", "management", "gamedev", "cp", "aiml"].map((domain) => (
+            <div className={AdminCss.formGroup1} key={domain}>
               <input
                 type="checkbox"
-                id={`domain${domains}`}
-                name="domains"
-                value={domains}
-                checked={formData.domain.includes(domains)}
-                onChange={() => handleDomainsChange(domains)}
+                id={`domain${domain}`}
+                name="domain"
+                value={domain}
+                checked={formData.domain.includes(domain)}
+                onChange={() => handleDomainsChange(domain)}
                 className={theme === "dark" ? AdminCss.darkinput2 : AdminCss.input2}
               />
               <label
-                htmlFor={`domain${domains}`}
+                htmlFor={`domain${domain}`}
                 className={theme === "dark" ? AdminCss.darklabel1 : AdminCss.label1}
               >
-                {domains.toUpperCase()}
+                {domain.toUpperCase()}
               </label>
             </div>
           ))}
