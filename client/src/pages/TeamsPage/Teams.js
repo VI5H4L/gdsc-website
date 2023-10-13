@@ -198,6 +198,7 @@ function TeamsPage(props) {
       />
       <About data={gdscLeadData.length > 0 ? gdscLeadData : allData} variant="yellow" />
       <DomainSection
+      tenure ={selectTenure}
         heading="Domain members"
         current="development"
         data={DomainData}
