@@ -41,19 +41,19 @@ function AddTeam() {
     }
   };
 
-  const handleDomainsChange = (domains) => {
-    if (formData.domain.includes(domains)) {
-      setFormData({
-        ...formData,
-        domain: formData.domain.filter((d) => d !== domains),
-      });
-    } else {
-      setFormData({
-        ...formData,
-        domain: [...formData.domain, domains],
-      });
-    }
-  };
+  // const handleDomainsChange = (domains) => {
+  //   if (formData.domain.includes(domains)) {
+  //     setFormData({
+  //       ...formData,
+  //       domain: formData.domain.filter((d) => d !== domains),
+  //     });
+  //   } else {
+  //     setFormData({
+  //       ...formData,
+  //       domain: [...formData.domain, domains],
+  //     });
+  //   }
+  // };
 
   return (
     <form className={AdminCss.form} onSubmit={handleSubmit}>
@@ -176,34 +176,58 @@ function AddTeam() {
                   placeholder="Enter tenure"
                 />
               </div>
+      // <div className={AdminCss.formGroup}>
+      //           <label
+      //             className={theme === "dark" ? AdminCss.darklabel : AdminCss.label}
+      //             >
+      //             Domains
+      //           </label>
+      //           <div className={AdminCss.timeline}>
+      //     {["development", "creative", "management", "gamedev", "cp", "aiml"].map((domain) => (
+      //       <div className={AdminCss.formGroup1} key={domain}>
+      //         <input
+      //           type="checkbox"
+      //           id={`domain${domain}`}
+      //           name="domain"
+      //           value={domain}
+      //           checked={formData.domain.includes(domain)}
+      //           onChange={() => handleDomainsChange(domain)}
+      //           className={theme === "dark" ? AdminCss.darkinput2 : AdminCss.input2}
+      //         />
+      //         <label
+      //           htmlFor={`domain${domain}`}
+      //           className={theme === "dark" ? AdminCss.darklabel1 : AdminCss.label1}
+      //         >
+      //           {domain.toUpperCase()}
+      //         </label>
+      //       </div>
+      //     ))}
+      //   </div>
+      //         </div>
+
       <div className={AdminCss.formGroup}>
-                <label
-                  className={theme === "dark" ? AdminCss.darklabel : AdminCss.label}
-                  >
-                  Domains
-                </label>
-                <div className={AdminCss.timeline}>
-          {["development", "creative", "management", "gamedev", "cp", "aiml"].map((domain) => (
-            <div className={AdminCss.formGroup1} key={domain}>
-              <input
-                type="checkbox"
-                id={`domain${domain}`}
-                name="domain"
-                value={domain}
-                checked={formData.domain.includes(domain)}
-                onChange={() => handleDomainsChange(domain)}
-                className={theme === "dark" ? AdminCss.darkinput2 : AdminCss.input2}
-              />
-              <label
-                htmlFor={`domain${domain}`}
-                className={theme === "dark" ? AdminCss.darklabel1 : AdminCss.label1}
-              >
-                {domain.toUpperCase()}
-              </label>
-            </div>
-          ))}
-        </div>
-              </div>
+        <label
+          className={theme === "dark" ? AdminCss.darklabel : AdminCss.label}
+          htmlFor="domainSelect"
+        >
+          Domains
+        </label>
+        <select
+          id="domainSelect"
+          name="domain"
+          value={formData.domain}
+          onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
+          className={theme === "dark" ? AdminCss.darkselect : AdminCss.select}
+        >
+          <option value="">Select Domain</option>
+          <option value="development">Development</option>
+          <option value="creative">Creative</option>
+          <option value="management">Management</option>
+          <option value="gamedev">Game Development</option>
+          <option value="cp">Competitive Programming</option>
+          <option value="aiml">AI/ML</option>
+        </select>
+      </div>
       <button type="submit" className={AdminCss.button}>
         Submit
       </button>
