@@ -3,7 +3,7 @@
     height: 60px;
     min-width: 100%;
     width: auto;
-    box-shadow: 0px 1px 10px #999;
+border:  solid lightgrey;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

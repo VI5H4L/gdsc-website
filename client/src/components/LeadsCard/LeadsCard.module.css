@@ -12,7 +12,9 @@
 
 .imageArea 
 {
-   margin: 10% 5% ;
+   margin-left: 3rem ;
+   margin-right: 3rem;
+   margin-bottom: 3rem;
 }
 
 .imageBigDiv 
@@ -23,16 +25,18 @@
     border: 2px dashed #3CBA54;
 }
 
+
+
 .imageDiv 
 {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background-color: aliceblue;
+
     margin: 8px;
     border: 2px solid #3CBA54;
 }
-
 .leadDetails
 {
     color: black;
@@ -47,6 +51,7 @@
 
 .designation 
 {
+     margin-top: -1rem;
     font-size: 1rem;
     font-weight: bolder;
 }
@@ -75,6 +80,7 @@
     border: 2px dashed #F4C20D;
 }
 
+
 @media (max-width:900px)
 {
     .leadImageDiv 
@@ -82,5 +88,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .imageArea{
+        margin: 0;
     }
 }

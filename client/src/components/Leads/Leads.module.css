@@ -9,8 +9,6 @@
 }
 
 
-
-
 .main 
 {
     background-image: url('./images/Illustrations.png');
@@ -98,7 +96,7 @@ h3,h6{
 
 
 .plane 
-{
+{ 
     position: absolute;
     top:-65%;
     left:30%;
@@ -109,10 +107,11 @@ h3,h6{
 }
 
 .planeImage 
-{
+{  
     width: 100%;
     height: 100%;
 }
+
 
 @media (max-width:1000px)
 {

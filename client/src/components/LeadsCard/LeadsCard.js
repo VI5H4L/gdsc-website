@@ -38,11 +38,12 @@ function LeadsCard(props) {
   };
 
   return (
-    <>
+    <div className="leads-image-maindiv">
       <motion.div  ref={ref}
               initial={inView? "animate" : "initial"}
               animate={inView? "animate" : "initial"}
               variants={slideInVariantsMobile} className={LeadCardCss.leadImageDiv}>
+                  
         {data.map((lead) => (
           <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
@@ -65,12 +66,14 @@ function LeadsCard(props) {
                   : LeadCardCss.leadDetails
               }`}>
               <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
-              <h6 className={LeadCardCss.designation}>{lead.position}</h6>
+              <h6 className={LeadCardCss.designation}>GDSC LEAD</h6>
             </div>
           </div>
         ))}
+
+
       </motion.div>
-    </>
+    </div>
   );
 }
 

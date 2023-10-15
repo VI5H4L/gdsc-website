@@ -70,7 +70,9 @@ function About(props) {
             Meet our Leads!!
           </motion.h1>
         )}
+        <div className="leads-home">
         <LeadsCard data={props.data} variant={variant} />
+        </div>
       </section>
     </>
   );
