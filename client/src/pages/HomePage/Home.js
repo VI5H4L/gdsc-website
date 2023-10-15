@@ -156,6 +156,7 @@ useEffect(() => {
       transition={{ duration: 0.5 }}>
         <div className={HomeCss.imageDiv}>
           <img
+          width={"100"}
             className={HomeCss.homeImage}
             src={homeImage}
             alt="homeImage.png"
@@ -249,8 +250,6 @@ undergraduate programs, with an interest in growing as a tech enthusiast, are we
           </div>
         </div>
       </section>
-
-  
           <div className={FacultyCss.plane}>
             <img
               src={plane}

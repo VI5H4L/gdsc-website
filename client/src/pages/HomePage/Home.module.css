@@ -1,6 +1,7 @@
 .headingDiv {
   width: 45vw;
   height: 100%;
+
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@
   width: 45vw;
   height: 100%;
   text-align: center;
+  font-size: xx-large;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,32 +23,38 @@
 }
 
 .heading1 {
-  font-size: 4rem;
+  font-size: 6rem;
   margin: 0px;
-  font-weight: bolder;
+
+  font-weight: 20px;
 }
 
 .heading2 {
-  font-size: 2.5rem;
-  margin: 0px;
-  font-weight: bold;
+  font-size: 3rem;
+  margin-top: 3px;
+
+
+  font-weight: 10px;
 }
 
 .heading3 {
+
   font-size: 1.5rem;
-  margin: 30px 0px 0px 0px;
+  margin: -5px 0px 0px 0px;
   font-weight: lighter;
 }
 
 .imageDiv {
   height: 500px;
-  width: 500px;
+  width: 600px;
   /* margin: 30px 40px 0px 0px; */
 }
 
 .homeImage {
   height: 100%;
+  
   width: 100%;
+  object-fit: cover;
   /* margin-left: 10%; */
   /* margin: 30px 40px 0px 0px; */
 }

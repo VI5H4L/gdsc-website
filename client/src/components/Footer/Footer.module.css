@@ -1,6 +1,6 @@
 .main
 {
-    background-color: #D4D4D8;
+    background-color: rgb(246,249, 251  );
     min-height: 300px;
     height: auto;
     width: 100%;
@@ -27,7 +27,7 @@
 
 .main1
 {
-  background-color: #D4D4D8;
+  background-color: rgb(246,249, 251  );
   min-height: 50vh;
   height: auto;
   width: 100vw;
@@ -137,7 +137,7 @@
   {
     width: 243.56px;
     height: 55px;
-    background-color: white;
+
     border-radius: 9px;
     color: black;
     font-size: 1rem;
@@ -189,7 +189,7 @@
     margin: 0px 10px ;
     border-radius: 50%;
     background-color: transparent;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -234,7 +234,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #D4D4D8;
+  background-color: rgb(246,249, 251  );
 }
 
 .darkcopyrightSection
