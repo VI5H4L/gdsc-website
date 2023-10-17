@@ -26,6 +26,7 @@ border:  solid lightgrey;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
+    
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -324,3 +325,66 @@ ul
         height: 60vh;
     }
 }
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 53px;
+    height: 27px;
+  
+  }
+  
+  .toggleSwitch input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+  
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 19px;
+    width: 19px;
+    left: 4px;
+    bottom: 2px;
+    background-color: #F4C20D;
+    border-radius: 50%;
+    transition: 0.4s;
+    border: 2px solid black;
+  }
+  
+  .sliderOn {
+    background-image: url(./images/toggle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 1px solid black; */
+  }
+  
+  .sliderOn:before {
+    transform: translateX(0);
+  }
+  
+  .sliderOff {
+    background-image: url(./images/toggle2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 1px solid black; */
+  }
+  
+  .sliderOff:before {
+    
+    transform: translateX(26px);
+    background-color: grey;
+    border: 2px solid black;
+  }
+  

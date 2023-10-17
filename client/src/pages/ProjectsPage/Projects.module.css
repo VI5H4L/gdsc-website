@@ -73,6 +73,7 @@
 {
     display: flex;
     flex-direction: column;
+margin-top: -5rem;
     align-items: center;
     justify-content: flex-start;
     height: 40vh;
@@ -136,6 +137,7 @@
 
 .darkfilterHeading
 {
+    border: solid;
     color: white;
 }
 

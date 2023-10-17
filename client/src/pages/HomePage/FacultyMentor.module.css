@@ -178,9 +178,9 @@ align-items: center;
 {
     position: absolute;
     bottom: -10%;
-    margin-top: 5rem;;
+    margin-top: 15rem;;
     left: 30%;
-    /* border: solid; */
+
 
     z-index: 700;
     width: 500px;
@@ -199,6 +199,7 @@ align-items: center;
     .plane
     {
         bottom: -15%;
+        margin-top: -2rem;
     }
 
     .mainDiv
@@ -226,7 +227,7 @@ align-items: center;
 
     .plane 
     {
-        margin-top: 10rem   ;
+        margin-top: 3rem;
         width: 300px;
         height: 300px;
         top: 900px;

@@ -57,7 +57,9 @@ function LeadsCard(props) {
                   variant === "green"
                     ? LeadCardCss.imageDiv
                     : LeadCardCss.teamImageDiv
-                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img src={convertDriveURL(lead.photo)} alt={lead.name} className={LeadCardCss.photo} style={{width: "auto", height: "100%", marginleft: "-50px"}}/></div>
+                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img
+
+              src={convertDriveURL(lead.photo)} alt={lead.name} className={LeadCardCss.photo} style={{width: "100%", height: "100%",objectFit:"cover", marginleft: "-50px"}}/></div>
             </div>
             <div
               className={`${

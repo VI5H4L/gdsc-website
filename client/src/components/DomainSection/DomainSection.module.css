@@ -1,5 +1,6 @@
 .aboutSection3
 {
+    margin-top: -9rem;
     min-height: 90vh;
     height: auto;
     width: 100vw;
@@ -12,6 +13,7 @@
 .aboutDiv3
 {
     min-height: 90vh;
+
     width: 85vw;
     height: auto;
     display: flex;
@@ -84,9 +86,13 @@
 .domainImageDiv
 {
     height: 532px;
+
+
     width: 1235px;
 }
-
+.domainImageDiv img{
+border-radius: 20px;
+}
 .domainImage
 {
     width: 100%;
@@ -170,7 +176,9 @@
 
 @media (max-width: 850px)
 {
-
+    .aboutSection3{
+        margin-top: -4rem;
+    }
 .domainImageDiv
 {
     height: 605px;

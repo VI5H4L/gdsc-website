@@ -151,10 +151,13 @@
 {
     font-size: 1rem;
 }
-
+.filterHeading{
+margin-top:-5rem ;
+}
 .darkfilterHeading
 {
     color: white;
+    margin-top: -5rem;
 }
 
 @media (max-width: 1270px)

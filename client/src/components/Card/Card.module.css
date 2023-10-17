@@ -32,6 +32,7 @@
 }
 .section3
 {
+    margin-top: -7rem;
     height: auto;
     min-height: 90vh;
     display: flex;

@@ -155,7 +155,6 @@
 
 import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import ToggleSwitch from "../ToogleSwitch/ToggleSwitch";
 import NavCss from "./Navbar1.module.css";
 import gdsclogo from "./images/gdsclogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -175,6 +174,12 @@ function Navbar({toshowAdmin}) {
 
   const gotoTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleTogglee = (e) => {
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -250,14 +255,21 @@ function Navbar({toshowAdmin}) {
               }}>
               Our Team
             </NavLink>
+            <span>
             <Link
               className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}
-              onClick={() => {
+             >
+    <span  className={NavCss.toggleSwitch} >
+      <input type={NavCss.checkbox} checked={isChecked}/>
+      <span   onClick={() => {
                 toggleTheme();
                 handleToggle();
-              }}>
-              <ToggleSwitch />
+                handleTogglee();
+              }}    className={`${NavCss.slider} ${isChecked ? NavCss.sliderOff : NavCss.sliderOn}`} />
+    </span>
             </Link>
+            </span>
+    
             <NavLink
               to="/admin"
               style={toshowAdmin ? {display:""}: {display:"none"}}

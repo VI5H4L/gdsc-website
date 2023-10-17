@@ -2,6 +2,7 @@
 {
     width: 200px;
     height: 200px;
+
     border-radius: 50%;
     background-color: aliceblue;
     margin: 8px;
@@ -141,7 +142,8 @@ h3,h6{
     {
         width: 100%;
         height: 100vh;
-        padding-bottom: 50%;
+        padding-bottom: 120%;
+
     }
 
     .plane 
@@ -158,4 +160,12 @@ h3,h6{
     {
         display: none;
     }
+    .main 
+    {
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 170%;
+
+    }
    }
+  
