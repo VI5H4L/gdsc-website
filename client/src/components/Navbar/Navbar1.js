@@ -159,7 +159,7 @@ import NavCss from "./Navbar1.module.css";
 import gdsclogo from "./images/gdsclogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ThemeContext } from "../../ThemeContext";
-
+import gdscnewlogo from "./images/gdscnewlogo.jpg"
 function Navbar({toshowAdmin}) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isActive, setActive] = useState(false);
@@ -192,7 +192,7 @@ function Navbar({toshowAdmin}) {
             onClick={gotoTop}
             className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}>
             <div className={NavCss.logoimagediv}>
-              <img src={gdsclogo} className={NavCss.gdsclogo} alt="gdsclogo" />
+              <img src={gdscnewlogo} className={NavCss.gdsclogo} alt="gdsclogo" />
               <div className={NavCss.logoname}>
                 <p className={NavCss.logonameheading}>
                   Google Developer Student Clubs{" "}

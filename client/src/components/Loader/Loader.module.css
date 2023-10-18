@@ -60,22 +60,22 @@
     transform: translateX(-50%) translateY(-50%);
   }
   .circle1 {
-    background-color: red;
+    background-color: #DB3236;
     opacity: 0;
     animation: 4s circle-move 0s infinite; 
   }
   .circle2 {
-    background-color: green;
+    background-color: #3CBA54;
     opacity: 0;
     animation: 4s circle-move 1s infinite;
   }
   .circle3 {
-    background-color: blue;
+    background-color: #4885ED;
     opacity: 0;
     animation: 4s circle-move 2s infinite;
   }
   .circle4 {
-    background-color: yellow;
+    background-color: #F4C20D;
     opacity: 0;
     animation: 4s circle-move 3s infinite;
   }
