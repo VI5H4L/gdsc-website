@@ -21,6 +21,7 @@ import { useInView } from "react-intersection-observer";
 import plane from "./images/planeIllustration.png";
 
 
+
 function Home() {
 
   const [ref,inView]=useInView({
@@ -258,6 +259,7 @@ undergraduate programs, with an interest in growing as a tech enthusiast, are we
 
     <About data={leads} variant="green" />
         <Events />
+
        <Photo />
       <Newsletter /> 
     </>

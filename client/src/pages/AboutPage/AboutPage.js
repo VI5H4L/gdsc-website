@@ -9,6 +9,8 @@ import { ThemeContext } from "../../ThemeContext";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+
+
 function AboutPage() {
   const { theme } = useContext(ThemeContext);
   const [image, setImage] = useState();
@@ -207,7 +209,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <DomainSection
+
+<DomainSection
         heading="Introducing our 6 domains!"
         current="development"
         data={DomainData}
@@ -216,8 +219,25 @@ function AboutPage() {
         variant="about"
       />
 
+
+     
       <section className={AboutCss.aboutSection4}>
         <div className={AboutCss.aboutDiv4}>
+          <p
+            className={`${
+              theme === "dark" ? AboutCss.darkdescription : AboutCss.description
+              }`}
+          >
+            orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, su orem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam,
+          </p>
           <p
             className={`${
               theme === "dark" ? AboutCss.darkdescription : AboutCss.description

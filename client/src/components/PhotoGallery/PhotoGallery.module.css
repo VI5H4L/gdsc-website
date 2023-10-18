@@ -13,6 +13,9 @@
 .photoDiv 
 {
     width: 400px;
+    border-radius: 10px;
+margin-bottom: 1rem;
+
     height: 400px;
     /* background-color: black; */
     display: flex;
@@ -113,6 +116,7 @@
 
 .cube 
 {
+    margin-top: 3rem;
     position: absolute;
     top: -28%;
     left: 30%;
@@ -121,7 +125,7 @@
 
 .cubeImage 
 {
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
 

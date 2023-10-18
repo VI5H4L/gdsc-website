@@ -155,12 +155,11 @@
 
 import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import ToggleSwitch from "../ToogleSwitch/ToggleSwitch";
 import NavCss from "./Navbar1.module.css";
 import gdsclogo from "./images/gdsclogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ThemeContext } from "../../ThemeContext";
-
+import gdscnewlogo from "./images/gdscnewlogo.jpg"
 function Navbar({toshowAdmin}) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isActive, setActive] = useState(false);
@@ -177,6 +176,12 @@ function Navbar({toshowAdmin}) {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleTogglee = (e) => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <>
       <nav
@@ -187,7 +192,7 @@ function Navbar({toshowAdmin}) {
             onClick={gotoTop}
             className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}>
             <div className={NavCss.logoimagediv}>
-              <img src={gdsclogo} className={NavCss.gdsclogo} alt="gdsclogo" />
+              <img src={gdscnewlogo} className={NavCss.gdsclogo} alt="gdsclogo" />
               <div className={NavCss.logoname}>
                 <p className={NavCss.logonameheading}>
                   Google Developer Student Clubs{" "}
@@ -250,14 +255,21 @@ function Navbar({toshowAdmin}) {
               }}>
               Our Team
             </NavLink>
+            <span>
             <Link
               className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}
-              onClick={() => {
+             >
+    <span  className={NavCss.toggleSwitch} >
+      <input type={NavCss.checkbox} checked={isChecked}/>
+      <span   onClick={() => {
                 toggleTheme();
                 handleToggle();
-              }}>
-              <ToggleSwitch />
+                handleTogglee();
+              }}    className={`${NavCss.slider} ${isChecked ? NavCss.sliderOff : NavCss.sliderOn}`} />
+    </span>
             </Link>
+            </span>
+    
             <NavLink
               to="/admin"
               style={toshowAdmin ? {display:""}: {display:"none"}}

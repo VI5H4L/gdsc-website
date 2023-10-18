@@ -12,6 +12,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+margin-top: 5rem;
 }
 
 
@@ -31,6 +32,7 @@
 {
     min-height: 50vh;
     height: auto;
+    margin-top: -5rem;
     width: 80%;
     align-items: center;
     display: flex;
@@ -67,6 +69,7 @@
 
 .darkaboutSubHeading2
 {
+
     font-size: 1.75rem;
     color: white;
     font-weight: bold;
@@ -115,6 +118,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 5%;
+    margin-top: -7rem;
 }
 
 .aboutSection4
@@ -587,3 +591,4 @@ height: 250px;
         height: 58vh;
     }
 }
+
