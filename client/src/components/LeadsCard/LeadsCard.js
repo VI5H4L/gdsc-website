@@ -42,7 +42,9 @@ function LeadsCard(props) {
       <motion.div  ref={ref}
               initial={inView? "animate" : "initial"}
               animate={inView? "animate" : "initial"}
-              variants={slideInVariantsMobile} className={LeadCardCss.leadImageDiv}>
+              variants={slideInVariantsMobile} style={{
+                marginTop:"5rem"
+              }} className={LeadCardCss.leadImageDiv}>
                   
         {data.map((lead) => (
           <div key={lead.id} className={LeadCardCss.imageArea}>
