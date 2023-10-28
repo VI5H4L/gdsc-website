@@ -85,10 +85,10 @@
 
 .domainImageDiv
 {
-    height: 532px;
+    height: 500px; 
 
 
-    width: 1235px;
+    width: 1000px;
 }
 .domainImageDiv img{
 border-radius: 20px;

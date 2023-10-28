@@ -19,6 +19,15 @@ body
   background-color: white;
 }
 
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
 
 
 #dark h4 {

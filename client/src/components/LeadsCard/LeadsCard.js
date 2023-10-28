@@ -71,6 +71,7 @@ function LeadsCard(props) {
               }`}>
               <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
               <h6 className={LeadCardCss.designation}>GDSC LEAD</h6>
+              <h6 className={LeadCardCss.designation}>{lead.tenure}</h6>
             </div>
           </div>
         ))}

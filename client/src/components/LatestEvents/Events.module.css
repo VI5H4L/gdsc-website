@@ -1,17 +1,17 @@
 .main 
 {
-padding: 30px;
+/* padding: 30px; */
     min-height: 90vh;
     height: auto;
     background-color: rgba(244, 194, 13, 0.2) ;
-    width: 100vw;
+    width:100vw;
     padding-bottom: 5%;
     position: relative;
 }
 
 .darkmain 
 {
-    padding: 30px;
+    /* padding: 30px; */
     min-height: 80vh;
     height: auto;
     background-color: black;
