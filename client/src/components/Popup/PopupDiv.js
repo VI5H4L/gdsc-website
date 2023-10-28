@@ -8,7 +8,7 @@ function PopupDiv(props) {
 
   return props.trigger ? (
     <>
-      <div className={theme === "dark" ? PopCss.darkmain : PopCss.main}>
+      <div style={{border:"none"}} className={theme === "dark" ? PopCss.darkmain : PopCss.main}>
         <div className={theme === "dark" ? PopCss.darkinner : PopCss.inner}>
           {props.children}
         </div>
