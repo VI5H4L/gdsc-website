@@ -228,30 +228,27 @@ function AboutPage() {
               theme === "dark" ? AboutCss.darkdescription : AboutCss.description
               }`}
           >
-            orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, su orem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam,
+         The GDSC Club (Google Developer Student Clubs) consists of several specialized domains, each with unique objectives:
+
+Development Domain: Focuses on Mobile and Web Development using technologies like Flutter, Kotlin, and more. Aims to promote Google technologies and fosters collaboration with other domains.
+
+Creative Domain: Emphasizes creativity and visual design, creating posters, web/app interfaces, etc. Collaborates with Development and educates members on design tools.
+
+Competitive Programming Domain: Educates members about Codeforces contests and organizes them, encouraging healthy competition and collaboration.
+
+AI/ML Domain: Focuses on AI and ML, promoting cooperation and practical application. Offers workshops and covers various AI/ML topics.
+
+Management Domain: Manages event execution, engagement, sponsorships, and documentation. Collaborates with other domains to enhance event quality.
+
+Game Development Domain: Explores game development using tools like Unity and Unreal Engine, fostering a creative environment for members to gain valuable skills.
+
+Each domain contributes to the club's overarching goals, including learning, innovation, collaboration, and skill development in their respective areas of expertise.		
           </p>
           <p
             className={`${
               theme === "dark" ? AboutCss.darkdescription : AboutCss.description
               }`}
-          >
-            orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, su orem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam,
+          >			
           </p>
         </div>
       </section>
