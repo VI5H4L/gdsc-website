@@ -59,13 +59,13 @@ function ExpandableData(props) {
         {`${props.data.description}`.slice(0, 150)}{" "}
         {/* Display the initial portion of data */}
         {/* <SeeMoreButton /> */}
-        <button className={name} onClick={handleClick}>
+        <button style={{cursor:"pointer"}} className={name} onClick={handleClick}>
           ...See More
         </button>
       </div>
-      <PopupDiv trigger={isActive}>
-        <div className={PopCss.contentDiv}>
-          <h1>{props.data.name}</h1>
+      <PopupDiv  trigger={isActive}>
+        <div  className={PopCss.contentDiv}>
+          <h1 style={{marginTop:"-3rem"}}>{props.data.name}</h1>
           <button
             className={theme === "dark" ? PopCss.darkbutton : PopCss.button}
             onClick={handleClick}>
@@ -73,10 +73,13 @@ function ExpandableData(props) {
               className={theme === "dark" ? PopCss.darkicon : PopCss.icon}
             />
           </button>
-          <p className={PopCss.para}>{props.data.description}</p>
+          <p  style={{marginTop:"-1rem"}} className={PopCss.para}>{props.data.description}</p>
           <div className={PopCss.posterDiv}>
             <div className={PopCss.poster}> <img src={props.data.photo} style = {{width: "352px", height: "352px", borderRadius: "15px"}}/></div>
-            <div className={PopCss.data}>
+            <div style={{display:"flex",
+           flexDirection:"column",
+           alignItems:"start"
+          }} className={PopCss.data}>
               <img src={arrow} className={PopCss.arrow} />
               <div className={PopCss.timeDiv}>
                 <div>
@@ -89,28 +92,43 @@ function ExpandableData(props) {
                 </div>
               </div>
 
-              <div className={PopCss.content}>
-                <div>
+              <div  className={PopCss.content}>
+                <div style={{display:"flex",
+           flexDirection:"row",
+alignItems:"center",
+          }}>
                   <span className={PopCss.subHeading}>Venue:</span>
-                  <span>{props.data.timeline.venue}</span>
+                  <span >{props.data.timeline.venue}</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",
+           flexDirection:"row",
+alignItems:"center",
+          }}>
                   <span className={PopCss.subHeading}>Tenure:</span>
                   <span>{props.data.tenure}</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",
+           flexDirection:"row",
+alignItems:"center",
+          }}>
                   <span className={PopCss.subHeading}>Domain(s):</span>
                   <span>{formattedDomainString}</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",
+           flexDirection:"row",
+alignItems:"center",
+          }}>
                   <span className={PopCss.subHeading}>{props.whichMentor}</span>
                   <span>{formattedSpeakersString}</span>
                 </div>
-                <div>
+                <div  style={{display:"flex",
+           flexDirection:"row",
+alignItems:"center",
+          }}>
                   <span className={PopCss.subHeading}>{props.whichMember}:</span>
                   <span>{formattedFacilitatorsString}</span>
                 </div>
-                <button className={PopCss.rsvpButton}>RSVP Here</button>
+                <button  style={{cursor:"pointer"}} className={PopCss.rsvpButton}>RSVP Here</button>
               </div>
             </div>
           </div>

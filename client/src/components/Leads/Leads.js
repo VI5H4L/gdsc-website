@@ -63,6 +63,9 @@ function About(props) {
           initial={inView1 ? "animate" : "initial"}
           animate={inView1? "animate" : "initial"}
           variants={slideInVariants}
+          style={{
+            marginTop:"8rem" ,
+          marginBottom:"8rem"         }}
             className={`${
               theme === "dark" ? AboutCss.darkHeading : AboutCss.heading
             }`}

@@ -23,6 +23,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 5%;
+
     width: 90%;
 }
 
@@ -71,6 +72,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+
     justify-content: flex-start;
     align-items: center;
   
@@ -102,6 +104,7 @@
 
 .ProjectSeeMore
 {
+
     border: none;
     background-color: transparent;
     font-size: 15px;
