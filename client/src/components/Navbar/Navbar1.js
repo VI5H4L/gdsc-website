@@ -280,7 +280,7 @@ function Navbar({toshowAdmin}) {
               }}>
               Admin
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/login"
               className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}
               onClick={() => {
@@ -288,7 +288,7 @@ function Navbar({toshowAdmin}) {
                 handleToggle();
               }}>
              Login
-            </NavLink>
+            </NavLink> */}
             <Link to="/button">
               <button className={NavCss.button1}>Join the community</button>
             </Link>

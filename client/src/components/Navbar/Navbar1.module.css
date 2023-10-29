@@ -62,6 +62,7 @@
 .listDiv
 {
    width: 40%;
+   gap:5px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -374,21 +375,21 @@ ul
   .slider:before {
     position: absolute;
     content: '';
-    height: 19px;
-    width: 19px;
-    left: 4px;
-    bottom: 2px;
+    height: 16px;
+    width: 17px;
+    left: 2px;
+    bottom: 3.12px;
     background-color: #F4C20D;
     border-radius: 50%;
     transition: 0.4s;
-    border: 2px solid black;
+    border: 1.5px solid black;
   }
   
   .sliderOn {
-    background-image: url(./images/toggle.png);
+    background-image: url(./images/light.png);
     background-repeat: no-repeat;
     background-size: cover;
-    /* border: 1px solid black; */
+    border: 2px solid black;
   }
   
   .sliderOn:before {
@@ -396,16 +397,16 @@ ul
   }
   
   .sliderOff {
-    background-image: url(./images/toggle2.png);
+    background-image: url(./images/dark.png);
     background-repeat: no-repeat;
     background-size: cover;
-    /* border: 1px solid black; */
+    border: 2px solid white;
   }
   
   .sliderOff:before {
     
-    transform: translateX(26px);
+    transform: translateX(25px);
     background-color: grey;
-    border: 2px solid black;
+    border: 1.5px solid white;
   }
   
