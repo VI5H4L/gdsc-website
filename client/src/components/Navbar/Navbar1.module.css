@@ -3,7 +3,7 @@
     height: 60px;
     min-width: 100%;
     width: auto;
-border:  solid lightgrey;
+    border-bottom:  solid rgba(211, 211, 211, 0.29);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -17,17 +17,35 @@ border:  solid lightgrey;
  
 }
 
-.darkNavbar 
+/* .darkNavbar 
 {
     height: 60px;
     width: 100%;
-    box-shadow: 0px 1px 10px #999;
+    border-bottom:  solid rgba(211, 211, 211, 0.29);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
     
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: black;
+ 
+} */
+.darkNavbar 
+{
+    height: 60px;
+    min-width: 100%;
+    width: auto;
+    border-bottom:  solid rgba(211, 211, 211, 0.29);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+    position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;

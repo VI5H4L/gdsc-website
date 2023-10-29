@@ -51,13 +51,15 @@ object-fit: cover;
 
 .designation 
 {
-     margin-top: -1rem;
+    margin: 0;
+    margin-top: 0.5rem;
     font-size: 1rem;
     font-weight: bolder;
 }
 
 .leadName 
 {
+    margin-bottom: 0.2rem;
     font-size: 1.1rem;
     font-weight: lighter;
 }
@@ -88,6 +90,7 @@ object-fit: cover;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 25px;
     }
     .imageArea{
         margin: 0;
