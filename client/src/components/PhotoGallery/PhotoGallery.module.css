@@ -40,7 +40,7 @@ margin-bottom: 1rem;
 
 .carousalDiv 
 {
-    margin-top: 2%;
+    /* margin-top: 2%; */
     white-space: nowrap;
     width: 100%;
     /* padding: 5%; */
@@ -65,11 +65,11 @@ margin-bottom: 1rem;
 
 .scrollingDiv
 {
-    height: 14vh;
-    margin: 0px 0px;
+    height: 13vh;
+    /* margin: 0px 0px; */
     overflow-x: hidden;
     overflow-y: hidden;
-    padding-bottom: 6%;
+    /* padding-bottom: 6%; */
     width: 100%;
 }
 
@@ -83,6 +83,7 @@ margin-bottom: 1rem;
     background-color: black;
     margin-top: 4%;
     border-radius: 8px;
+    
 }
 
 .carousalButton1
