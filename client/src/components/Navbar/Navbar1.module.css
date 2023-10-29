@@ -3,7 +3,7 @@
     height: 60px;
     min-width: 100%;
     width: auto;
-    border-bottom:  solid rgba(211, 211, 211, 0.29);
+    border-bottom:  solid rgba(211, 211, 211, 0.538);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -77,18 +77,20 @@
 .logoname
 {
     width: 240px;
-    height: 40px;
+    /* height: 40px; */
     font-size: x-small;
     text-align: left;
     display: flex;
-    align-items: center;
+    margin-left: 5px;
+    /* align-items: center; */
     flex-direction: column;
     justify-content: center;
 }
 
 .gdsclogo
 {
-    margin-top: 2%;
+    width: 55px;
+    object-fit: contain;
 }
 
 .logonameheading
@@ -110,7 +112,7 @@
 .logoimagediv {
     display: flex;
     flex-direction: row;
-    height: 30px;
+    /* height: 30px; */
     /* margin: 15px 0px 0px 0px; */
     float: left;
 }
@@ -135,7 +137,7 @@ a
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
 }
 
 

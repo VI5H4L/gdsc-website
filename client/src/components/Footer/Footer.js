@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import FooterCss from "./Footer.module.css";
-import gdsclogo from "../Navbar/images/gdsclogo.png";
+import gdsclogo from "../Navbar/images/gdscnlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,

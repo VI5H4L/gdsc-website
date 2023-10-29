@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import LoaderCss from './Loader.module.css';
-import logo from './Frame.svg';
+import logo from './rytlogo.svg';
 
 const Preloader = () => {
   const circlesRef = useRef();
@@ -54,9 +54,9 @@ const Preloader = () => {
     <div className={LoaderCss.preloader}>
       <div className={LoaderCss.heading} ref={headingRef}>
         <h1>
-          Google <span style={{ color: 'green' }}> Developer </span>
-          <span style={{ color: 'blue' }}> Students </span>
-          <span style={{ color: 'red' }}> Clubs </span>
+        <span style={{ color: '#DB3236' }}>G</span>oogle<span style={{ color: '#3CBA54' }}> D</span>eveloper 
+          <span style={{ color: '#4885ED' }}> S</span>tudent
+          <span style={{ color: '#F4C20D' }}> C</span>lubs
         </h1>
       </div>
       <div className={LoaderCss.subheading} ref={subHeadingRef}>

@@ -159,7 +159,7 @@ import NavCss from "./Navbar1.module.css";
 import gdsclogo from "./images/gdsclogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ThemeContext } from "../../ThemeContext";
-import gdscnewlogo from "./images/gdscnewlogo.jpg"
+import gdscnewlogo from "./images/gdscnlogo.png"
 function Navbar({toshowAdmin}) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isActive, setActive] = useState(false);
