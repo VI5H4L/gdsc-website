@@ -70,7 +70,8 @@ function LeadsCard(props) {
                   : LeadCardCss.leadDetails
               }`}>
               <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
-              <h6 className={LeadCardCss.designation}>GDSC LEAD</h6>
+              {lead.position === "domainlead" ? <h6 className={LeadCardCss.designation}>Domain Lead</h6> : null}
+              {lead.position === "gdsclead"  ? <h6 className={LeadCardCss.designation}>GDSC Lead</h6> : null}
               <h6 className={LeadCardCss.designation}>{lead.tenure}</h6>
             </div>
           </div>
