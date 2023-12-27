@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import FooterCss from "./Footer.module.css";
 import gdsclogo from "../Navbar/images/gdscnlogo.png";
+import {NavLink, useNavigate} from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,
@@ -14,6 +15,7 @@ import { useInView } from "react-intersection-observer";
 
 function Footer() {
 
+  const nav = useNavigate();
   const [ref,inView]=useInView({
     triggerOnce: false
   })
@@ -29,10 +31,8 @@ function Footer() {
       <section
         id="Footer"
         className={`${theme === "dark" ? FooterCss.darkmain : FooterCss.main}`}>
-        <motion.div   ref={ref} 
-             initial={inView ? "animate" : "initial"}
-      animate={inView ? "animate" : "initial"}
-      variants={slideInVariants}  className={FooterCss.column1}>
+        <motion.div  
+className={FooterCss.column1}>
           <div className={FooterCss.logoimagediv}>
             <img src={gdsclogo} className={FooterCss.gdsclogo} alt="gdsclogo" />
 
@@ -52,13 +52,16 @@ function Footer() {
             className={`${
               theme === "dark" ? FooterCss.darkbelow : FooterCss.below
             }`}>
-            <span>dhsbubfai iacsuiucb</span>
-            <span>dhsbubfai iacsuiucb</span>
-            <span>dhsbubfai iacsuiucb</span>
+              <div>
+                The LNMIIT Jaipur
+              </div>
+         <div> Rupa ki Nangal, Post-Sumel, Via, </div> 
+         <div>
+         Jamdoli, Jaipur, Rajasthan 302031
+          </div> 
           </div>
           <div>
             <motion.button
-            whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? FooterCss.darkbrandButtons
@@ -97,28 +100,20 @@ function Footer() {
         </motion.div>
 
         <motion.div   ref={ref} 
-             initial={inView ? "animate" : "initial"}
-      animate={inView ? "animate" : "initial"}
-      variants={slideInVariants} className={FooterCss.footerDataDiv}>
+        style={{justifyContent:"space-evenly"}}
+            className={FooterCss.footerDataDiv}>
           <div className={FooterCss.data}>
-            <h2>XYZ</h2>
-            <h4>Lorem ipsum</h4>
-            <h4>Lorem ipsum</h4>
-            <h4>Lorem ipsum</h4>
+            <h2 style={{cursor:"pointer"}} onClick={()=>{nav("/")}}>Home</h2>
+            <h4 style={{cursor:"pointer"}}  onClick={()=>{nav("/about")}}>About</h4>
+            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/events")}}>Events</h4>
+            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/projects")}}>Project</h4>
           </div>
 
           <div className={FooterCss.data}>
-            <h2>XYZ</h2>
-            <h4>Lorem ipsum</h4>
-            <h4>Lorem ipsum</h4>
-            <h4>Lorem ipsum</h4>
-          </div>
-
-          <div className={FooterCss.data}>
-            <h2>XYZ</h2>
-            <h4>Lorem ipsum</h4>
-            <h4>Lorem ipsum</h4>
-            <h4>Lorem ipsum</h4>
+            <h2 style={{cursor:"pointer"}} onClick={()=>{nav("/about")}} >About</h2>
+            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/out-team")}} >Our Team</h4>
+            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/")}} >Contact Us</h4>
+            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/events")}} >Events</h4>
           </div>
         </motion.div>
       </section>
