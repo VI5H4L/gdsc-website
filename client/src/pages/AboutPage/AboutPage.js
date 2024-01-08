@@ -8,6 +8,7 @@ import DomainData from "../../Data/Domain";
 import { ThemeContext } from "../../ThemeContext";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Loader from "../../components/DataLoader/Loader";
 
 
 
