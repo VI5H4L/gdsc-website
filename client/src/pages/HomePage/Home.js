@@ -19,6 +19,7 @@ import facultyImage from "../HomePage/images/faculty_mentor.png";
 import {delay, motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
 import plane from "./images/planeIllustration.png";
+import Loader from "../../components/DataLoader/Loader";
 
 
 

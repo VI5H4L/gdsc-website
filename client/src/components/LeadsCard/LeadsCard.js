@@ -4,7 +4,7 @@ import { ThemeContext } from "../../ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { motion} from 'framer-motion';
 function LeadsCard(props) {
-
+const[loader,setLoader]= useState(false);
   const [ref,inView]=useInView({
     triggerOnce: false,
     delay: 500
@@ -47,7 +47,8 @@ function LeadsCard(props) {
               }} className={LeadCardCss.leadImageDiv}>
                   
         {data.map((lead) => (
-          <div key={lead.id} className={LeadCardCss.imageArea}>
+        
+        lead.name=="Vasundhara Shukla"||lead.name=="Ramsha Iqbal"?<div key={lead.id} className={LeadCardCss.imageArea}>
             <div
               className={
                 variant === "green"
@@ -74,7 +75,7 @@ function LeadsCard(props) {
               {lead.position === "gdsclead"  ? <h6 className={LeadCardCss.designation}>GDSC Lead</h6> : null}
               <h6 className={LeadCardCss.designation}>{lead.tenure}</h6>
             </div>
-          </div>
+          </div>:<></>
         ))}
 
 
