@@ -26,8 +26,9 @@
     cursor: url(../../pages/EventsPage/images/click1.svg) 45 45 ,pointer;
 }
 .cardImage{
-    height: 100%;
-    width: 100%;
+    height: 98%;
+    width: 98%;
+    border-radius: 15px;
     
 }
 .section3

@@ -3,6 +3,7 @@ import CardCss from "./Card.module.css";
 import ExpandableData from "../ExpandedDiv/ExpandableData";
 function EventCard(props) {
   const { data } = props;
+  console.log(data);
   const { variant } = props;
   // console.log(props.data);
   return (
@@ -15,7 +16,7 @@ function EventCard(props) {
                 variant === "events" ? CardCss.ImageDiv : CardCss.ImageDiv1
               }>
               <img
-                src={props.image2}
+                src={item.photo}
                 className={CardCss.cardImage}
                 alt="about"
               />

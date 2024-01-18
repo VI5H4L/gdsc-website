@@ -30,12 +30,15 @@ function LeadsCard(props) {
     }
   }, [props.data]);
 
-  const convertDriveURL = (url) => {
-    const parts = url.split('/');
-    const fileId = parts[parts.length - 2];
-    // console.log(fileId);
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
-  };
+
+
+  // const convertDriveURL = (url) => {
+  //   const parts = url.split('/');
+  //   const fileId = parts[parts.length - 2];
+  //   // console.log(fileId);
+  //   console.log(fileId)
+  //   return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  // };
 
   return (
     <div className="leads-image-maindiv">
@@ -46,8 +49,12 @@ function LeadsCard(props) {
                 marginTop:"5rem"
               }} className={LeadCardCss.leadImageDiv}>
                   
-        {data.map((lead) => (
-        
+        {data.map((lead) => {
+         if (
+          (variant === "green" && lead.tenure === "2023-2024") ||
+          (variant === "green" && lead.tenure === "2020-2021")
+        ) {
+          return (
        <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
               className={
@@ -62,7 +69,7 @@ function LeadsCard(props) {
                     : LeadCardCss.teamImageDiv
                 } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img
 
-              src={convertDriveURL(lead.photo)} alt={lead.name} className={LeadCardCss.photo} style={{width: "100%", height: "100%",objectFit:"cover", marginleft: "-50px"}}/></div>
+              src={lead.photo} alt={lead.name} className={LeadCardCss.photo} style={{width: "100%", height: "100%",objectFit:"cover", marginleft: "-50px"}}/></div>
             </div>
             <div
               className={`${
@@ -73,10 +80,75 @@ function LeadsCard(props) {
               <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
               {lead.position === "domainlead" ? <h6 className={LeadCardCss.designation}>Domain Lead</h6> : null}
               {lead.position === "gdsclead"  ? <h6 className={LeadCardCss.designation}>GDSC Lead</h6> : null}
-              <h6 className={LeadCardCss.designation}>{lead.tenure}</h6>
+              <h6 className={LeadCardCss.designation}>{lead.tenure=="2023-2024"?"Current GDSC Lead":"First GDSC Lead"}</h6>
             </div>
+          
           </div>
-        ))}
+            );
+          }
+          else  if (
+            (variant === "yellow" )
+          )  {
+            // Show all other leads in the else part
+            return (
+              <div key={lead.id} className={LeadCardCss.imageArea}>
+                <div
+                  className={
+                    variant === "green"
+                      ? LeadCardCss.imageBigDiv
+                      : LeadCardCss.teamimageBigDiv
+                  }
+                >
+                  <div
+                    className={
+                      variant === "green"
+                        ? LeadCardCss.imageDiv
+                        : LeadCardCss.teamImageDiv
+                    }
+                    style={{
+                      display: "inline-block",
+                      position: "relative",
+                      width: "200px",
+                      height: "200px",
+                      overflow: "hidden",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <img
+                      src={lead.photo}
+                      alt={lead.name}
+                      className={LeadCardCss.photo}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        marginLeft: "-50px",
+                      }}
+                    />
+                  </div>
+                </div>
+                <div
+                  className={`${
+                    theme === "dark"
+                      ? LeadCardCss.darkLeadDetails
+                      : LeadCardCss.leadDetails
+                  }`}
+                >
+                  <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
+                  {lead.position === "domainlead" ? (
+                    <h6 className={LeadCardCss.designation}>Domain Lead</h6>
+                  ) : null}
+                  {lead.position === "gdsclead" ? (
+                    <h6 className={LeadCardCss.designation}>GDSC Lead</h6>
+                  ) : null}
+                  <h6 className={LeadCardCss.designation}>
+                    {lead.tenure}
+                  </h6>
+                </div>
+              </div>
+            );
+          }
+        })}
 
 
       </motion.div>
