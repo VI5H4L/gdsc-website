@@ -12,15 +12,8 @@ import { ThemeContext } from "../../ThemeContext";
 import cube from "./images/cubeIllustation.png";
 import {motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
-import Loader from "../DataLoader/Loader";
 
 function Photo() {
-  const handleImageLoad = () => {
-    setLoading(false); // Set loading to false when all images are loaded
-  };
-
-
-  const [loading, setLoading] = useState(true);
   const { theme } = useContext(ThemeContext);
   const [selectedImage, setSelectedImage] = useState(null);
   const [allImage,setAllImage]=useState([]);
@@ -69,7 +62,7 @@ function Photo() {
 
   const convertDriveURL = (url) => {
     const parts = url.split('/');
-    const fileId = parts[parts.length - 2]; 
+    const fileId = parts[parts.length - 2];
     console.log(fileId);
     return `https://drive.google.com/uc?export=view&id=${fileId}`;
   };

@@ -4,7 +4,7 @@ import { ThemeContext } from "../../ThemeContext";
 import { useInView } from "react-intersection-observer";
 import { motion} from 'framer-motion';
 function LeadsCard(props) {
-const[loader,setLoader]= useState(false);
+
   const [ref,inView]=useInView({
     triggerOnce: false,
     delay: 500
