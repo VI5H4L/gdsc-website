@@ -37,16 +37,14 @@ function Home() {
 
   const  [leads, setLeads] = useState([]);
 
-  useEffect(() => {
-    fetchAboutData();
-}, []);
-
-
 const fetchAboutData = async () => {
     try {
         // console.log("aaa");
         const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
-
+        console.log("Home page Response")
+        console.log(response);
+       console.log("Home page Response///////////")
+        console.log(response.json());
         
         const data = await response.json();
         setLeads(data);
@@ -56,6 +54,11 @@ const fetchAboutData = async () => {
         console.error('Error fetching gdsclead:', error);
       }
 }
+
+  
+  useEffect(() => {
+    fetchAboutData();
+}, []);
 
 const slideInVariantsDesktop = {
   initial: { translateX: 100, opacity: 0 },
