@@ -63,7 +63,7 @@ function Photo() {
   const convertDriveURL = (url) => {
     const parts = url.split('/');
     const fileId = parts[parts.length - 2];
-    console.log(fileId);
+    // console.log(fileId);
     return `https://drive.google.com/uc?export=view&id=${fileId}`;
   };
   
