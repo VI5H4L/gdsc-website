@@ -32,13 +32,13 @@ function LeadsCard(props) {
 
 
 
-  // const convertDriveURL = (url) => {
-  //   const parts = url.split('/');
-  //   const fileId = parts[parts.length - 2];
-  //   // console.log(fileId);
-  //   console.log(fileId)
-  //   return `https://drive.google.com/uc?export=view&id=${fileId}`;
-  // };
+  const convertDriveURL = (url) => {
+    const parts = url.split('/');
+    const fileId = parts[parts.length - 2];
+    // console.log(fileId);
+    console.log(fileId)
+    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+  };
 
   return (
     <div className="leads-image-maindiv">
@@ -115,7 +115,7 @@ function LeadsCard(props) {
                     }}
                   >
                     <img
-                      src={lead.photo}
+                      src={convertDriveURL(lead.photo)}
                       alt={lead.name}
                       className={LeadCardCss.photo}
                       style={{
