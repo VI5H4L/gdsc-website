@@ -46,7 +46,7 @@ const fetchAboutData = async () => {
        console.log("Home page Response///////////")
         console.log(response.json());
         
-        const data = response.json();
+        const data = response.data;
         console.log("Home page DATA")
         console.log(data);
         setLeads(data);
