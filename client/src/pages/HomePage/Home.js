@@ -19,6 +19,7 @@ import facultyImage from "../HomePage/images/faculty_mentor.png";
 import {delay, motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
 import plane from "./images/planeIllustration.png";
+import axios from './axios';
 
 
 
@@ -38,22 +39,46 @@ function Home() {
   const  [leads, setLeads] = useState([]);
 
 const fetchAboutData = async () => {
-    try {
-        // console.log("aaa");
-        const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
-        console.log("Home page Response")
-        console.log(response);
-       console.log("Home page Response///////////")
-        console.log(response.json());
+    // try {
+    //     // console.log("aaa");
+    //     const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
+    //     console.log("Home page Response")
+    //     console.log(response);
+    //    console.log("Home page Response///////////")
+    //     console.log(response.json());
         
-        const data = response.data();
-        console.log("Home page DATA")
+    //     const data = response.data();
+    //     console.log("Home page DATA")
+    //     console.log(data);
+    //     setLeads(data);
+        
+    //   } catch (error) {
+    //     console.error('Error fetching gdsclead:', error);
+    //   }
+
+  axios.get('https://gdscbackend.vercel.app/ourteam/gdsclead')
+      .then(response => response.json())
+      .then(data => {
+        // Set the fetched images to the state
+        console.log("New page Response///////////")
         console.log(data);
-        setLeads(data);
-        
-      } catch (error) {
-        console.error('Error fetching gdsclead:', error);
-      }
+      })
+    //     .then((response) => {
+    //   const transformedImageUrls = response.data.map((item) => {
+    //     // Convert Google Drive URL to direct image URL
+    //     const parts = url.split('/');
+    // const fileId = parts[parts.length - 2];
+    // // console.log(fileId);
+    // return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    //   });
+
+    //   setAllImage(transformedImageUrls);
+    //   setSelectedImage(transformedImageUrls[0]);
+    // })
+      
+      .catch(error => {
+        console.error('Error fetching images:', error);
+      });
 }
 
   
