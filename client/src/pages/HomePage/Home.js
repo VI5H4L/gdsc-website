@@ -46,10 +46,11 @@ const fetchAboutData = async () => {
        console.log("Home page Response///////////")
         console.log(response.json());
         
-        const data = await response.json();
-        setLeads(data);
-        console.log("Home page")
+        const data = response.json();
+        console.log("Home page DATA")
         console.log(data);
+        setLeads(data);
+        
       } catch (error) {
         console.error('Error fetching gdsclead:', error);
       }
