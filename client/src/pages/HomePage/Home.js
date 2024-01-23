@@ -38,53 +38,38 @@ function Home() {
 
   const  [leads, setLeads] = useState([]);
 
-const fetchAboutData = async () => {
-    // try {
-    //     // console.log("aaa");
-    //     const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
-    //     console.log("Home page Response")
-    //     console.log(response);
-    //    console.log("Home page Response///////////")
-    //     console.log(response.json());
-        
-    //     const data = response.data();
-    //     console.log("Home page DATA")
-    //     console.log(data);
-    //     setLeads(data);
-        
-    //   } catch (error) {
-    //     console.error('Error fetching gdsclead:', error);
-    //   }
-
-  axios.get('https://gdscbackend.vercel.app/ourteam/gdsclead')
-      .then(response => response.json())
-      .then(data => {
-        // Set the fetched images to the state
-        console.log("New page Response///////////")
-        console.log(data);
-      })
-    //     .then((response) => {
-    //   const transformedImageUrls = response.data.map((item) => {
-    //     // Convert Google Drive URL to direct image URL
-    //     const parts = url.split('/');
-    // const fileId = parts[parts.length - 2];
-    // // console.log(fileId);
-    // return `https://drive.google.com/uc?export=view&id=${fileId}`;
-    //   });
-
-    //   setAllImage(transformedImageUrls);
-    //   setSelectedImage(transformedImageUrls[0]);
-    // })
-      
-      .catch(error => {
-        console.error('Error fetching images:', error);
-      });
-}
-
+  const fetchAboutData = async () => {
+    try {
+      const response = await axios.get('https://gdscbackend.vercel.app/ourteam/gdsclead');
+      // Update state with the fetched data
+      setLeads(response.data);
+    } catch (error) {
+      console.error('Error fetching gdsclead:', error);
+    }
+  }
   
   useEffect(() => {
     fetchAboutData();
-}, []);
+  }, []);
+  
+
+// const fetchAboutData = async () => {
+
+//   axios.get('https://gdscbackend.vercel.app/ourteam/gdsclead')
+//       .then(response =>  {
+//         console.log("New page Response///////////")
+//         console.log(response.data);
+//       })
+      
+//       .catch(error => {
+//         console.error('Error fetching images:', error);
+//       });
+// }
+
+  
+//   useEffect(() => {
+//     fetchAboutData();
+// }, []);
 
 const slideInVariantsDesktop = {
   initial: { translateX: 100, opacity: 0 },

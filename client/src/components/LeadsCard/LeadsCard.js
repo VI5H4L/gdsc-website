@@ -41,6 +41,7 @@ function LeadsCard(props) {
   };
 
   return (
+    
     <div className="leads-image-maindiv">
       <motion.div  ref={ref}
               initial={inView? "animate" : "initial"}
@@ -48,13 +49,17 @@ function LeadsCard(props) {
               variants={slideInVariantsMobile} style={{
                 marginTop:"5rem"
               }} className={LeadCardCss.leadImageDiv}>
-                  
-        {data.map((lead) => {
+              
+        {
+        data.map((lead) => {
          if (
-          (variant === "green" && lead.tenure === "2023-2024") ||
-          (variant === "green" && lead.tenure === "2020-2021")
-        ) {
+          variant === "green" &&
+  (lead.tenure === "2023-2024" || lead.tenure === "2020-2021")
+)
+ {
+          console.log("Green variant condition met:", lead);
           return (
+            
        <div key={lead.id} className={LeadCardCss.imageArea}>
             <div
               className={
@@ -79,7 +84,7 @@ function LeadsCard(props) {
               }`}>
               <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
               {lead.position === "domainlead" ? <h6 className={LeadCardCss.designation}>Domain Lead</h6> : null}
-              {lead.position === "gdsclead"  ? <h6 className={LeadCardCss.designation}>GDSC Lead</h6> : null}
+              {/* {lead.position === "gdsclead"  ? <h6 className={LeadCardCss.designation}>GDSC Lead</h6> : null} */}
               <h6 className={LeadCardCss.designation}>{lead.tenure=="2023-2024"?"Current GDSC Lead":"First GDSC Lead"}</h6>
             </div>
           
