@@ -356,7 +356,7 @@ function ProjectsPage() {
           <div key={item.id} className={ProjectCss.components}>
             <div className={ProjectCss.ImageDiv}>
               <img
-                src={projectImage}
+                src={item.photo}
                 className={ProjectCss.cardImage}
                 alt="about"
               />

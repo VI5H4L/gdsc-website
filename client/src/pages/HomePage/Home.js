@@ -19,6 +19,7 @@ import facultyImage from "../HomePage/images/faculty_mentor.png";
 import {delay, motion} from 'framer-motion'
 import { useInView } from "react-intersection-observer";
 import plane from "./images/planeIllustration.png";
+import axios from "axios";
 
 
 
@@ -38,16 +39,21 @@ function Home() {
     fetchAboutData();
   }, []);
 
-
-const fetchAboutData = async () => {
-    try {
-        const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
-        const data = await response.json();
-        setLeads(data);
-      } catch (error) {
-        console.error('Error fetching gdsclead:', error);
-      }
+  const fetchAboutData = async () => {
+    await axios.get('https://gdscbackend.vercel.app/ourteam/gdsclead')
+      .then(response => {
+        console.log(response.data);
+        setLeads(response.data);
+          console.log(response.data);
+          setLeads(response.data);
+          console.log(leads);
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
 }
+  
+
 
 const slideInVariantsDesktop = {
   initial: { translateX: 100, opacity: 0 },

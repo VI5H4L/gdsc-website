@@ -141,8 +141,9 @@ h3,h6{
     .main 
     {
         width: 100%;
-        height: 100vh;
-        padding-bottom: 120%;
+        min-height: 100vh;
+        height: auto;
+        /* padding-bottom: 120%; */
 
     }
 
@@ -163,8 +164,9 @@ h3,h6{
     .main 
     {
         width: 100%;
-        height: 100vh;
-        padding-bottom: 170%;
+        min-height: 100vh;
+        height: auto;
+        /* padding-bottom: 170%; */
 
     }
    }
