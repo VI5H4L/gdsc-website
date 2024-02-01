@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import FooterCss from "./Footer.module.css";
 import gdsclogo from "../Navbar/images/gdscnlogo.png";
-import {NavLink, useNavigate} from "react-router-dom"
+import {NavLink,Link, useNavigate} from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,
@@ -61,15 +61,15 @@ className={FooterCss.column1}>
           </div> 
           </div>
           <div>
-            <motion.button
+            {/* <motion.button
               className={`${
                 theme === "dark"
                   ? FooterCss.darkbrandButtons
                   : FooterCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faTwitter} />
-            </motion.button>
-            <motion.button
+            </motion.button> */}
+            {/* <motion.button
             whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
@@ -77,25 +77,27 @@ className={FooterCss.column1}>
                   : FooterCss.brandButtons
               }`}>
               <FontAwesomeIcon size="1x" icon={faFacebookF} />
-            </motion.button>
-            <motion.button
+            </motion.button> */}
+           <motion.button
+            
             whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? FooterCss.darkbrandButtons
                   : FooterCss.brandButtons
-              }`}>
-              <FontAwesomeIcon size="1x" icon={faInstagram} />
+              }`}> <Link  
+              to="https://www.linkedin.com/company/gdsc-lnmiit-jaipur/"> 
+              <FontAwesomeIcon size="1x" icon={faInstagram} /></Link>
             </motion.button>
-            <motion.button
+         <motion.button
             whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? FooterCss.darkbrandButtons
                   : FooterCss.brandButtons
-              }`}>
-              <FontAwesomeIcon size="1x" icon={faLinkedinIn} />
-            </motion.button>
+              }`}> <Link to="https://www.instagram.com/gdsc.lnmiit/">
+              <FontAwesomeIcon size="1x" icon={faLinkedinIn} /> </Link>
+            </motion.button>  
           </div>
         </motion.div>
 

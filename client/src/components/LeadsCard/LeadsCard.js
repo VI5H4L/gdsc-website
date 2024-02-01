@@ -51,7 +51,9 @@ function LeadsCard(props) {
               variants={slideInVariantsMobile} style={{
                 marginTop:"5rem"
               }} className={LeadCardCss.leadImageDiv}>
+       
         {props.data.map((lead) => (
+           
        <div key={lead._id} className={LeadCardCss.imageArea}>
             <div
               className={
@@ -75,9 +77,10 @@ function LeadsCard(props) {
               <h3 className={LeadCardCss.leadName}>{lead.name}</h3>
               {lead.position === "domainlead" ? <h6 className={LeadCardCss.designation}>Domain Lead</h6> : null}
               {lead.position === "gdsclead"  ? <h6 className={LeadCardCss.designation}>GDSC Lead</h6> : null}
-              <h6 className={LeadCardCss.designation}>{lead.tenure==="2023-2024"?"Current GDSC Lead":"First GDSC Lead"}</h6>
-            </div>
+              <h6 className={LeadCardCss.designation}>{lead.tenure}</h6>
+            </div> 
           </div>))}
+            
       </motion.div>
     </div>
   );

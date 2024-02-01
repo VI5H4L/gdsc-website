@@ -295,7 +295,7 @@ function Navbar({toshowAdmin}) {
           </div>
           <div>
             <Link
-              to="/button"
+              to="https://gdsc.community.dev/the-lnm-institute-of-information-technology-jaipur/"
               className={`${theme === "dark" ? NavCss.darklist : NavCss.list}`}>
               <button className={NavCss.button}>Join the community</button>
             </Link>

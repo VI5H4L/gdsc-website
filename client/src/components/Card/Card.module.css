@@ -13,7 +13,7 @@
     background-color: black;
     border: 2px solid #4885ED;
     border-radius: 15px;
-    cursor: url(../../pages/ProjectsPage/images/click2.svg) 45 45 ,pointer;
+    /* cursor: url(../../pages/ProjectsPage/images/click2.svg) 45 45 ,pointer; */
 }
 
 .ImageDiv1

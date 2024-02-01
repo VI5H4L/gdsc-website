@@ -110,7 +110,7 @@ margin-top: -5rem;
     background-color: black;
     border: 2px solid #4BC561;
     border-radius: 15px;
-    cursor: url(../ProjectsPage/images/click2.svg) 45 45 ,pointer;
+    /* cursor: url(../ProjectsPage/images/click2.svg) 45 45 ,pointer; */
 }
 
 

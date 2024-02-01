@@ -14,7 +14,7 @@
     background-color: black;
     border: 2px solid #4885ED;
 
-    cursor: url(../EventsPage/images/click1.svg) 45 45 ,pointer;
+    /* cursor: url(../EventsPage/images/click1.svg) 45 45 ,pointer; */
 }
 .cardImage{
     height: 100%;

@@ -12,6 +12,7 @@ function Photo() {
   const { theme } = useContext(ThemeContext);
   const [selectedImage, setSelectedImage] = useState(null);
   const [allImage,setAllImage]=useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [ref,inView]=useInView({
     triggerOnce: false
@@ -66,22 +67,26 @@ function Photo() {
     return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
   };
   
-  const previousImage = () => {
+  const previousImage =async () => {
+    setIsLoading(true);
     if (currentIndex === 0) {
       setCurrentIndex(allImage.length - 1);
     } else {
       setCurrentIndex(currentIndex - 1);
     }
     setSelectedImage(allImage[currentIndex]);
+    setIsLoading(false);
   };
 
-  const nextImage = () => {
+  const nextImage =async () => {
+    setIsLoading(true);
     if (currentIndex === allImage.length - 1) {
       setCurrentIndex(0);
     } else {
       setCurrentIndex(currentIndex + 1);
     }
     setSelectedImage(allImage[currentIndex]);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -115,9 +120,16 @@ function Photo() {
         </motion.h1>
         <div className={PhotoCss.mainDiv}>
           <div className={PhotoCss.photoDiv}>
-          {selectedImage && (
+          {/* {selectedImage && (
             <img src={convertDriveURL(selectedImage)}  className={PhotoCss.photoDiv} />
-          )}
+          )} */}
+           {isLoading ? (
+              <p>Loading...</p>
+            ) : (
+              selectedImage && (
+                <img src={convertDriveURL(selectedImage)} className={PhotoCss.photoDiv} />
+              )
+            )}
           </div>
           <div className={PhotoCss.mainCarousal}>
             <motion.button

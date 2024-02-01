@@ -43,7 +43,7 @@ function DomainSection(props) {
   const [heading, setHeading] = useState(data[current].heading);
   const [previous, setPrevious] = useState(data.length - 1);
   const [next, setNext] = useState(1);
-
+  const [isLoading, setIsLoading] = useState(false);
 
   console.log(props.current, current);
   
@@ -53,49 +53,112 @@ function DomainSection(props) {
     showTag = false;
     showTag2 = true;
   }
+
+  const previousButton = async () => {
+    setIsLoading(true);
+    let newCurrent = 0;
+  
+    if (current === 0) {
+      newCurrent = data.length - 1;
+    } else {
+      newCurrent = current - 1;
+    }
+  
+    setCurrent(newCurrent);
+    setHeading(data[newCurrent].heading);
+  
+    if (newCurrent === 0) {
+      setPrevious(data.length - 1);
+      setNext(newCurrent + 1);
+    } else if (newCurrent === data.length - 1) {
+      setNext(0);
+      setPrevious(newCurrent - 1);
+    } else {
+      setPrevious(newCurrent - 1);
+      setNext(newCurrent + 1);
+    }
+  
+    await handleDomainChange(data[previous].heading);
+  
+    setIsLoading(false);
+  };
+  
+  const nextButton = async () => {
+    setIsLoading(true);
+    let newCurrent = 0;
+  
+    if (current === data.length - 1) {
+      newCurrent = 0;
+    } else {
+      newCurrent = current + 1;
+    }
+  
+    setCurrent(newCurrent);
+    setHeading(data[newCurrent].heading);
+  
+    if (newCurrent === 0) {
+      setPrevious(data.length - 1);
+      setNext(newCurrent + 1);
+    } else if (newCurrent === data.length - 1) {
+      setNext(0);
+      setPrevious(newCurrent - 1);
+    } else {
+      setPrevious(newCurrent - 1);
+      setNext(newCurrent + 1);
+    }
+  
+    await handleDomainChange(data[next].heading);
+    setIsLoading(false);
+  };
+  
   
 
-  const previousButton = () => {
-    if (current === 0) {
-      setCurrent(data.length - 1);
-    } else {
-      setCurrent(current - 1);
-    }
-    setHeading(data[current].heading);
-    // setImage(data[current].src);
-    if (current === 0) {
-      setPrevious(data.length - 1);
-      setNext(current + 1);
-    } else if (current === data.length - 1) {
-      setNext(0);
-      setPrevious(current - 1);
-    } else {
-      setPrevious(current - 1);
-      setNext(current + 1);
-    }
-    handleDomainChange(data[previous].heading)
-  };
+  // const previousButton =async () => {
+  //   setIsLoading(true);
+  //   if (current === 0) {
+  //     setCurrent(data.length - 1);
+  //   } else {
+  //     setCurrent(current - 1);
+  //   }
+  //   setHeading(data[current].heading);
+  //   // setImage(data[current].src);
+  //   if (current === 0) {
+  //     setPrevious(data.length - 1);
+  //     setNext(current + 1);
+  //   } else if (current === data.length - 1) {
+  //     setNext(0);
+  //     setPrevious(current - 1);
+  //   } else {
+  //     setPrevious(current - 1);
+  //     setNext(current + 1);
+  //   }
+  //  await handleDomainChange(data[previous].heading);
 
-  const nextButton = () => {
-    if (current === data.length - 1) {
-      setCurrent(0);
-    } else {
-      setCurrent(current + 1);
-    }
-    setHeading(data[current].heading);
-    // setImage(data[current].src);
-    if (current === 0) {
-      setPrevious(data.length - 1);
-      setNext(current + 1);
-    } else if (current === data.length - 1) {
-      setNext(0);
-      setPrevious(current - 1);
-    } else {
-      setPrevious(current - 1);
-      setNext(current + 1);
-    }
-    handleDomainChange(data[next].heading);
-  };
+  //  setIsLoading(false);
+  // };
+
+  // const nextButton =async () => {
+  //   setIsLoading(true);
+  //   if (current === data.length - 1) {
+  //     setCurrent(0);
+  //   } else {
+  //     setCurrent(current + 1);
+  //   }
+  //   setHeading(data[current].heading);
+  //   // setImage(data[current].src);
+  //   if (current === 0) {
+  //     setPrevious(data.length - 1);
+  //     setNext(current + 1);
+  //   } else if (current === data.length - 1) {
+  //     setNext(0);
+  //     setPrevious(current - 1);
+  //   } else {
+  //     setPrevious(current - 1);
+  //     setNext(current + 1);
+  //   }
+  //   await handleDomainChange(data[next].heading);
+  //   setIsLoading(false);
+  // };
 
   const handleDomainChange = (selectedDomain) => {
     console.log('=================SELECTED DOMAIN===================');
