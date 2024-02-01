@@ -48,7 +48,7 @@ function Events() {
         </motion.h1>
         <div className={EventCss.mainImageDiv}>
           {events.map((event) => (
-            <div key={event.id} className={EventCss.eventsDiv}>
+            <div key={event._id} className={EventCss.eventsDiv}>
               <div
                 className={`${
                   theme === "dark" ? EventCss.darkImageDiv : EventCss.imageDiv

@@ -19,10 +19,12 @@ function LeadsCard(props) {
   const { theme } = useContext(ThemeContext);
   const { variant } = props;
 
+  console.log(props.data);
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log("Props data:", props.data);
+    // console.log("Props data:", props.data);
     if (Array.isArray(props.data)) {
       setData(props.data);
     } else {
@@ -33,8 +35,9 @@ function LeadsCard(props) {
   const convertDriveURL = (url) => {
     const parts = url.split('/');
     const fileId = parts[parts.length - 2];
-    // console.log(fileId);
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    console.log(`<----${fileId}------>`);
+    console.log(`.........${url}.............`);
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
   };
 
   return (
@@ -46,9 +49,8 @@ function LeadsCard(props) {
                 marginTop:"5rem"
               }} className={LeadCardCss.leadImageDiv}>
                   
-        {data.map((lead) => (
-        
-       <div key={lead.id} className={LeadCardCss.imageArea}>
+        {props.data.map((lead) => (
+       <div key={lead._id} className={LeadCardCss.imageArea}>
             <div
               className={
                 variant === "green"
@@ -60,9 +62,7 @@ function LeadsCard(props) {
                   variant === "green"
                     ? LeadCardCss.imageDiv
                     : LeadCardCss.teamImageDiv
-                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img
-
-              src={convertDriveURL(lead.photo)} alt={lead.name} className={LeadCardCss.photo} style={{width: "100%", height: "100%",objectFit:"cover", marginleft: "-50px"}}/></div>
+                } style={{display: "inline-block", position: "relative", width: "200px", height: "200px", overflow: "hidden", borderRadius: "50%"}}><img src={convertDriveURL(lead.photo)} alt={lead.name} className={LeadCardCss.photo} style={{width: "100%", height: "100%",objectFit:"cover", marginleft: "-50px"}}/></div>
             </div>
             <div
               className={`${

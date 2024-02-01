@@ -2,7 +2,6 @@ import React, { useContext,useState,useEffect } from "react";
 import AboutCss from "./AboutPage.module.css";
 import AboutImage from "./images/aboutImage.png";
 import darkAboutImage from "./images/darkAboutImage.png";
-import DomainImage from "./images/domainImage.png";
 import DomainSection from "../../components/DomainSection/DomainSection";
 import DomainData from "../../Data/Domain";
 import { ThemeContext } from "../../ThemeContext";
@@ -46,7 +45,7 @@ function AboutPage() {
   const convertDriveURL = (url) => {
     const parts = url.split('/');
     const fileId = parts[parts.length - 2];
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
   };
 
   const fetchData = async (Domain) => {

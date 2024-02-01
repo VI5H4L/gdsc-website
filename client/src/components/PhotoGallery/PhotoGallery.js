@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import PhotoCss from "./PhotoGallery.module.css";
-// import image1 from "./images/image1.jpg";
-// import image2 from "./images/image2.png";
-// import image3 from "./images/image3.jpg";
-// import image4 from "./images/image4.png";
-// import image5 from "./images/image5.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "../../ThemeContext";
@@ -29,42 +24,46 @@ function Photo() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const fetchImages = () => {
-    // Your backend API endpoint for fetching the images
-    const apiEndpoint = 'https://gdscbackend.vercel.app/gallery/';
-    // Your API key for authentication
-    // const apiKey = process.env.EVENT_URI;
+  // const fetchImages = () => {
+  //   const apiEndpoint = 'https://gdscbackend.vercel.app/gallery/';
 
-    fetch(apiEndpoint)
-      .then(response => response.json())
-      .then(data => {
-        // Set the fetched images to the state
-        setAllImage(data.map(item => item.photo));
-        setSelectedImage(data[0].photo);
-      })
-    //     .then((response) => {
-    //   const transformedImageUrls = response.data.map((item) => {
-    //     // Convert Google Drive URL to direct image URL
-    //     const parts = url.split('/');
-    // const fileId = parts[parts.length - 2];
-    // // console.log(fileId);
-    // return `https://drive.google.com/uc?export=view&id=${fileId}`;
-    //   });
+  //   fetch(apiEndpoint)
+  //     .then(response =>{console.log(response);})
+  //     // .then(data => {
+  //     //   console.log(data);
+  //     //   setAllImage(data.map(item => item.photo));
+  //     //   console.log(data.map);
+  //     //   setSelectedImage(data[0].photo);
+  //     // })
+  //     .catch(error => {
+  //       console.error('Error fetching images:', error);
+  //     });
+  //   };
 
-    //   setAllImage(transformedImageUrls);
-    //   setSelectedImage(transformedImageUrls[0]);
-    // })
-      
-      .catch(error => {
-        console.error('Error fetching images:', error);
-      });
-    };
+
+  useEffect(() => {
+    fetchAboutData();
+  }, []);
+
+  const fetchAboutData = async () => {
+      await axios.get('https://gdscbackend.vercel.app/gallery/')
+        .then(response => {
+          console.log(response.data);
+          setAllImage(response.data.map(item => item.photo));
+          console.log(response.data.map);
+          setSelectedImage(response.data[0].photo);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
 
   const convertDriveURL = (url) => {
     const parts = url.split('/');
     const fileId = parts[parts.length - 2];
-    console.log(fileId);
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    console.log(`+++++++++++++++${fileId}++++++++++++++++`);
+    console.log(`+++++++++++++++${url}----------`);
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1000`;
   };
   
   const previousImage = () => {
@@ -84,10 +83,6 @@ function Photo() {
     }
     setSelectedImage(allImage[currentIndex]);
   };
-
-  useEffect(() => {
-    fetchImages();
-  }, []);
 
   useEffect(() => {
     const container = document.getElementById("image-gallery-container");

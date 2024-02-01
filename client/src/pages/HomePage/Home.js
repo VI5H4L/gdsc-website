@@ -27,27 +27,21 @@ function Home() {
   const [ref,inView]=useInView({
     triggerOnce: false
   })
-
-  
   const [ref1,inView1]=useInView({
     triggerOnce: false,
     delay: 500
   })
   const { theme } = useContext(ThemeContext);
-
   const  [leads, setLeads] = useState([]);
 
   useEffect(() => {
     fetchAboutData();
-}, []);
+  }, []);
 
 
 const fetchAboutData = async () => {
     try {
-        // console.log("aaa");
         const response = await fetch('https://gdscbackend.vercel.app/ourteam/gdsclead');
-
-        
         const data = await response.json();
         setLeads(data);
       } catch (error) {
