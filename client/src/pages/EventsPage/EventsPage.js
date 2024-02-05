@@ -61,6 +61,7 @@ function EventsPage(props) {
         data={filteredData.length > 0 ? filteredData : allData}
         image2={EventImage}
         variant={props.variant}
+        link={allData.buttonLink}
       />
     </>
   );

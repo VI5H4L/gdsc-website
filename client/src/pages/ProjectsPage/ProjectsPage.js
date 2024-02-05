@@ -324,11 +324,11 @@ function ProjectsPage() {
             value={selectedTenure}
             onChange={handleTenureChange}
           >
-            <option value="">Select Tenure</option>
-            <option value="2020-2021">2020-2021</option>
-            <option value="2021-2022">2021-2022</option>
-            <option value="2022-2023">2022-2023</option>
-            <option value="2023-2024">2023-2024</option>
+            <option className={ProjectCss.option} value="">Select Tenure</option>
+            <option className={ProjectCss.option} value="2020-2021">2020-2021</option>
+            <option className={ProjectCss.option} value="2021-2022">2021-2022</option>
+            <option className={ProjectCss.option} value="2022-2023">2022-2023</option>
+            <option className={ProjectCss.option}  value="2023-2024">2023-2024</option>
 
           </motion.select>
 
@@ -339,13 +339,13 @@ function ProjectsPage() {
             name={selectedDomain}
             onChange={handleDomainChange}
           >
-            <option value="">Select Domain</option>
-            <option value="development">Development</option>
-            <option value="creative">Creative</option>
-            <option value="management">Management</option>
-            <option value="gamedev">Game Dev</option>
-            <option value="cp">Competitive Programming</option>
-            <option value="aiml">AI/ML</option>
+            <option className={ProjectCss.option} value="">Select Domain</option>
+            <option className={ProjectCss.option} value="development">Development</option>
+            <option className={ProjectCss.option} value="creative">Creative</option>
+            <option className={ProjectCss.option} value="management">Management</option>
+            <option className={ProjectCss.option} value="gamedev">Game Dev</option>
+            <option className={ProjectCss.option} value="cp">Competitive Programming</option>
+            <option className={ProjectCss.option} value="aiml">AI/ML</option>
           </motion.select>
           )}
         </div>
@@ -362,7 +362,7 @@ function ProjectsPage() {
               />
             </div>
             <div>
-              <ExpandableData heading={item.heading} data={item} event={item.teamMembers} whichMember={"Team Members(s)"}  project={item.teamMentors} whichMentor={"Team Mentors(s)"}/>
+              <ExpandableData heading={item.heading} data={item} event={item.teamMembers} whichMember={"Team Members(s)"}  project={item.teamMentors} whichMentor={"Team Mentors(s)"} link={item.github} />
             </div>
           </div>
         ))}

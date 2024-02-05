@@ -128,7 +128,7 @@ alignItems:"center",
                   <span className={PopCss.subHeading}>{props.whichMember}:</span>
                   <span>{formattedFacilitatorsString}</span>
                 </div>
-                <button  style={{cursor:"pointer"}} className={PopCss.rsvpButton}>RSVP Here</button>
+            {variant=="events"? <a href={props.link}><button  style={{cursor:"pointer"}} className={PopCss.rsvpButton}>RSVP Here</button></a>:<a href={props.link}><button  style={{cursor:"pointer"}} className={PopCss.rsvpButton}>Github Link</button></a> }
               </div>
             </div>
           </div>

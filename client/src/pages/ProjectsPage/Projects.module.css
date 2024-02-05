@@ -52,6 +52,11 @@
     background-color: transparent;
 }
 
+.option 
+{
+    color: black;
+}
+
 .darkselect
 {
     width: 352px;
@@ -115,8 +120,8 @@ margin-top: -5rem;
 
 
 .cardImage{
-    height: 98%;
-    width: 98%;
+    height: 100%;
+    width: 100%;
     border-radius: 15px;
     
 }
@@ -139,7 +144,6 @@ margin-top: -5rem;
 
 .darkfilterHeading
 {
-    border: solid;
     color: white;
 }
 

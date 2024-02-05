@@ -44,7 +44,7 @@ function LeadsCard(props) {
 
   return (
     
-    <div className="leads-image-maindiv">
+    <div className={LeadCardCss.mainDiv}>
       <motion.div  ref={ref}
               initial={inView? "animate" : "initial"}
               animate={inView? "animate" : "initial"}

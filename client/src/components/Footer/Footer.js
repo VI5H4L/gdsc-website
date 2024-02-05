@@ -116,7 +116,7 @@ className={FooterCss.column1}>
 
           <div className={FooterCss.data}>
             <h2 style={{cursor:"pointer"}} onClick={()=>{nav("/about")}} >About</h2>
-            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/out-team")}} >Our Team</h4>
+            <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/our-team")}} >Our Team</h4>
             <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/")}} >Contact Us</h4>
             <h4 style={{cursor:"pointer"}} onClick={()=>{nav("/events")}} >Events</h4>
           </div>

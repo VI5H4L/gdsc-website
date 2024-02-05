@@ -30,6 +30,7 @@ function EventCard(props) {
                 whichMember={"Facilitator(s)"}  
                 project={item.speakers} 
                 whichMentor={"Speakers(s)"}
+                link={item.buttonlink}
               />
             </div>
           </div>
