@@ -181,6 +181,20 @@
     background-color: black;
   }
 
+  .buttonDiv 
+  {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .gdsclogo
+  {
+    width: 80px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
 
   .brandButtons 
 {

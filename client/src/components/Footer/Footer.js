@@ -53,14 +53,17 @@ className={FooterCss.column1}>
               theme === "dark" ? FooterCss.darkbelow : FooterCss.below
             }`}>
               <div>
-                The LNMIIT Jaipur
+                LNMIIT
               </div>
-         <div> Rupa ki Nangal, Post-Sumel, Via, </div> 
+         <div> Rupa ki Nangal, Post-Sumel, Via Jamdoli, </div> 
          <div>
-         Jamdoli, Jaipur, Rajasthan 302031
+        Jaipur, Rajasthan 
           </div> 
-          </div>
           <div>
+        302031
+          </div>
+          </div>
+          <div  className={FooterCss.buttonDiv}>
             {/* <motion.button
               className={`${
                 theme === "dark"
@@ -78,26 +81,26 @@ className={FooterCss.column1}>
               }`}>
               <FontAwesomeIcon size="1x" icon={faFacebookF} />
             </motion.button> */}
-           <motion.button
+       <a href="https://www.linkedin.com/company/gdsc-lnmiit-jaipur/">     <motion.button
             
             whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? FooterCss.darkbrandButtons
                   : FooterCss.brandButtons
-              }`}> <Link  
-              to="https://www.linkedin.com/company/gdsc-lnmiit-jaipur/"> 
-              <FontAwesomeIcon size="1x" icon={faInstagram} /></Link>
-            </motion.button>
-         <motion.button
+              }`}>
+           
+              <FontAwesomeIcon size="1x" icon={faLinkedinIn} /> 
+            </motion.button></a>
+       <a href="https://www.instagram.com/gdsc.lnmiit/"> <motion.button
             whileHover={{rotate:[-7, 7, -5, 5, -3, 3, 0],scale:1.2}}
               className={`${
                 theme === "dark"
                   ? FooterCss.darkbrandButtons
                   : FooterCss.brandButtons
-              }`}> <Link to="https://www.instagram.com/gdsc.lnmiit/">
-              <FontAwesomeIcon size="1x" icon={faLinkedinIn} /> </Link>
-            </motion.button>  
+              }`}> 
+              <FontAwesomeIcon size="1x" icon={faInstagram} />
+            </motion.button>  </a> 
           </div>
         </motion.div>
 

@@ -96,6 +96,7 @@
     font-weight: bold;
     display: flex;
     background-color: transparent;
+    color: black;
 }
 
 .darkselect
@@ -108,7 +109,7 @@
     font-weight: bold;
     display: flex;
     background-color: transparent;
-    color: white;
+    color: black;
 }
 
 .select1 
@@ -139,6 +140,11 @@
     display: flex;
     background-color: transparent;
     color: white;
+}
+
+.option 
+{
+    color: black;
 }
 .eventsFilterDiv
 {
