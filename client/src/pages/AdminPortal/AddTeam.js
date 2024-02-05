@@ -159,7 +159,7 @@ function AddTeam() {
           Email (Enter URL)
         </label>
         <input
-          type="url"
+          // type="url"
           id="email"
           name="email"
           value={formData.email}
