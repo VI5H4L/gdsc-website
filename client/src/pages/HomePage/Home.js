@@ -233,7 +233,7 @@ useEffect(() => {
                     ? FacultyCss.darkParagraph
                     : FacultyCss.paragraph
                 }`}>
-                <div>Sourabh Kumar</div>
+                <div>Dr. Saurabh Kumar</div>
                 <div>Our Faculty Mentor</div>
               </div>
               <div
